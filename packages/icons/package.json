@@ -12,7 +12,7 @@
     "start": "yarn build",
     "update-icons": "ts-node src/update.ts",
     "prettier": "prettier --write ..",
-    "build": "ts-node src/generate.ts",
+    "build": "ts-node src/generate.ts && node scripts/pre-release.js",
     "test": "ava",
     "release": "yarn build && cd dist && yarn publish --access public"
   },
@@ -52,13 +52,6 @@
         ]
       }
     }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/geist-org/icons.git"
-  },
-  "bugs": {
-    "url": "https://github.com/geist-org/icons/issues"
   },
   "homepage": "https://napolke.ru",
   "dependencies": {}
