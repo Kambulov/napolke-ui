@@ -102,6 +102,9 @@ export default {
       removeDimensions: true,
     },
     {
+      camelCaseAttributes: true,
+    },
+    {
       removeAttrs: {
         attrs: ['svg:width', 'svg:height', 'svg:style', 'svg:color'],
       },

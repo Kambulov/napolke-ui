@@ -7,7 +7,6 @@
   "types": "index.d.ts",
   "author": "Napole Org",
   "license": "MIT",
-  "prettier": "@geist-ui/prettier-config",
   "scripts": {
     "start": "yarn build",
     "update-icons": "ts-node src/update.ts",
@@ -17,7 +16,6 @@
     "release": "yarn build && cd dist && yarn publish --access public"
   },
   "peerDependencies": {
-    "@geist-ui/core": ">=1.0.0",
     "react": ">=16.13.0"
   },
   "devDependencies": {
@@ -36,10 +34,12 @@
     "ava": "^3.7.1",
     "browser-env": "^3.3.0",
     "fs-extra": "^9.0.0",
+    "jsdom": "^16.2.2",
+    "node-fetch": "^2.6.0",
     "prettier": "^2.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "svgo": "^1.3.2",
+    "svgo": "^3.0.5",
     "ts-node": "^8.9.0",
     "typescript": "^3.8.3"
   },
