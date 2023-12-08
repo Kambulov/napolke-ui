@@ -1,7 +1,7 @@
 {
   "name": "@napolke-ui/icons",
   "description": "The icon components for Napolke UI.",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
@@ -14,8 +14,7 @@
     "prettier": "prettier --write ..",
     "build": "ts-node src/generate.ts",
     "test": "ava",
-    "release": "yarn build && cd dist && yarn publish --access public",
-    "prepublishOnly": "node scripts/check-release.js"
+    "release": "yarn build && cd dist && yarn publish --access public"
   },
   "peerDependencies": {
     "@geist-ui/core": ">=1.0.0",
