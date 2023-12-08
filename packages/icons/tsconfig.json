@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": false,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "target": "es2015"
+  },
+  "include": [
+    "icons/src/**/*"
+  ],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
