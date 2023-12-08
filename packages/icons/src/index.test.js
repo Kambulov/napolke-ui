@@ -21,20 +21,20 @@ test('Render icons witheout crashing', t => {
 
 test('Render icon with size', t => {
   const div = document.createElement('div')
-  ReactDOM.render(<Icons.Github size={12} />, div)
+  ReactDOM.render(<Icons.Box size={12} />, div)
   t.is(div.firstChild.getAttribute('height'), '12')
   t.is(div.firstChild.getAttribute('width'), '12')
 })
 
 test('Render icon with color', t => {
   const div = document.createElement('div')
-  ReactDOM.render(<Icons.Github color="#7a16ff" />, div)
+  ReactDOM.render(<Icons.Box color="#7a16ff" />, div)
   t.is(div.firstChild.style.color, 'rgb(122, 22, 255)')
 })
 
 test('Render icon with props', t => {
   const div = document.createElement('div')
-  ReactDOM.render(<Icons.Github className="test" strokeWidth={4} />, div)
+  ReactDOM.render(<Icons.Box className="test" strokeWidth={4} />, div)
   t.true(div.firstChild.classList.contains('test'))
   t.is(div.firstChild.getAttribute('stroke-width'), '4')
 })

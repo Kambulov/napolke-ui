@@ -5,11 +5,9 @@ import { transform } from '@babel/core'
 import {
   moduleBabelConfig,
   allModulesBabelConfig,
-  replaceAll,
-  toHumpName,
-  toComponentName,
   makeBasicDefinition,
 } from './utils'
+import svgoConfig from "./svgo.config";
 
 const outputDir = path.join(__dirname, '../', 'dist')
 const sourceFile = path.join(__dirname, '../', 'source')
@@ -28,11 +26,12 @@ export default (async () => {
 
         const content = fs.readFileSync(filePath, 'utf-8');
 
-        const result = await optimize(content, { plugins: [
+        const result = await optimize(content, {
+          plugins: [
             { name: 'removeXMLNS' },
-            { name: 'removeTitle' },
-            { name: 'removeDimensions' },
-          ]});
+            { name: 'removeTitle' }
+          ]
+        });
 
         const svgString = groupSvgContent(result.data);
 
@@ -40,13 +39,15 @@ export default (async () => {
           const ${fileName} = ({ color = 'currentColor', size = 24, style, ...props }) => {
             return (${svgString})
           }
-          export default ${fileName};`
+          export default ${fileName};
+        `
 
         exports += `export { default as ${fileName} } from './${fileName}';\n`
         definition += `export const ${fileName}: Icon;\n`
 
         const componentDefinition = `${makeBasicDefinition()}declare const ${fileName}: Icon;
-export default ${fileName}\n`
+          export default ${fileName}\n`
+
         const componentCode = transform(component, moduleBabelConfig).code
         await fs.outputFile(path.join(outputDir, `${fileName}.d.ts`), componentDefinition)
         await fs.outputFile(path.join(outputDir, `${fileName}.js`), componentCode)
@@ -68,46 +69,5 @@ const groupSvgContent = (svgString) => {
      .toString()
      .replace(/clip-rule/g, 'clipRule')
      .replace(/fill-rule/g, 'fillRule')
-     .replace(/<svg([^>]+)>/, `<svg$1 {...props} height={size} width={size} viewBox={\`0 0 \${size} \${size}\`} style={{color: color || 'currentColor'}}> `);
-}
-
-function getSVGOOption() {
-
-  return {
-    plugins: [
-      { cleanupAttrs: false },
-      { removeDoctype: true },
-      { removeXMLProcInst: true },
-      { removeComments: true },
-      { removeMetadata: true },
-      { removeTitle: true },
-      { removeDesc: true },
-      { removeUselessDefs: true },
-      { removeEditorsNSData: true },
-      { removeEmptyAttrs: true },
-      { removeHiddenElems: true },
-      { removeEmptyText: true },
-      { removeEmptyContainers: true },
-      { removeViewBox: false },
-      { cleanupEnableBackground: true },
-      { convertStyleToAttrs: true },
-      { convertPathData: true },
-      { convertTransform: true },
-      { removeUnknownsAndDefaults: true },
-      { removeNonInheritableGroupAttrs: true },
-      { removeUselessStrokeAndFill: false },
-      { removeUnusedNS: true },
-      { cleanupIDs: true },
-      { cleanupNumericValues: true },
-      { moveElemsAttrsToGroup: true },
-      { moveGroupAttrsToElems: true },
-      { collapseGroups: true },
-      { removeRasterImages: false },
-      // { mergePaths: true },
-      { convertShapeToPath: true },
-      { sortAttrs: true },
-      { removeDimensions: true },
-      { removeAttrs: { attrs: ['class'] } },
-    ],
-  };
+     .replace(/<svg([^>]+)>/, `<svg$1 {...props} height={size} width={size} style={{color: color || 'currentColor'}}> `);
 }
