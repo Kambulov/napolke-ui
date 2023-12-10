@@ -1,23 +1,22 @@
 # React Icons
 
-The icon components for Geist UI.
+Компонент иконок для Napolke UI.
 
-[![npm Version](https://img.shields.io/npm/v/@geist-ui/icons)](https://www.npmjs.com/package/@geist-ui/icons)
-[![Build](https://img.shields.io/github/workflow/status/geist-org/icons/Build)](https://github.com/geist-org/icons/actions?query=workflow%3ABuild)
+[![npm Version](https://img.shields.io/npm/v/@napolke-ui/icons)](https://www.npmjs.com/package/@napolke-ui/icons)
 
-## Install
+## Установка
 
 ```
-$ yarn add @geist-ui/icons
+$ yarn add @napolke-ui/icons
 OR
-$ npm install @geist-ui/icons
+$ npm install @napolke-ui/icons
 ```
 
-## Usage
+## Использование
 
 ```tsx
 import React from 'react'
-import { Code } from '@geist-ui/icons'
+import { Code } from '@napolke-ui/icons'
 
 const App = () => {
   return <Code />
@@ -26,7 +25,7 @@ const App = () => {
 export default App
 ```
 
-Icons can be configured with `color`, `size` and any SVG props:
+Иконки принимают параметры `color` и `size`:
 
 ```ts
 <Code color="red" size={36} />
@@ -35,28 +34,23 @@ Icons can be configured with `color`, `size` and any SVG props:
 
 ## Other ways
 
-1. You can include the whole icon pack:
+1. Имортировать сразу все иконки
 
 ```tsx
-import * as Icons from '@geist-ui/icons'
+import * as Icons from '@napolke-ui/icons'
 
 const App = () => {
   return <Icons.Code />
 }
 ```
 
-2. You can include single icon:
+2. Импортировать только одну иконку
 
 ```tsx
-import Code from '@geist-ui/icons/code'
+import Code from '@napolke-ui/icons/code'
 
 const App = () => {
   return <Code />
 }
 ```
 
-<br/>
-
-## LICENSE
-
-[MIT](https://raw.githubusercontent.com/geist-org/icons/master/LICENSE)
