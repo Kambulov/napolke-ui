@@ -1,11 +1,16 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "../components",
+    "outDir": "../dist",
     "paths": {
-      "@napolke-ui/*": [
-        "../core/index.ts"
+      "*": ["*"],
+      "napolke-ui": ["../components/index.tsx"],
+      "components/*": [
+        "../components/*"
       ]
     },
+    "declaration": true,
+    "emitDeclarationOnly": true,
     "strictNullChecks": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -23,27 +28,23 @@
     "allowJs": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
     "module": "esnext",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "typeRoots": [
-      "node_modules/@types",
-      "./typings"
-    ],
-    "incremental": true
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths",
+        "afterDeclarations": true,
+        "exclude": [ "**/node_modules/**" ]
+      }
+    ]
   },
+  "files": [
+    "../components/index.ts"
+  ],
   "exclude": [
     "node_modules",
-    "es",
-    "examples",
-    "dist"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "lib/**/*.tsx",
-    "../core/components/*.tsx"
+    "lib",
+    "es"
   ]
 }
