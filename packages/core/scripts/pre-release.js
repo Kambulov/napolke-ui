@@ -2,7 +2,7 @@ const fs = require('fs-extra')
 const path = require('path')
 const outputPath = path.join(__dirname, '../dist')
 const rootPath = path.join(__dirname, '../')
-const shouldMovedFiles = ['LICENSE', 'README.md', 'package.json', 'scripts', '.npmignore']
+const shouldMovedFiles = []
 
 ;(async () => {
   await Promise.all(
