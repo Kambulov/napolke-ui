@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
-import { CssBaseline } from 'components'
+import { CssBaseline } from '../../core/components'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -26,8 +26,24 @@ class MyDocument extends Document {
             dangerouslySetInnerHTML={{
               __html: `
             (function(){
-              if (!window.localStorage) return;
-              if (window.localStorage.getItem('theme') === 'dark') {
+              if (typeof document === 'undefined') return;
+              
+              let value;
+              if (typeof document !== 'undefined') {
+                const cookies = document.cookie.split(';');
+                const filteredCookies = cookies.filter(cookie => cookie.indexOf('theme=') >= 0);
+
+                if (filteredCookies.length) {
+                   value =
+                      filteredCookies[0].substring(
+                         filteredCookies[0].indexOf('true'),
+                         filteredCookies[0].length
+                      ) === 'dark'
+                         ? 'dark'
+                         : 'light';
+                }
+              }
+              if (value === 'dark') {
                 document.documentElement.style.background = '#000';
                 document.body.style.background = '#000';
               };
@@ -37,21 +53,17 @@ class MyDocument extends Document {
           />
           <Main />
           <NextScript />
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=UA-110371817-12"
-          />
-          <script
-            async
-            dangerouslySetInnerHTML={{
-              __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'UA-110371817-12');
-              `,
-            }}
-          />
+          {/*<script*/}
+          {/*  async*/}
+          {/*  dangerouslySetInnerHTML={{*/}
+          {/*    __html: `*/}
+          {/*    window.dataLayer = window.dataLayer || [];*/}
+          {/*    function gtag(){dataLayer.push(arguments);}*/}
+          {/*    gtag('js', new Date());*/}
+          {/*    gtag('config', 'UA-110371817-12');*/}
+          {/*    `,*/}
+          {/*  }}*/}
+          {/*/>*/}
         </body>
       </Html>
     )

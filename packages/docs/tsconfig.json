@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@napolke-ui/*": [
-        "../core/index.ts"
+      "@napolke-ui": [
+        "../core/components/index.ts"
       ]
     },
     "strictNullChecks": true,
@@ -44,6 +44,6 @@
     "**/*.ts",
     "**/*.tsx",
     "lib/**/*.tsx",
-    "../core/components/*.tsx"
+    "../core/components/**/*.tsx"
   ]
 }

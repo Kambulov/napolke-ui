@@ -1,72 +1,27 @@
 const withMDX = require('@next/mdx')({
-  extension: /\.(md|mdx)?$/,
+  extension: /\.mdx?$/,
   options: {
-    rehypePlugins: [require('@mapbox/rehype-prism'), require('rehype-join-line')],
+    providerImportSource: '@mdx-js/react',
   },
 })
+module.exports = withMDX({
+  // Append the default value with md extensions
+  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
+  basePath: process.env.VERSION ? `/${process.env.VERSION}` : undefined,
+  webpack: (config, { defaultLoaders }) => {
+    config.module.rules.push({
+      test: /\.tsx?$/,
+      use: [
+        defaultLoaders.babel,
+        {
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: true,
+          },
+        },
+      ],
+    });
 
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
+    return config;
+  },
 })
-
-const nextConfig = {
-  generateEtags: false,
-
-  poweredByHeader: false,
-
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-
-  pageExtensions: ['jsx', 'js', 'mdx', 'md', 'ts', 'tsx'],
-
-  cssModules: true,
-
-  cssLoaderOptions: {
-    importLoaders: 1,
-    localIdentName: '[local]___[hash:base64:5]',
-  },
-
-  env: {
-    VERSION: require('./package.json').version,
-  },
-
-  trailingSlash: false,
-
-  async redirects() {
-    return [
-      {
-        source: '/',
-        permanent: true,
-        destination: '/en-us',
-      },
-      {
-        source: '/icons',
-        permanent: true,
-        destination: '/en-us/components/icons',
-      },
-      {
-        source: '/en-us/customization',
-        destination: '/en-us',
-        permanent: true,
-      },
-      {
-        source: '/ru-ru/customization',
-        destination: '/ru-ru',
-        permanent: true,
-      },
-      {
-        source: '/en-us/guide/scaleable',
-        destination: '/en-us/guide/scale',
-        permanent: true,
-      },
-      {
-        source: '/ru-ru/guide/scaleable',
-        destination: '/ru-ru/guide/scale',
-        permanent: true,
-      },
-    ]
-  },
-}
-
-module.exports = withBundleAnalyzer(withMDX(nextConfig))

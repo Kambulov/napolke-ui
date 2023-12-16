@@ -24,8 +24,14 @@ export function getThemeModeCookieValue() {
 }
 
 export function getPreferredTheme() {
-   const preferredTheme = getThemeModeCookieValue();
-   const userMedia = window.matchMedia('(prefers-color-scheme: light)')
+   // Проверка наличия объекта window
+   if (typeof window !== 'undefined') {
+      const preferredTheme = getThemeModeCookieValue();
+      const userMedia = window.matchMedia('(prefers-color-scheme: light)')
 
-   return preferredTheme || (userMedia.matches ? 'dark' : 'light');
+      return preferredTheme || (userMedia.matches ? 'dark' : 'light');
+   } else {
+      // Обработка сценария, когда код выполняется в среде, где window не определен
+      return 'light'; // или любое другое значение по умолчанию
+   }
 }
