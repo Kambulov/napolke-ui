@@ -4,6 +4,7 @@ import { AppProps } from 'next/app'
 import React from 'react'
 import { CssBaseline, DarkModeProvider } from '@napolke-ui'
 import useDomClean from 'lib/use-dom-clean'
+import Menu from "../сomponents/layout/menu";
 
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
@@ -24,7 +25,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
         {/*<ConfigContext*/}
         {/*  onThemeChange={themeChangeHandle}*/}
         {/*  onThemeTypeChange={type => setThemeType(type)}>*/}
-        {/*  <Menu />*/}
+          <Menu />
         {/*  <Search />*/}
         {/*  <MDXProvider*/}
         {/*    components={{*/}

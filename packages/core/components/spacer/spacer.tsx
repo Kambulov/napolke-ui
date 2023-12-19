@@ -37,6 +37,6 @@ const SpacerComponent: React.FC<SpacerProps> = ({
 }
 
 SpacerComponent.defaultProps = defaultProps
-SpacerComponent.displayName = 'GeistSpacer'
+SpacerComponent.displayName = 'NuiSpacer'
 const Spacer = withScale(SpacerComponent)
 export default Spacer
