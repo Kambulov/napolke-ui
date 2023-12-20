@@ -39,7 +39,7 @@ const external = id => /^react|react-dom|next\/link/.test(id)
 const cjsOutput = {
   format: 'cjs',
   exports: 'named',
-  entryFileNames: '[name]/index.js',
+  entryFileNames: '[name]/index.tsx',
   dir: distPath,
   manualChunks: id => {
     if (id.includes('node_modules/styled-jsx')) {
@@ -53,7 +53,7 @@ const cjsOutput = {
 
 const esmOutput = {
   format: 'es',
-  entryFileNames: '[name]/index.js',
+  entryFileNames: '[name]/index.tsx',
   dir: esmPath,
   manualChunks: id => {
     if (id.includes('node_modules/styled-jsx/server')) {
@@ -108,11 +108,11 @@ export default (async () => {
         // {
         //   ...esmOutput,
         //
-        //   entryFileNames: 'index.js',
+        //   entryFileNames: 'index.tsx',
         // },
         {
           ...cjsOutput,
-          entryFileNames: 'index.js',
+          entryFileNames: 'index.tsx',
         },
       ],
       external,

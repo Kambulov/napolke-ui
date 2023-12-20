@@ -57,7 +57,7 @@ export default (async () => {
     await Promise.all(promises)
     const allModulesCode = transform(exports, allModulesBabelConfig).code
     await fs.outputFile(path.join(outputDir, 'index.d.ts'), definition)
-    await fs.outputFile(path.join(outputDir, 'index.js'), allModulesCode)
+    await fs.outputFile(path.join(outputDir, 'index.tsx'), allModulesCode)
 
   } catch (error) {
     console.error(`Error reading SVG files: ${error.message}`);

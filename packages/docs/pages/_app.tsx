@@ -7,6 +7,7 @@ import useDomClean from 'lib/use-dom-clean'
 import Menu from "../сomponents/layout/menu";
 import ConfigContext from "../lib/config-provider";
 import {MDXProvider} from "@mdx-js/react";
+import {HybridLink} from "../сomponents/mdx-widgets";
 
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
@@ -29,6 +30,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
         {/*  <Search />*/}
           <MDXProvider
             components={{
+               a: HybridLink,
               img: Image,
             }}>
             <Component {...pageProps} />

@@ -20,7 +20,7 @@ const Menu: React.FC<unknown> = () => {
   const isMobile = useMediaQuery('xs', { match: 'down' })
   const allSides = useMemo(() => Metadata[locale], [locale])
   const {mode} = useTheme()
-
+  console.log('allSides',allSides)
   useEffect(() => {
     const prefetch = async () => {
       const urls = isRussian
@@ -118,7 +118,7 @@ const Menu: React.FC<unknown> = () => {
                 hideBorder
                 onChange={handleTabChange}>
                 <Tabs.Item font="14px" label={isRussian ? 'Главная' : 'Home'} value="" />
-                {allSides.map((tab, index) => (
+                {allSides?.map((tab, index) => (
                   <Tabs.Item
                     font="14px"
                     label={tab.localeName || tab.name}
