@@ -1,21 +1,20 @@
 import React, { useMemo } from 'react'
 import NextLink from 'next/link'
-import { useTheme } from 'components'
 import Metadata from 'lib/data'
 import useLocale from 'lib/use-locale'
 import { useConfigs } from 'lib/config-context'
 import { Sides } from '../sidebar/side-item'
-import ChevronRightIcon from '@geist-ui/icons/chevronRight'
+// import ChevronRightIcon from '@geist-ui/icons/chevronRight'
 import { useRouter } from 'next/router'
+import {Theme} from "../../../../core/components/themes/presets";
 
 interface Props {
   expanded: boolean
 }
 
 const MenuMobile: React.FC<Props> = ({ expanded }) => {
-  const theme = useTheme()
   const { pathname } = useRouter()
-  const { isChinese } = useConfigs()
+  const { isRussian } = useConfigs()
   const { locale } = useLocale()
   const menuData = useMemo(() => Metadata[locale], [locale])
   const [expandedGroupName, setExpandedGroupName] = React.useState<string | null>(null)
@@ -31,7 +30,7 @@ const MenuMobile: React.FC<Props> = ({ expanded }) => {
       <div className="content">
         <NextLink href={`/${locale}`}>
           <a className={`menu-item fadein ${pathname === `/${locale}` ? 'active' : ''}`}>
-            {isChinese ? '主页' : 'Home'}
+            {isRussian ? 'Главная' : 'Home'}
           </a>
         </NextLink>
 
@@ -43,11 +42,11 @@ const MenuMobile: React.FC<Props> = ({ expanded }) => {
             <button
               className={`menu-item ${expandedGroupName === group.name && 'expanded'}`}
               onClick={() => handleGroupClick(group.name)}>
-              <ChevronRightIcon
-                size="1rem"
-                strokeWidth={2}
-                color={theme.palette.accents_4}
-              />
+              {/*<ChevronRightIcon*/}
+              {/*  size="1rem"*/}
+              {/*  strokeWidth={2}*/}
+              {/*  color={theme.palette.accents_4}*/}
+              {/*/>*/}
               {group.name}
             </button>
             {expandedGroupName === group.name && (
@@ -82,7 +81,7 @@ const MenuMobile: React.FC<Props> = ({ expanded }) => {
           overflow-y: auto;
           z-index: 999;
           box-sizing: border-box;
-          background-color: ${theme.palette.background};
+          background-color: ${Theme.palette.background.name};
           overflow-y: auto;
         }
         .fadein {
@@ -91,8 +90,8 @@ const MenuMobile: React.FC<Props> = ({ expanded }) => {
           opacity: 0;
         }
         .menu-item {
-          padding: 0 ${theme.layout.gapHalf};
-          margin: 0 ${theme.layout.gap};
+          padding: 0 ${Theme.layout.gapHalf.name};
+          margin: 0 ${Theme.layout.gap.name};
           height: 48px;
           width: 100%;
           display: flex;
@@ -100,48 +99,48 @@ const MenuMobile: React.FC<Props> = ({ expanded }) => {
           border: none;
           background: none;
           outline: none;
-          border-bottom: 1px solid ${theme.palette.accents_2};
+          border-bottom: 1px solid ${Theme.palette.gray200.name};
           text-transform: capitalize;
-          color: ${theme.palette.accents_6};
+          color: ${Theme.palette.gray500.name};
           cursor: pointer;
         }
         .menu-item :global(svg) {
-          transform: translateX(${theme.layout.gapQuarterNegative});
+          transform: translateX(${Theme.layout.gapQuarterNegative.name});
           transition: transform 250ms ease;
         }
         .menu-item.expanded {
           border-bottom: none;
         }
         .menu-item.expanded :global(svg) {
-          transform: rotate(90deg) translateY(${theme.layout.gapQuarter});
+          transform: rotate(90deg) translateY(${Theme.layout.gapQuarter.name});
         }
         .group {
-          background: ${theme.palette.accents_1};
-          padding: 0 calc(${theme.layout.gap} * 1.5) ${theme.layout.gap};
-          border-top: 1px solid ${theme.palette.accents_2};
+          background: ${Theme.palette.gray50.name};
+          padding: 0 calc(${Theme.layout.gap.name} * 1.5) ${Theme.layout.gap.name};
+          border-top: 1px solid ${Theme.palette.gray200.name};
         }
         .section-name {
           display: block;
           font-size: 0.75rem;
           text-transform: uppercase;
-          color: ${theme.palette.accents_5};
-          margin-top: ${theme.layout.gap};
-          margin-bottom: ${theme.layout.gapHalf};
+          color: ${Theme.palette.gray500.name};
+          margin-top: ${Theme.layout.gap.name};
+          margin-bottom: ${Theme.layout.gapHalf.name};
         }
         .section-item {
-          padding: ${theme.layout.gapQuarter} ${theme.layout.gap};
-          margin: 0 ${theme.layout.gapQuarter};
+          padding: ${Theme.layout.gapQuarter.name} ${Theme.layout.gap.name};
+          margin: 0 ${Theme.layout.gapQuarter.name};
           width: 100%;
           display: flex;
           align-items: center;
           border: none;
           background: none;
           outline: none;
-          color: ${theme.palette.accents_6};
-          border-left: 1px solid ${theme.palette.accents_2};
+          color: ${Theme.palette.gray500.name};
+          border-left: 1px solid ${Theme.palette.gray200.name};
         }
         .active {
-          color: ${theme.palette.link};
+          color: ${Theme.palette.link.name};
           font-weight: 500;
         }
         @keyframes fadeIn {

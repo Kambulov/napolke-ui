@@ -18,12 +18,19 @@ export interface NapolkeUIThemesExpressiveness {
 export interface NapolkeIThemesLayout {
    radius: PaleteItem
    gapQuarter: PaleteItem
+   gapHalf: PaleteItem
+   gap: PaleteItem
+   unit: PaleteItem
+   gapQuarterNegative: PaleteItem
+   pageWidthWithMargin: PaleteItem
 }
 export interface NapolkeIThemesPalette {
    white: PaleteItem
+   link: PaleteItem
    background: PaleteItem
    border: PaleteItem
    success: PaleteItem
+   successLight: PaleteItem
    secondary: PaleteItem
    error: PaleteItem
    warning: PaleteItem
@@ -34,6 +41,7 @@ export interface NapolkeIThemesPalette {
    gray400: PaleteItem
    gray500: PaleteItem
    gray700: PaleteItem
+   gray950: PaleteItem
 }
 
 export interface BreakpointsItem {
@@ -66,6 +74,10 @@ const palette:NapolkeIThemesPalette = {
       value: '#fff',
       name: 'var(--nui-color-white)'
    },
+   link: {
+      value: '#0070f3',
+      name: 'var(--nui-color-link)'
+   },
    background: {
       value: '#fff',
       name: 'var(--nui-color-background)'
@@ -77,6 +89,10 @@ const palette:NapolkeIThemesPalette = {
    success: {
       value: '#0070f3',
       name: 'var(--nui-color-success)'
+   },
+   successLight: {
+      value: '#3291ff',
+      name: 'var(--nui-color-success-light)'
    },
    secondary: {
       value: '#666',
@@ -118,6 +134,10 @@ const palette:NapolkeIThemesPalette = {
       value: 'hsl(240 5.3% 26.1%)',
       name: 'var(--npui-color-gray-700)'
    },
+   gray950: {
+      value: 'hsl(240 7.3% 8%)',
+      name: 'var(--npui-color-gray-950)'
+   },
 }
 
 
@@ -131,6 +151,26 @@ export const Theme: NapolkeUIThemes = {
       gapQuarter: {
          value: '4pt',
          name: 'var(--nui-gap-quarter)'
+      },
+      gapHalf: {
+         value: '8pt',
+         name: 'var(--nui-gap-half)'
+      },
+      gap: {
+         value: '16pt',
+         name: 'var(--nui-gap)'
+      },
+      unit: {
+         value: '16px',
+         name: 'var(--nui-unit)'
+      },
+      gapQuarterNegative: {
+         value: '-4pt',
+         name: 'var(--nui-gap-quarter-negative)'
+      },
+      pageWidthWithMargin: {
+         value: '782pt',
+         name: 'var(--nui-page-with-margin)'
       },
 
    },

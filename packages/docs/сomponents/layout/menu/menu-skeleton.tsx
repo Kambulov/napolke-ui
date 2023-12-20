@@ -1,8 +1,7 @@
 import React from 'react'
-import useTheme from 'components/use-theme'
+import {Theme} from "../../../../core/components/themes/presets";
 
 const MenuSkeleton: React.FC<unknown> = () => {
-  const theme = useTheme()
   return (
     <div className="skeleton">
       <style jsx>{`
@@ -10,7 +9,7 @@ const MenuSkeleton: React.FC<unknown> = () => {
           height: var(--geist-page-nav-height);
           width: 100%;
           margin: 0 auto;
-          background-color: ${theme.palette.accents_1};
+          background-color: ${Theme.palette.gray50.name};
           border-radius: 10px;
         }
       `}</style>

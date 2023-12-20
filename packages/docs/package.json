@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "next dev ",
-    "start": "next start"
+    "start": "next start",
+    "docs:collect": "node scripts/collect-meta.js"
   },
   "keywords": [
     "napolke",
@@ -23,6 +24,8 @@
     "@types/react": "18.2.45",
     "@xstyled/styled-components": "^3.7.3",
     "date-fns": "^2.30.0",
+    "extract-mdx-metadata": "^2.0.0",
+    "fs-extra": "^10.0.0",
     "next": "^12.1.4",
     "prism-react-renderer": "1.3.5",
     "react": "^18.2.0",
@@ -35,6 +38,7 @@
     "yup": "1.2.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.16.7"
+    "@babel/runtime": "^7.16.7",
+    "@napolke-ui/icons": "^0.0.26"
   }
 }

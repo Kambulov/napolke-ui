@@ -21,11 +21,12 @@ import {
 } from 'lib/constants'
 
 const Controls: React.FC<unknown> = React.memo(() => {
-  const { updateChineseState } = useConfigs()
+  const { updateRussianState } = useConfigs()
   const { pathname } = useRouter()
   const { locale } = useLocale()
    const { mode, toggleMode} = useTheme()
   const isRussian = useMemo(() => locale === RUSSIAN_LANGUAGE_IDENT, [locale])
+   console.log('isRussian',isRussian)
   const nextLocalePath = useMemo(() => {
     const nextLocale = isRussian ? ENGLISH_LANGUAGE_IDENT : RUSSIAN_LANGUAGE_IDENT
     return pathname.replace(locale, nextLocale)
@@ -37,7 +38,7 @@ const Controls: React.FC<unknown> = React.memo(() => {
   //   window.localStorage.setItem('theme', type)
   // }
   const switchLanguages = () => {
-    updateChineseState(!isRussian)
+     updateRussianState(!isRussian)
     Router.push(nextLocalePath)
   }
   const redirectGithub = () => {

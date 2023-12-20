@@ -22,3 +22,19 @@ export type { SelectProps, SelectOptionProps } from './select'
 
 export { default as useBodyScroll } from './use-body-scroll'
 export type { BodyScrollOptions } from './use-body-scroll'
+
+export { default as Link } from './link'
+export type { LinkProps } from './link'
+
+export { default as Image } from './image'
+export type { ImageProps, ImageBrowserProps } from './image'
+
+export { default as useMediaQuery } from './use-media-query'
+export type { ResponsiveOptions, ResponsiveBreakpoint } from './use-media-query'
+
+export { default as Tabs } from './tabs'
+export type { TabsProps } from './tabs'
+
+
+export { default as Grid } from './grid'
+export type { GridProps, GridContainerProps } from './grid'

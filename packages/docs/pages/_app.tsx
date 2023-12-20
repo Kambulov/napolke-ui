@@ -2,9 +2,11 @@ import Head from 'next/head'
 import { NextPage } from 'next'
 import { AppProps } from 'next/app'
 import React from 'react'
-import { CssBaseline, DarkModeProvider } from '@napolke-ui'
+import { CssBaseline, DarkModeProvider, Image } from '@napolke-ui'
 import useDomClean from 'lib/use-dom-clean'
 import Menu from "../сomponents/layout/menu";
+import ConfigContext from "../lib/config-provider";
+import {MDXProvider} from "@mdx-js/react";
 
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
@@ -22,20 +24,16 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
       <DarkModeProvider>
         <CssBaseline />
         <div>fggg</div>
-        {/*<ConfigContext*/}
-        {/*  onThemeChange={themeChangeHandle}*/}
-        {/*  onThemeTypeChange={type => setThemeType(type)}>*/}
+        <ConfigContext>
           <Menu />
         {/*  <Search />*/}
-        {/*  <MDXProvider*/}
-        {/*    components={{*/}
-        {/*      a: HybridLink,*/}
-        {/*      img: Image,*/}
-        {/*      pre: HybridCode,*/}
-        {/*    }}>*/}
-        {/*    <Component {...pageProps} />*/}
-        {/*  </MDXProvider>*/}
-        {/*</ConfigContext>*/}
+          <MDXProvider
+            components={{
+              img: Image,
+            }}>
+            <Component {...pageProps} />
+          </MDXProvider>
+        </ConfigContext>
         {/*<style global jsx>{`*/}
         {/*  .tag {*/}
         {/*    color: ${theme.palette.accents_5};*/}

@@ -1,16 +1,16 @@
 import React from 'react'
 export interface Configs {
   isRussian?: boolean
-  updateChineseState: (state: boolean) => void
-  sidebarScrollHeight: number
-  updateSidebarScrollHeight: (height: number) => void
-  switchTheme: (type: string) => void
+  updateRussianState: (state: boolean) => void
+  sidebarScrollHeight?: number
+  updateSidebarScrollHeight?: (height: number) => void
+  switchTheme?: (type: string) => void
 }
 
 export const defaultConfigs: Configs = {
   sidebarScrollHeight: 0,
   updateSidebarScrollHeight: () => {},
-  updateChineseState: () => {},
+  updateRussianState: () => {},
   switchTheme: () => {},
 }
 

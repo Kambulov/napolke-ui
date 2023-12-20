@@ -1,8 +1,8 @@
 import React, { useMemo, useRef } from 'react'
 import { isUnplacedRect, ReactiveDomReact } from '../utils/layouts'
 import usePrevious from '../utils/use-previous'
-import useTheme from '../use-theme'
 import useClasses from '../use-classes'
+import {Theme} from "../themes/presets";
 
 type Props = {
   rect: ReactiveDomReact
@@ -32,7 +32,6 @@ const Highlight: React.FC<HighlightProps> = ({
   className,
   ...props
 }) => {
-  const theme = useTheme()
   const ref = useRef<HTMLDivElement | null>(null)
   const isFirstVisible = usePrevious<boolean>(isUnplacedRect(rect))
   const position = useMemo<HighlightPosition>(() => {
@@ -51,7 +50,7 @@ const Highlight: React.FC<HighlightProps> = ({
     <div ref={ref} className={useClasses('highlight', className)} {...props}>
       <style jsx>{`
         .highlight {
-          background: ${theme.palette.accents_2};
+          background: ${Theme.palette.gray200.name};
           position: absolute;
           border-radius: 5px;
           width: ${position.width};

@@ -4,21 +4,22 @@ import NextLink from 'next/link'
 import { Controls } from '../../pures'
 import { useConfigs } from 'lib/config-context'
 import { useBodyScroll, useTheme, Button, Image, useMediaQuery, Tabs } from '@napolke-ui'
-import { addColorAlpha } from '@napolke-ui/utils/color'
-import MenuIcon from '@geist-ui/icons/menu'
+import { addColorAlpha } from '../../../../core/components/utils/color'
+// import MenuIcon from '@napolke-ui/icons/menu'
 import MenuMobile from './menu-mobile'
 import Metadata from 'lib/data'
 import useLocale from 'lib/use-locale'
+import {Theme} from "../../../../core/components/themes/presets";
 
 const Menu: React.FC<unknown> = () => {
   const router = useRouter()
-  const theme = useTheme()
   const { isRussian } = useConfigs()
   const { tabbar: currentUrlTabValue, locale } = useLocale()
   const [expanded, setExpanded] = useState<boolean>(false)
   const [, setBodyHidden] = useBodyScroll(null, { delayReset: 300 })
   const isMobile = useMediaQuery('xs', { match: 'down' })
   const allSides = useMemo(() => Metadata[locale], [locale])
+  const {mode} = useTheme()
 
   useEffect(() => {
     const prefetch = async () => {
@@ -102,7 +103,7 @@ const Menu: React.FC<unknown> = () => {
                     draggable={false}
                     title="Logo"
                   />
-                  Geist
+                  Napolke UI
                 </a>
               </NextLink>
             </div>
@@ -135,7 +136,7 @@ const Menu: React.FC<unknown> = () => {
                   auto
                   type="abort"
                   onClick={() => setExpanded(!expanded)}>
-                  <MenuIcon size="1.125rem" />
+                  {/*<MenuIcon size="1.125rem" />*/}
                 </Button>
               ) : (
                 <Controls />
@@ -159,8 +160,8 @@ const Menu: React.FC<unknown> = () => {
           height: var(--geist-page-nav-height);
           //width: 100%;
           backdrop-filter: saturate(180%) blur(5px);
-          background-color: ${addColorAlpha(theme.palette.background, 0.8)};
-          box-shadow: ${theme.type === 'dark'
+          background-color: ${addColorAlpha(Theme.palette.background.value, 0.8)};
+          box-shadow: ${mode === 'dark'
             ? '0 0 0 1px #333'
             : '0 0 15px 0 rgba(0, 0, 0, 0.1)'};
           z-index: 999;
@@ -173,7 +174,7 @@ const Menu: React.FC<unknown> = () => {
           height: 100%;
           margin: 0 auto;
           user-select: none;
-          padding: 0 ${theme.layout.gap};
+          padding: 0 ${Theme.layout.gap};
         }
         .logo {
           flex: 1 1;
@@ -191,17 +192,17 @@ const Menu: React.FC<unknown> = () => {
           height: 28px;
         }
         .logo :global(.image) {
-          border: 1px solid ${theme.palette.border};
+          border: 1px solid ${Theme.palette.border.name};
           border-radius: 2rem;
         }
         .tabs {
           flex: 1 1;
-          padding: 0 ${theme.layout.gap};
+          padding: 0 ${Theme.layout.gap.name};
         }
         .tabs :global(.content) {
           display: none;
         }
-        @media only screen and (max-width: ${theme.breakpoints.xs.max}) {
+        @media only screen and (max-width: ${Theme.breakpoints.xs.max}) {
           .tabs {
             display: none;
           }

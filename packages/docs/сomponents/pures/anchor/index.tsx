@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Link, useTheme } from 'components'
+import { Link } from '@napolke-ui'
 import AnchorIcon from './anchor-icon'
+import {Theme} from "../../../../core/components/themes/presets";
 
 export interface Props {
   pure?: boolean
@@ -12,7 +13,6 @@ export const virtualAnchorEncode = (text?: string) => {
 }
 
 const VirtualAnchor: React.FC<React.PropsWithChildren<Props>> = ({ children, pure }) => {
-  const theme = useTheme()
   const ref = useRef<HTMLAnchorElement>(null)
   const [id, setId] = useState<string | undefined>()
 
@@ -64,7 +64,7 @@ const VirtualAnchor: React.FC<React.PropsWithChildren<Props>> = ({ children, pur
           width: 0.8em;
           height: 0.8em;
           margin-top: 1px;
-          color: ${theme.palette.accents_5};
+          color: ${Theme.palette.gray500.name};
         }
 
         .parent:hover > .icon {

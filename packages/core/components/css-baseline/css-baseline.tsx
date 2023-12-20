@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react'
 import flush, { flushToHTML } from 'styled-jsx/server'
+import {Theme} from "../themes/presets";
 
 export type FlushToReact = <T>(opts?: { nonce?: string }) => Array<ReactElement<T>>
 export type FlushToHTML = (opts?: { nonce?: string }) => string
@@ -50,6 +51,19 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
           --npui-color-gray-800: hsl(240 7.3% 84%);
           --npui-color-gray-900: hsl(240 9.1% 91.8%);
           --npui-color-gray-950: hsl(0 0% 95%);
+        }
+        body {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          text-rendering: optimizeLegibility;
+          font-size: 1rem;
+          line-height: 1.5;
+          margin: 0;
+          padding: 0;
+          min-height: 100%;
+          position: relative;
+          overflow-x: hidden;
+          font-family: ${Theme.font.sans};
         }
       `}</style>
     </>
