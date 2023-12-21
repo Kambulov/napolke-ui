@@ -1,10 +1,10 @@
 import { PrismTheme } from 'prism-react-renderer'
-import { GeistUIThemes } from 'components/themes/presets'
+import {NapolkeUIThemes} from "../../../core/components/themes/presets";
 
-const makeCodeTheme = (theme: GeistUIThemes): PrismTheme => ({
+const makeCodeTheme = (theme: NapolkeUIThemes): PrismTheme => ({
   plain: {
-    backgroundColor: theme.palette.background,
-    color: theme.palette.accents_4,
+    backgroundColor: theme.palette.background.name,
+    color: theme.palette.gray400.name,
     fontWeight: '400',
     fontStyle: 'normal',
     fontFamily: theme.font.mono,
@@ -28,13 +28,13 @@ const makeCodeTheme = (theme: GeistUIThemes): PrismTheme => ({
     {
       types: ['tag', 'operator', 'number'],
       style: {
-        color: theme.palette.accents_6,
+        color: theme.palette.gray500.name,
       },
     },
     {
       types: ['property', 'function'],
       style: {
-        color: theme.palette.success,
+        color: theme.palette.success.name,
       },
     },
     {
@@ -46,7 +46,7 @@ const makeCodeTheme = (theme: GeistUIThemes): PrismTheme => ({
     {
       types: ['attr-name'],
       style: {
-        color: theme.palette.warning,
+        color: theme.palette.warning.name,
       },
     },
     {
@@ -67,7 +67,7 @@ const makeCodeTheme = (theme: GeistUIThemes): PrismTheme => ({
         'variable',
       ],
       style: {
-        color: theme.palette.purple,
+        color: theme.palette.success.name,
       },
     },
     {
@@ -79,7 +79,7 @@ const makeCodeTheme = (theme: GeistUIThemes): PrismTheme => ({
     {
       types: ['language-javascript', 'script'],
       style: {
-        color: theme.palette.success,
+        color: theme.palette.success.name,
       },
     },
     {

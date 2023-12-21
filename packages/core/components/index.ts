@@ -47,3 +47,21 @@ export type { LoadingProps } from './loading'
 
 export { default as useToasts } from './use-toasts'
 export type { Toast, ToastInput, ToastAction, ToastLayout } from './use-toasts'
+
+export { default as useClipboard } from './use-clipboard'
+export type { UseClipboardOptions } from './use-clipboard'
+
+export { default as Divider } from './divider'
+export type { DividerProps } from './divider'
+
+
+export { default as Card } from './card'
+export type { CardProps, CardContentProps, CardFooterProps } from './card'
+
+
+export { default as Avatar } from './avatar'
+export type { AvatarProps, AvatarGroupProps } from './avatar'
+export { default as useClickAway } from './use-click-away'
+
+export { default as Tooltip } from './tooltip'
+export type { TooltipProps } from './tooltip'

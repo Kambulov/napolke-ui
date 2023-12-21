@@ -1,7 +1,8 @@
 import React from 'react'
 import { VirtualAnchor } from '../pures'
-import { Code, useTheme } from 'components'
+import { Code } from '@napolke-ui'
 import { useConfigs } from 'lib/config-context'
+import {Theme} from "../../../core/components/themes/presets";
 
 export interface AttributesTitleProps {
   alias?: string
@@ -20,7 +21,6 @@ const getAlias = (isChinese: boolean, alias?: string) => {
 
 const AttributesTitle: React.FC<React.PropsWithChildren<AttributesTitleProps>> =
   React.memo(({ children, alias }) => {
-    const theme = useTheme()
     const { isRussian } = useConfigs()
 
     return (
@@ -37,23 +37,23 @@ const AttributesTitle: React.FC<React.PropsWithChildren<AttributesTitleProps>> =
             display: inline-flex;
             align-items: center;
             height: 2rem;
-            padding-left: ${theme.layout.gapQuarter};
-            padding-right: ${theme.layout.gapHalf};
-            background-color: ${theme.palette.accents_1};
-            border-radius: ${theme.layout.radius};
+            padding-left: ${Theme.layout.gapQuarter.name};
+            padding-right: ${Theme.layout.gapHalf.name};
+            background-color: ${Theme.palette.gray50.name};
+            border-radius: ${Theme.layout.radius.name};
             margin-bottom: 0;
           }
 
           h4 :global(small) {
             font-size: 0.65em;
             padding-left: 0.65rem;
-            color: ${theme.palette.accents_4};
+            color: ${Theme.palette.gray400.name};
             align-self: flex-end;
             line-height: 1.6rem;
           }
 
           h4 :global(span) {
-            color: ${theme.palette.accents_6};
+            color: ${Theme.palette.gray500.name};
           }
         `}</style>
       </>

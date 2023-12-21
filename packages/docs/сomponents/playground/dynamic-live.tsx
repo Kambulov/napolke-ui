@@ -2,7 +2,6 @@ import React from 'react'
 import { LivePreview, LiveProvider, LiveError } from 'react-live'
 import makeCodeTheme from './code-theme'
 import Editor from './editor'
-import {useTheme} from "@napolke-ui";
 import {Theme} from "../../../core/components/themes/presets";
 
 export interface Props {
@@ -13,8 +12,7 @@ export interface Props {
 }
 
 const DynamicLive: React.FC<Props> = ({ code, scope }) => {
-  const {mode} = useTheme()
-  const codeTheme = makeCodeTheme(mode)
+  const codeTheme = makeCodeTheme(Theme)
   return (
     <LiveProvider code={code} scope={scope} theme={codeTheme}>
       <div className="wrapper">

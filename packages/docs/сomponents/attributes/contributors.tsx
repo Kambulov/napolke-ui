@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { Avatar, Link, Tooltip } from 'components'
+import { Avatar, Link, Tooltip } from '@napolke-ui'
 import { useConfigs } from 'lib/config-context'
 import { CONTRIBUTORS_URL, GITHUB_URL } from 'lib/constants'
 const RepoMasterURL = `${GITHUB_URL}/blob/master`
@@ -25,7 +25,7 @@ const getContributors = async (path: string): Promise<Array<Contributor>> => {
 }
 
 const Contributors: React.FC<Props> = ({ path }) => {
-  const { isChinese } = useConfigs()
+  const { isRussian } = useConfigs()
   const [users, setUsers] = useState<Array<Contributor>>([])
   const link = useMemo(() => `${RepoMasterURL}/${path || '/pages'}`, [])
 
@@ -52,7 +52,7 @@ const Contributors: React.FC<Props> = ({ path }) => {
       ))}
       <Tooltip
         leaveDelay={0}
-        text={isChinese ? '在 GitHub 上编辑此页面' : 'Edit this page on GitHub'}
+        text={isRussian ? '在 GitHub sass' : 'Edit this page on GitHub'}
         type="dark">
         <Link color target="_blank" rel="nofollow" href={link}>
           <Avatar text="Add" />

@@ -1,6 +1,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-import { useTheme, Loading } from '@napolke-ui'
+import { Loading } from '@napolke-ui'
 import { useConfigs } from 'lib/config-context'
 import Title from './title'
 import {Theme} from '../../../core/components/themes/presets'
@@ -35,10 +35,9 @@ const Playground: React.FC<PlaygroundProps> = React.memo(
     desc,
     scope,
   }: PlaygroundProps & typeof defaultProps) => {
-    const theme = useTheme()
-    const { isChinese } = useConfigs()
+    const { isRussian } = useConfigs()
     const code = inputCode.trim()
-    const title = inputTitle || (isChinese ? '基础的' : 'General')
+    const title = inputTitle || (isRussian ? 'Главные' : 'General')
 
     return (
       <>

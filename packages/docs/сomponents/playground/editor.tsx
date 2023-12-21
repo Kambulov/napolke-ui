@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
 import { LiveEditor } from 'react-live'
 import { useConfigs } from 'lib/config-context'
-import { useTheme, useToasts, useClipboard } from '@napolke-ui'
+import { useToasts, useClipboard } from '@napolke-ui'
 import CopyIcon from '@napolke-ui/icons/Coins'
 import RightIcon from '@napolke-ui/icons/Coins'
+import {Theme} from "../../../core/components/themes/presets";
 
 interface Props {
   code: string
 }
 
 const Editor: React.FC<Props> = ({ code }) => {
-  const theme = useTheme()
   const { copy } = useClipboard()
-  const { isChinese } = useConfigs()
+  const { isRussian } = useConfigs()
   const [visible, setVisible] = useState(false)
   const { setToast } = useToasts()
   const clickHandler = (event: React.MouseEvent) => {
@@ -25,7 +25,7 @@ const Editor: React.FC<Props> = ({ code }) => {
     event.stopPropagation()
     event.preventDefault()
     copy(code)
-    setToast({ text: isChinese ? '代码已拷贝至剪切板。' : 'code copied.' })
+    setToast({ text: isRussian ? 'te' : 'code copied.' })
   }
 
   return (
@@ -37,14 +37,14 @@ const Editor: React.FC<Props> = ({ code }) => {
               <span className="arrow">
                 <RightIcon size={16} />
               </span>
-              <span>{isChinese ? '编辑代码' : 'Code Editor'}</span>
+              <span>{isRussian ? 'ereqw' : 'Code Editor'}</span>
             </div>
             <div className="action">
               {visible && (
                 <span
                   className="copy"
                   onClick={copyHandler}
-                  title={isChinese ? '拷贝代码' : 'Copy Code'}>
+                  title={isRussian ? 'qqr' : 'Copy Code'}>
                   <CopyIcon size={18} />
                 </span>
               )}
@@ -58,15 +58,15 @@ const Editor: React.FC<Props> = ({ code }) => {
 
       <style jsx>{`
         .editor {
-          border-bottom-left-radius: ${theme.layout.radius};
-          border-bottom-right-radius: ${theme.layout.radius};
+          border-bottom-left-radius: ${Theme.layout.radius.name};
+          border-bottom-right-radius: ${Theme.layout.radius.name};
         }
 
         details {
           transition: all 0.2s ease;
           overflow: hidden;
-          border-bottom-left-radius: ${theme.layout.radius};
-          border-bottom-right-radius: ${theme.layout.radius};
+          border-bottom-left-radius: ${Theme.layout.radius.name};
+          border-bottom-right-radius: ${Theme.layout.radius.name};
         }
 
         details summary::-webkit-details-marker {
@@ -75,8 +75,8 @@ const Editor: React.FC<Props> = ({ code }) => {
 
         summary {
           box-sizing: border-box;
-          border-top: 1px solid ${theme.palette.accents_2};
-          color: ${theme.palette.accents_5};
+          border-top: 1px solid ${Theme.palette.gray200.name};
+          color: ${Theme.palette.gray500.name};
           width: 100%;
           list-style: none;
           user-select: none;
@@ -90,7 +90,7 @@ const Editor: React.FC<Props> = ({ code }) => {
           align-items: center;
           width: 100%;
           height: 2.875rem;
-          padding: 0 ${theme.layout.gap};
+          padding: 0 ${Theme.layout.gap.name};
         }
 
         summary :global(svg) {
@@ -108,13 +108,13 @@ const Editor: React.FC<Props> = ({ code }) => {
           position: relative;
           box-sizing: border-box;
           white-space: pre;
-          font-family: ${theme.font.mono};
-          color: ${theme.palette.foreground};
-          background-color: ${theme.palette.background};
+          font-family: ${Theme.font.mono};
+          color: ${Theme.palette.black.name};
+          background-color: ${Theme.palette.background.name};
           font-size: 1em;
           overflow: hidden;
-          border-top: 1px solid ${theme.palette.accents_2};
-          padding: ${theme.layout.gapHalf};
+          border-top: 1px solid ${Theme.palette.gray200.name};
+          padding: ${Theme.layout.gapHalf.name};
         }
 
         .arrow {
@@ -130,12 +130,12 @@ const Editor: React.FC<Props> = ({ code }) => {
         .copy {
           display: inline-flex;
           align-items: center;
-          color: ${theme.palette.accents_4};
+          color: ${Theme.palette.gray500.name};
           transition: color 0.2s ease;
         }
 
         .copy:hover {
-          color: ${theme.palette.accents_6};
+          color: ${Theme.palette.gray700.name};
         }
       `}</style>
     </div>
