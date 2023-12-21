@@ -23,6 +23,9 @@ export interface NapolkeIThemesLayout {
    unit: PaleteItem
    gapQuarterNegative: PaleteItem
    pageWidthWithMargin: PaleteItem
+   breakpointMobile: PaleteItem
+   breakpointTablet: PaleteItem
+   pageMargin: PaleteItem
 }
 export interface NapolkeIThemesPalette {
    white: PaleteItem
@@ -33,6 +36,7 @@ export interface NapolkeIThemesPalette {
    successLight: PaleteItem
    secondary: PaleteItem
    error: PaleteItem
+   errorLight: PaleteItem
    warning: PaleteItem
    black: PaleteItem
    gray50: PaleteItem
@@ -101,6 +105,10 @@ const palette:NapolkeIThemesPalette = {
    error: {
       value: '#e00',
       name: 'var(--nui-color-secondary)'
+   },
+   errorLight: {
+      value: '#ff1a1a',
+      name: 'var(--nui-color-error-light)'
    },
    warning: {
       value: '#f5a623',
@@ -171,6 +179,18 @@ export const Theme: NapolkeUIThemes = {
       pageWidthWithMargin: {
          value: '782pt',
          name: 'var(--nui-page-with-margin)'
+      },
+      breakpointMobile: {
+         value: '650px',
+         name: 'var(--nui-breakpoint-mobile)'
+      },
+      breakpointTablet: {
+         value: '900px',
+         name: 'var(--nui-breakpoint-tablet)'
+      },
+      pageMargin: {
+         value: '16pt',
+         name: 'var(--nui-page-margin)'
       },
 
    },
