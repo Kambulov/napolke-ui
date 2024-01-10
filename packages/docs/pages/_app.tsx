@@ -24,7 +24,6 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
       </Head>
       <DarkModeProvider>
         <CssBaseline />
-        <div>fggg</div>
         <ConfigContext>
           <Menu />
         {/*  <Search />*/}
@@ -36,56 +35,58 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
             <Component {...pageProps} />
           </MDXProvider>
         </ConfigContext>
-        {/*<style global jsx>{`*/}
-        {/*  .tag {*/}
-        {/*    color: ${theme.palette.accents_5};*/}
-        {/*  }*/}
-        {/*  .punctuation {*/}
-        {/*    color: ${theme.palette.accents_5};*/}
-        {/*  }*/}
-        {/*  .attr-name {*/}
-        {/*    color: ${theme.palette.accents_6};*/}
-        {/*  }*/}
-        {/*  .attr-value {*/}
-        {/*    color: ${theme.palette.accents_4};*/}
-        {/*  }*/}
-        {/*  .language-javascript {*/}
-        {/*    color: ${theme.palette.accents_4};*/}
-        {/*  }*/}
-        {/*  span.class-name {*/}
-        {/*    color: ${theme.palette.warning};*/}
-        {/*  }*/}
-        {/*  span.maybe-class-name {*/}
-        {/*    color: ${theme.palette.purple};*/}
-        {/*  }*/}
-        {/*  span.token.string {*/}
-        {/*    color: ${theme.palette.accents_5};*/}
-        {/*  }*/}
-        {/*  span.token.comment {*/}
-        {/*    color: ${theme.palette.accents_3};*/}
-        {/*  }*/}
-        {/*  span.keyword {*/}
-        {/*    color: ${theme.palette.success};*/}
-        {/*  }*/}
-        {/*  span.plain-text {*/}
-        {/*    color: ${theme.palette.accents_3};*/}
-        {/*  }*/}
-        {/*  body::-webkit-scrollbar {*/}
-        {/*    width: var(--geist-page-scrollbar-width);*/}
-        {/*    background-color: ${theme.palette.accents_1};*/}
-        {/*  }*/}
-        {/*  body::-webkit-scrollbar-thumb {*/}
-        {/*    background-color: ${theme.palette.accents_2};*/}
-        {/*    border-radius: ${theme.layout.radius};*/}
-        {/*  }*/}
-        {/*  :root {*/}
-        {/*    --geist-page-nav-height: 64px;*/}
-        {/*    --geist-page-scrollbar-width: 4px;*/}
-        {/*  }*/}
-        {/*`}</style>*/}
+        <style global jsx>{`
+     
+          :root {
+            --nui-page-nav-height: 64px;
+            --nui-page-scrollbar-width: 4px;
+          }
+        `}</style>
       </DarkModeProvider>
     </>
   )
 }
 
 export default Application
+
+// {/*  .tag {*/}
+// {/*    color: ${theme.palette.accents_5};*/}
+// {/*  }*/}
+// {/*  .punctuation {*/}
+// {/*    color: ${theme.palette.accents_5};*/}
+// {/*  }*/}
+// {/*  .attr-name {*/}
+// {/*    color: ${theme.palette.accents_6};*/}
+// {/*  }*/}
+// {/*  .attr-value {*/}
+// {/*    color: ${theme.palette.accents_4};*/}
+// {/*  }*/}
+// {/*  .language-javascript {*/}
+// {/*    color: ${theme.palette.accents_4};*/}
+// {/*  }*/}
+// {/*  span.class-name {*/}
+// {/*    color: ${theme.palette.warning};*/}
+// {/*  }*/}
+// {/*  span.maybe-class-name {*/}
+// {/*    color: ${theme.palette.purple};*/}
+// {/*  }*/}
+// {/*  span.token.string {*/}
+// {/*    color: ${theme.palette.accents_5};*/}
+// {/*  }*/}
+// {/*  span.token.comment {*/}
+// {/*    color: ${theme.palette.accents_3};*/}
+// {/*  }*/}
+// {/*  span.keyword {*/}
+// {/*    color: ${theme.palette.success};*/}
+// {/*  }*/}
+// {/*  span.plain-text {*/}
+// {/*    color: ${theme.palette.accents_3};*/}
+// {/*  }*/}
+// {/*  body::-webkit-scrollbar {*/}
+// {/*    width: var(--geist-page-scrollbar-width);*/}
+// {/*    background-color: ${theme.palette.accents_1};*/}
+// {/*  }*/}
+// {/*  body::-webkit-scrollbar-thumb {*/}
+// {/*    background-color: ${theme.palette.accents_2};*/}
+// {/*    border-radius: ${theme.layout.radius};*/}
+// {/*  }*/}

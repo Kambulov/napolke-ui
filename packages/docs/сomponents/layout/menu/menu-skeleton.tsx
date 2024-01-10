@@ -6,7 +6,7 @@ const MenuSkeleton: React.FC<unknown> = () => {
     <div className="skeleton">
       <style jsx>{`
         .skeleton {
-          height: var(--geist-page-nav-height);
+          height: var(--nui-page-nav-height);
           width: 100%;
           margin: 0 auto;
           background-color: ${Theme.palette.gray50.name};

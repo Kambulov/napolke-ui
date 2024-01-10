@@ -75,8 +75,8 @@ const MenuMobile: React.FC<Props> = ({ expanded }) => {
       <style jsx>{`
         .mobile-menu {
           position: fixed;
-          top: var(--geist-page-nav-height);
-          height: calc(100vh - var(--geist-page-nav-height));
+          top: var(--nui-page-nav-height);
+          height: calc(100vh - var(--nui-page-nav-height));
           width: 100vw;
           overflow-y: auto;
           z-index: 999;

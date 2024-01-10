@@ -1,9 +1,9 @@
 import React from 'react'
 import { NextPage } from 'next'
 import { Grid } from '@napolke-ui'
-import PackageIcon from '@napolke-ui/icons/Coins'
-import FeatherIcon from '@napolke-ui/icons/Coins'
-import GitHubIcon from '@napolke-ui/icons/Coins'
+import PackageIcon from '@napolke-ui/icons/Box'
+import FeatherIcon from '@napolke-ui/icons/Feather'
+import GitHubIcon from '@napolke-ui/icons/Github'
 import { HomeCell } from '../../сomponents/mdx-widgets'
 import {Theme} from "../../../core/components/themes/presets";
 
@@ -13,9 +13,9 @@ const Application: NextPage<{}> = () => {
     <>
       <div className="layout">
         <div className="hero">
-          <h1 className="title">Geist</h1>
+          <h1 className="title">NapolkeUI</h1>
           <h3 className="desc">
-            An open source design system for building modern websites and applications.
+            Библиотека компонентов с открытым исходным кодом для создания современных web-сайтов
           </h3>
         </div>
 
@@ -23,39 +23,39 @@ const Application: NextPage<{}> = () => {
           <Grid xs={24} md={8}>
             <HomeCell
               icon={<PackageIcon />}
-              url="/en-us/components"
-              title="Components"
-              desc="Ever-increasing list of concise and aesthetic components."
+              url="/ru-ru/components"
+              title="Компоненты"
+              desc="Постоянно растущий список лаконичных и эстетичных компонентов."
             />
           </Grid>
           <Grid xs={24} md={8}>
             <HomeCell
               icon={<FeatherIcon />}
-              url="/en-us/guide/themes"
-              title="Customizable"
-              desc="Configure sizes, colors, appearances, shapes, and more."
+              url="/ru-ru/guide/themes"
+              title="Гибкость"
+              desc="Настраивайте размеры, цвета, внешний вид, формы и многое другое."
             />
           </Grid>
           <Grid xs={24} md={8}>
             <HomeCell
               icon={<GitHubIcon />}
               url="https://github.com/geist-org/geist-ui"
-              title="Open Sourced"
-              desc="Geist is open sourced and available free under MIT licence."
+              title="Открытый код"
+              desc="Napolke имеет открытый исходный код и доступен бесплатно по лицензии MIT."
             />
           </Grid>
         </Grid.Container>
       </div>
       <style jsx>{`
         .layout {
-          min-height: calc(100vh - var(--geist-page-nav-height));
+          min-height: calc(100vh - var(--nui-page-nav-height));
           max-width: ${Theme.layout.pageWidthWithMargin.name};
           margin: 0 auto;
           padding: 0 ${Theme.layout.gap.name} calc(${Theme.layout.gap.name} * 2);
           box-sizing: border-box;
         }
         .hero {
-          height: calc(100vh - var(--geist-page-nav-height) - 300px);
+          height: calc(100vh - var(--nui-page-nav-height) - 300px);
           min-height: 30vh;
           max-width: 500px;
           margin: 0 auto;

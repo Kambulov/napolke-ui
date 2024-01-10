@@ -96,7 +96,7 @@ const Menu: React.FC<unknown> = () => {
               <NextLink href={`/${locale}`}>
                 <a aria-label="Go Home">
                   <Image
-                    src="/images/logo.png"
+                    src="https://i.pinimg.com/originals/b9/05/3d/b9053d873e9f69058997913e0fffca2e.png"
                     width="20px"
                     height="20px"
                     mr={0.5}
@@ -149,15 +149,15 @@ const Menu: React.FC<unknown> = () => {
 
       <style jsx>{`
         .menu-wrapper {
-          height: var(--geist-page-nav-height);
+          height: var(--nui-page-nav-height);
         }
         .menu {
           position: fixed;
           top: 0;
           left: 0;
           right: 0;
-          padding-right: ${isLocked ? 'var(--geist-page-scrollbar-width)' : 0};
-          height: var(--geist-page-nav-height);
+          padding-right: ${isLocked ? 'var(--nui-page-scrollbar-width)' : 0};
+          height: var(--nui-page-nav-height);
           //width: 100%;
           backdrop-filter: saturate(180%) blur(5px);
           background-color: ${addColorAlpha(Theme.palette.background.value, 0.8)};

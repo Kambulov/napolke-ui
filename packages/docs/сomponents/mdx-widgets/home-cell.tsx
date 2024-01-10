@@ -1,5 +1,5 @@
 import React from 'react'
-import {  Link} from '@napolke-ui'
+import {Card, Link} from '@napolke-ui'
 import NextLink from 'next/link'
 import {Theme} from "../../../core/components/themes/presets";
 
@@ -14,11 +14,13 @@ const HomeCell: React.FC<HomeCellProps> = ({ url, title, desc, icon }) => {
   return (
     <NextLink href={url} passHref>
       <Link>
+         <Card padding="5px" shadow width="100%">
           <h4 className="feature__title">
             <div className="feature__icon">{icon}</div>
             {title}
           </h4>
           <p className="feature__description">{desc}</p>
+         </Card>
         <style jsx>{`
           .feature__title {
             display: flex;
