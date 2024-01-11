@@ -27,7 +27,8 @@ export const ScalePropKeys = [
   'py',
   'mx',
   'my',
-  'font',
+  'fs',
+  'fw',
   'unit',
   'scale',
 ]
@@ -59,7 +60,8 @@ export type ScaleProps = {
   py?: string | number
   mx?: string | number
   my?: string | number
-  font?: string | number
+  fs?: string | number
+  fw?: number
   unit?: string
   scale?: number
 }
@@ -84,7 +86,8 @@ export type ScaleInputKeys =
   | 'my'
   | 'width'
   | 'height'
-  | 'font'
+  | 'fs'
+  | 'fw'
 
 export type DynamicScales = {
   [key in ScaleInputKeys]: DynamicLayoutPipe
@@ -125,7 +128,8 @@ const defaultContext: ScaleConfig = {
     my: defaultDynamicLayoutPipe,
     width: defaultDynamicLayoutPipe,
     height: defaultDynamicLayoutPipe,
-    font: defaultDynamicLayoutPipe,
+    fs: defaultDynamicLayoutPipe,
+    fw : defaultDynamicLayoutPipe,
   },
   unit: '16px',
 }

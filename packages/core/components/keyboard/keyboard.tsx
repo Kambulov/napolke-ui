@@ -50,7 +50,7 @@ const KeyboardComponent: React.FC<React.PropsWithChildren<KeyboardProps>> = ({
           font-family: ${Theme.font.sans};
           border-radius: ${Theme.layout.radius};
           border: 1px solid ${Theme.palette.gray200.name};
-          font-size: ${SCALES.font(0.875)};
+          font-size: ${SCALES.fs(0.875)};
           width: ${SCALES.width(1, 'fit-content')};
           height: ${SCALES.height(1, 'auto')};
           min-width: 2em;

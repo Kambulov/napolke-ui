@@ -46,6 +46,17 @@ export interface NapolkeIThemesPalette {
    gray500: PaleteItem
    gray700: PaleteItem
    gray950: PaleteItem
+   primary50: PaleteItem
+   primary100: PaleteItem
+   primary200: PaleteItem
+   primary300: PaleteItem
+   primary400: PaleteItem
+   primary500: PaleteItem
+   primary600: PaleteItem
+   primary700: PaleteItem
+   primary800: PaleteItem
+   primary900: PaleteItem
+   primary950: PaleteItem
 }
 
 export interface BreakpointsItem {
@@ -145,6 +156,51 @@ const palette:NapolkeIThemesPalette = {
    gray950: {
       value: 'hsl(240 7.3% 8%)',
       name: 'var(--npui-color-gray-950)'
+   },
+
+   primary50: {
+      value: 'hsl(204 100% 97.1%)',
+      name: 'var(--nui-color-primary-50)'
+   },
+   primary100: {
+      value: 'hsl(204 93.8% 93.7%)',
+      name: 'var(--nui-color-primary-100)'
+   },
+   primary200: {
+      value: 'hsl(200.6 94.4% 86.1%)',
+      name: 'var(--nui-color-primary-200)'
+   },
+   primary300: {
+      value: 'hsl(199.4 95.5% 73.9%)',
+      name: 'var(--nui-color-primary-300)'
+   },
+   primary400: {
+      value: 'hsl(198.4 93.2% 59.6%)',
+      name: 'var(--nui-color-primary-400)'
+   },
+   primary500: {
+      value: 'hsl(198.6 88.7% 48.4%)',
+      name: 'var(--nui-color-primary-500)'
+   },
+   primary600: {
+      value: 'hsl(200.4 98% 39.4%)',
+      name: 'var(--nui-color-primary-600)'
+   },
+   primary700: {
+      value: 'hsl(201.3 96.3% 32.2%)',
+      name: 'var(--nui-color-primary-700)'
+   },
+   primary800: {
+      value: 'hsl(201.3 96.3% 32.2%)',
+      name: 'var(--nui-color-primary-800)'
+   },
+   primary900: {
+      value: 'hsl(202 80.3% 23.9%)',
+      name: 'var(--nui-color-primary-900)'
+   },
+   primary950: {
+      value: 'hsl(202.3 73.8% 16.5%)',
+      name: 'var(--nui-color-primary-950)'
    },
 }
 

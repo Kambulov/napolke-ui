@@ -94,7 +94,7 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
           border: 0;
           cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
           transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-          --select-font-size: ${SCALES.font(0.75)};
+          --select-font-size: ${SCALES.fs(0.75)};
           font-size: var(--select-font-size);
           width: ${SCALES.width(1, '100%')};
           height: ${SCALES.height(2.25)};
@@ -122,7 +122,7 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
           border-bottom: 1px solid ${Theme.palette.border.name};
           text-transform: capitalize;
           cursor: default;
-          font-size: ${SCALES.font(0.875)};
+          font-size: ${SCALES.fs(0.875)};
           width: ${SCALES.width(1, '100%')};
           font-weight: 500;
         }

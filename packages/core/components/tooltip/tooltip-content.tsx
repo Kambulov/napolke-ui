@@ -96,7 +96,7 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
           .inner {
             box-sizing: border-box;
             position: relative;
-            font-size: ${SCALES.font(1)};
+            font-size: ${SCALES.fs(1)};
             padding: ${SCALES.pt(0.65)} ${SCALES.pr(0.9)} ${SCALES.pb(0.65)}
               ${SCALES.pl(0.9)};
             height: 100%;

@@ -250,7 +250,7 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
               background-color: ${disabled
                 ? Theme.palette.gray50.name
                 : Theme.palette.background.name};
-              --select-font-size: ${SCALES.font(0.875)};
+              --select-font-size: ${SCALES.fs(0.875)};
               --select-height: ${SCALES.height(2.25)};
               min-width: 11.5em;
               width: ${SCALES.width(1, 'initial')};

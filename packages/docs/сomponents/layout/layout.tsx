@@ -42,7 +42,7 @@ export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = React.memo
           }
           .layout {
             min-height: calc(100vh - 108px);
-            max-width: ${Theme.layout.pageWidthWithMargin};
+            max-width: ${Theme.layout.pageWidthWithMargin.name};
             margin: 0 auto;
             padding: 0 ${Theme.layout.gap.name};
             display: flex;

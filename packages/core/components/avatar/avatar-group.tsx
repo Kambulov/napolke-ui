@@ -41,7 +41,7 @@ const AvatarGroupComponent: React.FC<React.PropsWithChildren<AvatarGroupProps>> 
         }
 
         .count {
-          font-size: ${SCALES.font(0.875)};
+          font-size: ${SCALES.fs(0.875)};
           display: inline-flex;
           align-items: center;
           padding-left: 5.5px;

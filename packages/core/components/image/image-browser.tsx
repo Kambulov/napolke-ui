@@ -142,7 +142,7 @@ const ImageBrowserComponent = React.forwardRef<
             max-width: 100%;
             border-radius: ${Theme.layout.radius};
             overflow: hidden;
-            font-size: ${SCALES.font(1)};
+            font-size: ${SCALES.fs(1)};
             width: ${SCALES.width(1, 'max-content')};
             height: ${SCALES.height(1, 'auto')};
             margin: ${SCALES.mt(0)} ${SCALES.mr(0, 'auto')} ${SCALES.mb(0)}

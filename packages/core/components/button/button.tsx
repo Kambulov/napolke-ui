@@ -156,7 +156,7 @@ const ButtonComponent = React.forwardRef<
             line-height: ${SCALES.height(2.5)};
             border-radius: ${Theme.layout.radius};
             font-weight: 400;
-            font-size: ${SCALES.font(0.875)};
+            font-size: ${SCALES.fs(0.875)};
             user-select: none;
             outline: none;
             text-transform: capitalize;

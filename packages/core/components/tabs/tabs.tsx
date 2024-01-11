@@ -137,7 +137,7 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
         <div className="content">{children}</div>
         <style jsx>{`
           .tabs {
-            font-size: ${SCALES.font(1)};
+            font-size: ${SCALES.fs(1)};
             width: ${SCALES.width(1, 'initial')};
             height: ${SCALES.height(1, 'auto')};
             padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};

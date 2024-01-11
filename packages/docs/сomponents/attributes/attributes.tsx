@@ -21,7 +21,6 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
                <Spacer h={1} />
                <h3>
                   <VirtualAnchor>APIs</VirtualAnchor>
-                  {isRussian && ' / hggg'}
                </h3>
                <AttributesTable>{children}</AttributesTable>
             </>

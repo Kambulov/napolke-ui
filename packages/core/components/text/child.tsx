@@ -38,7 +38,8 @@ const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = ({
 }: React.PropsWithChildren<TextChildProps> & typeof defaultProps) => {
   const Component = tag
   const { SCALES, getScaleProps } = useScale()
-  const font = getScaleProps('font')
+  const fontSize = getScaleProps('fs')
+  const fontWeight = getScaleProps('fw')
   const mx = getScaleProps(['margin', 'marginLeft', 'marginRight', 'mx', 'ml', 'mr'])
   const my = getScaleProps(['margin', 'marginTop', 'marginBottom', 'my', 'mt', 'mb'])
   const px = getScaleProps(['padding', 'paddingLeft', 'paddingRight', 'pl', 'pr', 'px'])
@@ -50,14 +51,15 @@ const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = ({
       { value: my, className: 'my' },
       { value: px, className: 'px' },
       { value: py, className: 'py' },
-      { value: font, className: 'font' },
+      { value: fontSize, className: 'font' },
+      { value: fontWeight, className: 'font-weight' },
     ]
     const scaleClassNames = keys.reduce((pre, next) => {
       if (typeof next.value === 'undefined') return pre
       return `${pre} ${next.className}`
     }, '')
     return `${scaleClassNames} ${className}`.trim()
-  }, [mx, my, px, py, font, className])
+  }, [mx, my, px, py, fontSize, className])
 
   return (
     <Component className={classNames} {...props}>
@@ -69,7 +71,8 @@ const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = ({
           height: ${SCALES.height(1, 'auto')};
         }
         .font {
-          font-size: ${SCALES.font(1, 'inherit')};
+          font-size: ${SCALES.fs(1, 'inherit')};
+          font-weight: ${fontWeight};
         }
         .mx {
           margin-left: ${SCALES.ml(0, 'revert')};

@@ -59,7 +59,7 @@ const CodeComponent: React.FC<React.PropsWithChildren<CodeProps>> = ({
         .pre {
           max-width: 100%;
           border: 1px solid ${border};
-          font-size: ${SCALES.font(0.875)};
+          font-size: ${SCALES.fs(0.875)};
           width: ${SCALES.width(1, 'initial')};
           height: ${SCALES.height(1, 'auto')};
           margin: ${SCALES.mt(1.3)} ${SCALES.mr(0)} ${SCALES.mb(1.3)} ${SCALES.ml(0)};
@@ -97,9 +97,9 @@ const CodeComponent: React.FC<React.PropsWithChildren<CodeProps>> = ({
           line-height: 1.35em;
           display: inline-flex;
           align-items: center;
-          font-size: ${SCALES.font(0.8125)};
-          padding: ${SCALES.font(0.32)} ${SCALES.font(0.5)} ${SCALES.font(0.32)}
-            ${SCALES.font(0.5)};
+          font-size: ${SCALES.fs(0.8125)};
+          padding: ${SCALES.fs(0.32)} ${SCALES.fs(0.5)} ${SCALES.fs(0.32)}
+            ${SCALES.fs(0.5)};
           width: auto;
           border-top-left-radius: calc(${Theme.layout.radius.name} - 1px);
           border-bottom-right-radius: ${Theme.layout.radius.name};

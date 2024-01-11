@@ -37,14 +37,14 @@ const Editor: React.FC<Props> = ({ code }) => {
               <span className="arrow">
                 <RightIcon size={16} />
               </span>
-              <span>{isRussian ? 'ereqw' : 'Code Editor'}</span>
+              <span>{isRussian ? 'Редактор кода' : 'Code Editor'}</span>
             </div>
             <div className="action">
               {visible && (
                 <span
                   className="copy"
                   onClick={copyHandler}
-                  title={isRussian ? 'qqr' : 'Copy Code'}>
+                  title={isRussian ? 'Копировать' : 'Copy Code'}>
                   <CopyIcon size={18} />
                 </span>
               )}

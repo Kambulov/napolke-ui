@@ -11,117 +11,112 @@ export const meta = {
 
 ## Text
 
-Display text using well-defined typographic styles.
+Компонент для отображения текста.
 
 <Playground
-  title="Headings"
-  desc="Use `Text` to standardize text content."
+  title="Заголовок"
+  desc="Используйте `Text` для стандартизации текстового содержимого."
   scope={{ Text }}
   code={`
-    <Text h1>Start our Geist journey.</Text>
+    <Text h1>Привет мир!</Text>
 `}
 />
 
 <Playground
-  title="Paragraph"
-  desc="Add `p` and `b` attributes to a `Text`."
+  title="Параграф"
+  desc="Добавьте атрибуты `p`, `b`, `small`, `i` и т.д. к `Text`."
   scope={{ Text }}
   code={`
 <>
   <Text p>
-   Caching is very important for fast Web sites. This article describes different methods of caching and how to use HTTP Headers to control them.
+   Генерация рыбатекста происходит довольно просто: есть несколько фиксированных
+    наборов фраз и словочетаний, из которых в опредёленном порядке формируются предложения.
   </Text>
   <Text p b>
-   A brief description of the changes between the early versions of HTTP, to the modern HTTP/2, the emergent HTTP/3 and beyond.
+   Предложения складываются в абзацы — и вы наслаждетесь очередным бредошедевром.
   </Text>
-</>
-`}
-/>
-
-<Playground
-  title="Small"
-  scope={{ Text }}
-  code={`
-<>
-  <Text small>
-   HTTP response codes indicate whether a specific HTTP request has been successfully completed. Responses are grouped in five classes: informational responses, successful responses, redirections, client errors, and servers errors.
-  </Text>
+   <Text small>
+    Генерация рыбатекста происходит довольно просто: есть несколько фиксированных
+    наборов фраз и словочетаний, из которых в опредёленном порядке формируются предложения.  </Text>
   <Text small i>
-   HTTP response codes indicate whether a specific HTTP request has been successfully completed. Responses are grouped in five classes: informational responses, successful responses, redirections, client errors, and servers errors.
-  </Text>
+ Предложения складываются в абзацы — и вы наслаждетесь очередным бредошедевром.  </Text>
 </>
 `}
 />
 
 <Playground
-  title="Blockquote"
+  title="Цитата"
   scope={{ Text }}
   code={`
 <Text blockquote my={0}>
-  Send cookies from the server to the user-agent.
+  Предложения складываются в абзацы — и вы наслаждетесь очередным бредошедевром.
 </Text>
 `}
 />
 
 <Playground
-  title="Types"
+  title="Типы и цвет"
   scope={{ Text }}
   code={`
 <Text b i style={{ letterSpacing: '0.6px' }}>
-  <Text span type="success">G</Text>
-  <Text span type="warning">e</Text>
-  <Text span type="secondary">i</Text>
-  <Text span type="error">s</Text>
-  <Text span style={{ color: '#ccc' }}>t</Text>
+  <Text span type="success">N</Text>
+  <Text span type="warning">a</Text>
+  <Text span type="secondary">p</Text>
+  <Text span type="error">o</Text>
+  <Text span style={{ color: '#ccc' }}>l</Text>
+  <Text span style={{ color: '#ccc' }}>k</Text>
+  <Text span style={{ color: '#ccc' }}>e</Text>
   <Text span type="success" ml="5px">UI</Text>
 </Text>
 `}
 />
 
 <Playground
-  title="Sizes"
+  title="Размер шрифта"
   scope={{ Text }}
   code={`
 <>
-  <Text font="12px" mt={0}>Font Size: 12px;</Text>
-  <Text font="14px">Font Size: 14px;</Text>
-  <Text font="1rem">Font Size: 1rem;</Text>
-  <Text scale={1.25} mb={0}>Font Size Scale: 1.25;</Text>
+  <Text fs="12px" mt={0}>NapolkeUI: 12px;</Text>
+  <Text fs="14px">NapolkeUI: 14px;</Text>
+  <Text fs="1rem">NapolkeUI: 1rem;</Text>
+  <Text scale={1.25} mb={0}>NapolkeUI Scale: 1.25;</Text>
 </>
 `}
 />
 
 <Playground
-  title="Compose"
-  desc="Effect of multiple `Text` stacks"
+  title="Композиция"
+  desc="Эффект  вложенных `Text`"
   scope={{ Text }}
   code={`
 <>
   <Text p mt={0}>
-   Specifies origins that are allowed to see values of attributes retrieved via features of the Resource Timing API, which would otherwise be reported as zero due to cross-origin restrictions.
-  </Text>
+Генерация рыбатекста происходит довольно просто: есть несколько фиксированных
+    наборов фраз и словочетаний, из которых в опредёленном порядке формируются предложения.    </Text>
 
   <Text mb={0}>
-    <Text small del>Indicates if the resource transmitted should be displayed inline (default behavior without the header),</Text>
-    <Text small b>or if it should be handled like a download and the browser should present a “Save As” dialog.</Text>
+    <Text small del>Сама идея работы генератора заимствована у псевдосоветского "универсального кода речей", </Text>
+    <Text small b>из которого мы выдернули используемые в нём словосочетания</Text>
   </Text>
 </>
 `} />
 
-<Attributes edit="/pages/en-us/components/text.mdx">
-<Attributes.Title>Text.Props</Attributes.Title>
+<Attributes edit="/pages/ru-ru/components/text.mdx">
+<Attributes.Title>Пропсы</Attributes.Title>
 
-| Attribute      | Description    | Type             | Accepted values          | Default   |
+| Атрибут      | Описание         | Тип              | Принимаемые значения         | Деф. значение   |
 | -------------- | -------------- | ---------------- | ------------------------ | --------- |
-| **p**          | component name | `boolean`        | -                        | `true`    |
-| **h1 - h6**    | component name | `boolean`        | -                        | `false`   |
-| **small**      | component name | `boolean`        | -                        | `false`   |
-| **span**       | component name | `boolean`        | -                        | `false`   |
-| **del**        | component name | `boolean`        | -                        | `false`   |
-| **i**          | component name | `boolean`        | -                        | `false`   |
-| **em**         | component name | `boolean`        | -                        | `false`   |
-| **b**          | component name | `boolean`        | -                        | `false`   |
-| **blockquote** | component name | `boolean`        | -                        | `false`   |
+| **p**          | наименование тега | `boolean`        | -                        | `true`    |
+| **h1 - h6**    | наименование тега | `boolean`        | -                        | `false`   |
+| **small**      | наименование тега | `boolean`        | -                        | `false`   |
+| **span**       | наименование тега | `boolean`        | -                        | `false`   |
+| **del**        | наименование тега | `boolean`        | -                        | `false`   |
+| **i**          | наименование тега | `boolean`        | -                        | `false`   |
+| **em**         | наименование тега | `boolean`        | -                        | `false`   |
+| **b**          | наименование тега | `boolean`        | -                        | `false`   |
+| **blockquote** | наименование тега | `boolean`        | -                        | `false`   |
+| **fs**         | размер шрифта     | `string` | `number` | -                     | `16px`   |
+| **fw**         | жирность шрифта     | `string` | `number` | -                     | `400`   |
 | **type**       | text type      | `TextTypes`      | [TextTypes](#texttypes)  | `default` |
 | ...            | native props   | `HTMLAttributes` | `'id', 'className', ...` | -         |
 

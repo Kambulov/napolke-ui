@@ -38,7 +38,6 @@ const Title: React.FC<TitleProps> = React.memo(
             line-height: 1;
             font-size: 1.3rem;
             margin-top: 55px;
-            text-transform: capitalize;
             position: relative;
           }
 

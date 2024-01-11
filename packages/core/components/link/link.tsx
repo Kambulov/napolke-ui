@@ -62,7 +62,7 @@ const LinkComponent = React.forwardRef<
             text-decoration: none;
             border-radius: ${block ? Theme.layout.radius.name : 0};
             transition: color 200ms ease 0ms;
-            font-size: ${SCALES.font(1, 'inherit')};
+            font-size: ${SCALES.fs(1, 'inherit')};
             width: ${SCALES.width(1, 'fit-content')};
             height: ${SCALES.height(1, 'auto')};
             margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};

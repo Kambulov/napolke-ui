@@ -58,5 +58,5 @@ const Playground: React.FC<PlaygroundProps> = React.memo(
 )
 
 Playground.defaultProps = defaultProps
-Playground.displayName = 'GeistPlayground'
+Playground.displayName = 'NuiPlayground'
 export default Playground

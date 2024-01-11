@@ -39,7 +39,7 @@ const Application: NextPage<{}> = () => {
           <Grid xs={24} md={8}>
             <HomeCell
               icon={<GitHubIcon />}
-              url="https://github.com/geist-org/geist-ui"
+              url="https://github.com/Kambulov/napolke-ui"
               title="Открытый код"
               desc="Napolke имеет открытый исходный код и доступен бесплатно по лицензии MIT."
             />

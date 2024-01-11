@@ -83,7 +83,7 @@ const AvatarComponent: React.FC<AvatarProps> = ({
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: ${SCALES.font(1)};
+          font-size: ${SCALES.fs(1)};
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;

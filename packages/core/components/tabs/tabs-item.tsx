@@ -72,7 +72,7 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
             user-select: none;
             display: flex;
             align-items: center;
-            font-size: ${SCALES.font(0.875)};
+            font-size: ${SCALES.fs(0.875)};
             line-height: normal;
             width: ${SCALES.width(1, 'auto')};
             height: ${SCALES.height(1, 'auto')};

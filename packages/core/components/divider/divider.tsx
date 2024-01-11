@@ -60,7 +60,7 @@ const DividerComponent: React.FC<React.PropsWithChildren<DividerProps>> = ({
           max-width: 100%;
           background-color: ${color};
           position: relative;
-          font-size: ${SCALES.font(1)};
+          font-size: ${SCALES.fs(1)};
           width: ${SCALES.width(1, 'auto')};
           height: ${SCALES.height(0.0625)};
           padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
