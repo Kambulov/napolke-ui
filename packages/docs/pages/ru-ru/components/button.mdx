@@ -12,11 +12,11 @@ export const meta = {
 
 ## Button
 
-Used to trigger an operation.
+Компонент кнопки
 
 <Playground
-  title="Basic"
-  desc="The basic `Button` contains an animation effect."
+  title="Дефолтное отображение"
+  desc="Базовое отображение `Button` без пропсов"
   scope={{ Button }}
   code={`
 <Button>Action</Button>
@@ -25,7 +25,7 @@ Used to trigger an operation.
 
 <Playground
   title="Loading"
-  desc="Show running status."
+  desc="Отображение лоадера при загрузке"
   scope={{ Button, Spacer }}
   code={`
 <>
@@ -40,7 +40,7 @@ Used to trigger an operation.
 
 <Playground
   title="Disabled"
-  desc="Do not respond to any action."
+  desc="Заблокированная кнопка"
   scope={{ Button }}
   code={`
 <Button disabled>Action</Button>
@@ -62,14 +62,17 @@ Used to trigger an operation.
   scope={{ Button, Spacer, Grid }}
   code={`
 <Grid.Container gap={1.5}>
+  <Grid><Button auto type="primary">Primary</Button></Grid>
   <Grid><Button auto type="secondary">Secondary</Button></Grid>
   <Grid><Button auto type="success">Success</Button></Grid>
   <Grid><Button auto type="warning">Warning</Button></Grid>
+  <Grid><Button auto type="market">Market</Button></Grid>
   <Grid><Button auto type="error">Error</Button></Grid>
   <Grid><Button auto type="abort">Abort</Button></Grid>
   <Grid><Button auto type="secondary-light">Secondary Light</Button></Grid>
   <Grid><Button auto type="success-light">Success Light</Button></Grid>
   <Grid><Button auto type="warning-light">Warning Light</Button></Grid>
+  <Grid><Button auto type="market-light">Market Light</Button></Grid>
   <Grid><Button auto type="error-light">Error Light</Button></Grid>
 </Grid.Container>
 `}

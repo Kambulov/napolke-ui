@@ -138,7 +138,8 @@ const ButtonComponent = React.forwardRef<
         className={useClasses('btn', className)}
         disabled={disabled}
         onClick={clickHandler}
-        {...props}>
+        {...props}
+      >
         {loading && <ButtonLoading color={color} />}
         {childrenWithIcon}
         {dripShow && (
@@ -154,7 +155,7 @@ const ButtonComponent = React.forwardRef<
             box-sizing: border-box;
             display: inline-block;
             line-height: ${SCALES.height(2.5)};
-            border-radius: ${Theme.layout.radius};
+            border-radius: ${Theme.layout.radius.name};
             font-weight: 400;
             font-size: ${SCALES.fs(0.875)};
             user-select: none;
@@ -173,10 +174,10 @@ const ButtonComponent = React.forwardRef<
             cursor: ${cursor};
             pointer-events: ${events};
             box-shadow: ${shadow ? Theme.expressiveness.shadowSmall : 'none'};
-            --napolke-ui-button-icon-padding: ${SCALES.pl(0.727)};
-            --napolke-ui-button-height: ${SCALES.height(2.5)};
-            --napolke-ui-button-color: ${color};
-            --napolke-ui-button-bg: ${bg};
+            --nui-button-icon-padding: ${SCALES.pl(0.727)};
+            --nui-button-height: ${SCALES.height(2.5)};
+            --nui-button-color: ${color};
+            --nui-button-bg: ${bg};
             min-width: ${auto ? 'min-content' : SCALES.width(10.5)};
             width: ${auto ? 'auto' : 'initial'};
             height: ${SCALES.height(2.5)};
@@ -187,7 +188,7 @@ const ButtonComponent = React.forwardRef<
           .btn:hover,
           .btn:focus {
             color: ${hover.color};
-            --geist-ui-button-color: ${hover.color};
+            --nui-button-color: ${hover.color};
             background-color: ${hover.bg};
             border-color: ${hover.border};
             cursor: ${cursor};
@@ -219,6 +220,6 @@ const ButtonComponent = React.forwardRef<
 )
 
 ButtonComponent.defaultProps = defaultProps
-ButtonComponent.displayName = 'GeistButton'
+ButtonComponent.displayName = 'NuiButton'
 const Button = withScale(ButtonComponent)
 export default Button

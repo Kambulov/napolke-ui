@@ -1,4 +1,4 @@
-import {NapolkeIThemesPalette, Theme} from '../themes/presets'
+import {NapolkeUIThemesPalette, Theme} from '../themes/presets'
 import { ButtonTypes } from '../utils/prop-types'
 import { ButtonProps } from './button'
 import { addColorAlpha } from '../utils/color'
@@ -10,7 +10,7 @@ export interface ButtonColorGroup {
 }
 
 export const getButtonGhostColors = (
-  palette: NapolkeIThemesPalette,
+  palette: NapolkeUIThemesPalette,
   type: ButtonTypes,
 ): ButtonColorGroup | null => {
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
@@ -40,34 +40,44 @@ export const getButtonGhostColors = (
 }
 
 export const getButtonColors = (
-  palette: NapolkeIThemesPalette,
+  palette: NapolkeUIThemesPalette,
   props: ButtonProps,
 ): ButtonColorGroup => {
   const { type, disabled, ghost } = props
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
     default: {
-      bg: palette.background.name,
+      bg: palette.background.value,
       border: palette.border.name,
       color: palette.gray500.name,
     },
     secondary: {
-      bg: palette.black.name,
+      bg: palette.black.value,
       border: palette.black.name,
       color: palette.background.name,
     },
     success: {
-      bg: palette.success.name,
+      bg: palette.success.value,
       border: palette.success.name,
       color: palette.white.name,
     },
     warning: {
-      bg: palette.warning.name,
+      bg: palette.warning.value,
       border: palette.warning.name,
       color: palette.white.name,
     },
     error: {
-      bg: palette.error.name,
+      bg: palette.error.value,
       border: palette.error.name,
+      color: palette.white.name,
+    },
+    market: {
+      bg: palette.market.value,
+      border: palette.market.name,
+      color: palette.white.name,
+    },
+    primary: {
+      bg: palette.primary.value,
+      border: palette.primary.name,
       color: palette.white.name,
     },
     abort: {
@@ -78,7 +88,7 @@ export const getButtonColors = (
   }
   if (disabled)
     return {
-      bg: palette.gray50.name,
+      bg: palette.gray50.value,
       border: palette.gray200.name,
       color: palette.gray300.name,
     }
@@ -98,7 +108,7 @@ export const getButtonColors = (
 }
 
 export const getButtonGhostHoverColors = (
-  palette: NapolkeIThemesPalette,
+  palette: NapolkeUIThemesPalette,
   type: ButtonTypes,
 ): ButtonColorGroup | null => {
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
@@ -110,7 +120,7 @@ export const getButtonGhostHoverColors = (
     success: {
       bg: palette.success.name,
       border: palette.background.name,
-      color: palette.white.name,
+      color: palette.black.name,
     },
     warning: {
       bg: palette.warning.name,
@@ -128,12 +138,13 @@ export const getButtonGhostHoverColors = (
 }
 
 export const getButtonHoverColors = (
-  palette: NapolkeIThemesPalette,
+  palette: NapolkeUIThemesPalette,
   props: ButtonProps,
 ): ButtonColorGroup => {
   const { type, disabled, loading, shadow, ghost } = props
   const defaultColor = getButtonColors(palette, props)
-  const alphaBackground = addColorAlpha(defaultColor.bg, 0.85)
+  console.log('defaultColor',defaultColor)
+  const alphaBackground = addColorAlpha(defaultColor.bg, 0.75)
   const colors: {
     [key in ButtonTypes]: Omit<ButtonColorGroup, 'color'> & {
       color?: string
@@ -155,9 +166,17 @@ export const getButtonHoverColors = (
       bg: palette.background.value,
       border: palette.warning.value,
     },
+    market: {
+      bg: palette.background.value,
+      border: palette.market.value,
+    },
     error: {
       bg: palette.background.value,
       border: palette.error.value,
+    },
+    primary: {
+      bg: palette.background.value,
+      border: palette.primary.name,
     },
     abort: {
       bg: 'transparent',
@@ -177,6 +196,10 @@ export const getButtonHoverColors = (
       bg: alphaBackground,
     },
     'error-light': {
+      ...defaultColor,
+      bg: alphaBackground,
+    },
+    'market-light': {
       ...defaultColor,
       bg: alphaBackground,
     },
@@ -228,7 +251,7 @@ export const getButtonCursor = (
   }
 }
 
-export const getButtonDripColor = (palette: NapolkeIThemesPalette, props: ButtonProps) => {
+export const getButtonDripColor = (palette: NapolkeUIThemesPalette, props: ButtonProps) => {
   const { type } = props
   const isLightHover = type!.endsWith('light')
   const hoverColors = getButtonHoverColors(palette, props)

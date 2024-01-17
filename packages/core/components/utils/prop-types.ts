@@ -4,11 +4,14 @@ export const tupleNumber = <T extends number[]>(...args: T) => args
 
 const buttonTypes = tuple(
   'default',
+  'primary',
   'secondary',
   'success',
   'warning',
   'error',
   'abort',
+  'market',
+  'market-light',
   'secondary-light',
   'success-light',
   'warning-light',

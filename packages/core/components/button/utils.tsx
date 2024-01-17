@@ -16,7 +16,7 @@ export const getButtonChildrenWithIcon = (
   const hasIcon = icon || iconRight
   const isRight = Boolean(iconRight)
   const paddingForAutoMode = auto
-    ? `calc(var(--napolke-ui-button-height) / 2 + var(--napolke-ui-button-icon-padding) * .5)`
+    ? `calc(var(--nui-button-height) / 2 + var(--nui-button-icon-padding) * .5)`
     : 0
   const classes = useClasses('text', isRight ? 'right' : 'left')
 

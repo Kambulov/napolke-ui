@@ -17,7 +17,7 @@ const ButtonLoading: React.FC<React.PropsWithChildren<Props>> = ({ color }) => {
           right: 0;
           bottom: 0;
           z-index: 2;
-          background-color: var(--napolke-ui-button-bg);
+          background-color: var(--nui-button-bg);
         }
       `}</style>
     </div>

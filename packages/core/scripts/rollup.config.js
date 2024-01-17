@@ -75,7 +75,7 @@ export default (async () => {
   const components = await Promise.all(
     files.map(async name => {
       const unitPath = path.join(componentsPath, name)
-      const entry = path.join(unitPath, 'index.tsx')
+      const entry = path.join(unitPath, 'index.ts')
 
       const stat = await fs.stat(unitPath)
       if (!stat.isDirectory()) return null
@@ -103,7 +103,7 @@ export default (async () => {
       })),
     // Bundle for packages containing all components.
     {
-      input: { index: path.join(componentsPath, 'index.tsx') },
+      input: { index: path.join(componentsPath, 'index.ts') },
       output: [
         // {
         //   ...esmOutput,
