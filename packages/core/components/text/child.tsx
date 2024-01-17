@@ -96,5 +96,5 @@ const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = ({
 }
 
 TextChild.defaultProps = defaultProps
-TextChild.displayName = 'GeistTextChild'
+TextChild.displayName = 'NuiTextChild'
 export default TextChild

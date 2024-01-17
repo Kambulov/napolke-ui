@@ -1,0 +1,65 @@
+import Title from '../../../сomponents/playground/title'
+import Github from '@napolke-ui/icons/github'
+import { Spacer, Tabs } from '../../../../core/components'
+import Layout from '../../../сomponents/layout'
+import  Playground from '../../../сomponents/playground'
+import  Attributes from '../../../сomponents/attributes'
+
+export const meta = {
+    title: 'Icons',
+    group: 'General',
+}
+
+## Icons
+
+Display semantic vector graphics in SVG format.
+
+<Title title="Installation" desc="Install the package in your project directory." />
+<Tabs initialValue="yarn">
+    <Tabs.Item label="Yarn" value="yarn">
+        <Spacer h={0.6} />
+    </Tabs.Item>
+    <Tabs.Item label="npm" value="npm">
+        <Spacer h={0.6} />
+    </Tabs.Item>
+</Tabs>
+
+
+
+<Playground
+    title="Color"
+    scope={{ Github }}
+    code={`
+<Github color="red" />
+`}
+/>
+
+<Playground
+    title="Sizes"
+    scope={{ Github, Spacer }}
+    code={`
+<>
+  <Github size={16} /> <Spacer inline w={.35} />
+  <Github size={20} /> <Spacer inline w={.35} />
+  <Github size={24} /> <Spacer inline w={.35} />
+  <Github size={28} /> <Spacer inline w={.35} />
+  <Github size={32} /> <Spacer inline w={.35} />
+  <Github size={36} />
+</>
+`}
+/>
+
+<IconsGallery />
+
+<Attributes edit="/pages/en-us/components/icons.mdx">
+    <Attributes.Title>Icon.Props</Attributes.Title>
+
+    | Attribute | Description  | Type            | Accepted values                  | Default |
+    | --------- | ------------ | --------------- | -------------------------------- | ------- |
+    | **color** | Icon color   | `string`        | -                                | -       |
+    | **size**  | Icon size    | `number`        | -                                | -       |
+    | ...       | Native props | `SVGAttributes` | `'id', 'name', 'className', ...` | -       |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

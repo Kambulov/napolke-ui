@@ -49,7 +49,6 @@ const withScale = <T, P = {}>(
     const makeScaleHandler =
       (attrValue: string | number | undefined): DynamicLayoutPipe =>
       (scale1x, defaultValue) => {
-        // 0 means disable scale and the default value is 0
         if (scale1x === 0) {
           scale1x = 1
           defaultValue = defaultValue || 0
@@ -62,6 +61,7 @@ const withScale = <T, P = {}>(
 
         if (!isCSSNumberValue(attrValue)) return `${attrValue}`
         const customFactor = factor * Number(attrValue)
+
         return `calc(${customFactor} * ${unit})`
       }
 

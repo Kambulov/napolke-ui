@@ -27,7 +27,7 @@ export interface NapolkeIThemesLayout {
    breakpointTablet: PaleteItem
    pageMargin: PaleteItem
 }
-export interface NapolkeIThemesPalette {
+export interface NapolkeUIThemesPalette {
    white: PaleteItem
    link: PaleteItem
    background: PaleteItem
@@ -40,23 +40,39 @@ export interface NapolkeIThemesPalette {
    warning: PaleteItem
    black: PaleteItem
    gray50: PaleteItem
+   gray100: PaleteItem
    gray200: PaleteItem
    gray300: PaleteItem
    gray400: PaleteItem
    gray500: PaleteItem
+   gray600: PaleteItem
    gray700: PaleteItem
+   gray800: PaleteItem
+   gray900: PaleteItem
    gray950: PaleteItem
-   primary50: PaleteItem
-   primary100: PaleteItem
-   primary200: PaleteItem
-   primary300: PaleteItem
-   primary400: PaleteItem
-   primary500: PaleteItem
-   primary600: PaleteItem
-   primary700: PaleteItem
-   primary800: PaleteItem
-   primary900: PaleteItem
-   primary950: PaleteItem
+   blue50: PaleteItem
+   blue100: PaleteItem
+   blue200: PaleteItem
+   blue300: PaleteItem
+   blue400: PaleteItem
+   blue500: PaleteItem
+   blue600: PaleteItem
+   blue700: PaleteItem
+   blue800: PaleteItem
+   blue900: PaleteItem
+   blue950: PaleteItem
+
+   green50: PaleteItem
+   green100: PaleteItem
+   green200: PaleteItem
+   green300: PaleteItem
+   green400: PaleteItem
+   green500: PaleteItem
+   green600: PaleteItem
+   green700: PaleteItem
+   green800: PaleteItem
+   green900: PaleteItem
+   green950: PaleteItem
 }
 
 export interface BreakpointsItem {
@@ -78,13 +94,13 @@ export interface NapolkeUIThemesFont {
 }
 export interface NapolkeUIThemes {
    layout: NapolkeIThemesLayout
-   palette: NapolkeIThemesPalette
+   palette: NapolkeUIThemesPalette
    expressiveness: NapolkeUIThemesExpressiveness
    font: NapolkeUIThemesFont,
    breakpoints: NapolkeUIThemesBreakpoints
 }
 
-const palette:NapolkeIThemesPalette = {
+const palette:NapolkeUIThemesPalette = {
    white: {
       value: '#fff',
       name: 'var(--nui-color-white)'
@@ -129,9 +145,14 @@ const palette:NapolkeIThemesPalette = {
       value: '#000',
       name: 'var(--nui-color-black)'
    },
+   // *** GRAY ***
    gray50: {
       value: 'hsl(0 0% 98%)',
       name: 'var(--npui-color-gray-50)'
+   },
+   gray100: {
+      value: 'hsl(240 4.8% 95.9%)',
+      name: 'var(--npui-color-gray-100)'
    },
    gray200: {
       value: 'hsl(240 5.9% 90%)',
@@ -149,58 +170,116 @@ const palette:NapolkeIThemesPalette = {
       value: 'hsl(240 3.8% 46.1%)',
       name: 'var(--npui-color-gray-500)'
    },
+   gray600: {
+      value: 'hsl(240 5.2% 33.9%)',
+      name: 'var(--npui-color-gray-500)'
+   },
    gray700: {
       value: 'hsl(240 5.3% 26.1%)',
+      name: 'var(--npui-color-gray-700)'
+   },
+   gray800: {
+      value: 'hsl(240 3.7% 15.9%)',
+      name: 'var(--npui-color-gray-700)'
+   },
+   gray900: {
+      value: 'hsl(240 5.9% 10%)',
       name: 'var(--npui-color-gray-700)'
    },
    gray950: {
       value: 'hsl(240 7.3% 8%)',
       name: 'var(--npui-color-gray-950)'
    },
-
-   primary50: {
+   // *** GRAY ***
+   blue50: {
       value: 'hsl(204 100% 97.1%)',
-      name: 'var(--nui-color-primary-50)'
+      name: 'var(--nui-color-blue-50)'
    },
-   primary100: {
+   blue100: {
       value: 'hsl(204 93.8% 93.7%)',
-      name: 'var(--nui-color-primary-100)'
+      name: 'var(--nui-color-blue-100)'
    },
-   primary200: {
+   blue200: {
       value: 'hsl(200.6 94.4% 86.1%)',
-      name: 'var(--nui-color-primary-200)'
+      name: 'var(--nui-color-blue-200)'
    },
-   primary300: {
+   blue300: {
       value: 'hsl(199.4 95.5% 73.9%)',
-      name: 'var(--nui-color-primary-300)'
+      name: 'var(--nui-color-blue-300)'
    },
-   primary400: {
+   blue400: {
       value: 'hsl(198.4 93.2% 59.6%)',
-      name: 'var(--nui-color-primary-400)'
+      name: 'var(--nui-color-blue-400)'
    },
-   primary500: {
+   blue500: {
       value: 'hsl(198.6 88.7% 48.4%)',
-      name: 'var(--nui-color-primary-500)'
+      name: 'var(--nui-color-blue-500)'
    },
-   primary600: {
+   blue600: {
       value: 'hsl(200.4 98% 39.4%)',
-      name: 'var(--nui-color-primary-600)'
+      name: 'var(--nui-color-blue-600)'
    },
-   primary700: {
+   blue700: {
       value: 'hsl(201.3 96.3% 32.2%)',
-      name: 'var(--nui-color-primary-700)'
+      name: 'var(--nui-color-blue-700)'
    },
-   primary800: {
+   blue800: {
       value: 'hsl(201.3 96.3% 32.2%)',
-      name: 'var(--nui-color-primary-800)'
+      name: 'var(--nui-color-blue-800)'
    },
-   primary900: {
+   blue900: {
       value: 'hsl(202 80.3% 23.9%)',
-      name: 'var(--nui-color-primary-900)'
+      name: 'var(--nui-color-blue-900)'
    },
-   primary950: {
+   blue950: {
       value: 'hsl(202.3 73.8% 16.5%)',
-      name: 'var(--nui-color-primary-950)'
+      name: 'var(--nui-color-blue-950)'
+   },
+
+   // *** GREEn ***
+   green50: {
+      value: 'hsl(138.5 76.5% 96.7%)',
+      name: 'var(--nui-color-green-50)'
+   },
+   green100: {
+      value: 'hsl(140.6 84.2% 92.5%)',
+      name: 'var(--nui-color-green-100)'
+   },
+   green200: {
+      value: 'hsl(141 78.9% 85.1%)',
+      name: 'var(--nui-color-green-200)'
+   },
+   green300: {
+      value: 'hsl(141.7 76.6% 73.1%)',
+      name: 'var(--nui-color-green-300)'
+   },
+   green400: {
+      value: 'hsl(141.9 69.2% 58%)',
+      name: 'var(--nui-color-green-400)'
+   },
+   green500: {
+      value: 'hsl(142.1 70.6% 45.3%)',
+      name: 'var(--nui-color-green-500)'
+   },
+   green600: {
+      value: 'hsl(142.1 76.2% 36.3%)',
+      name: 'var(--nui-color-green-600)'
+   },
+   green700: {
+      value: 'hsl(142.4 71.8% 29.2%)',
+      name: 'var(--nui-color-green-700)'
+   },
+   green800: {
+      value: 'hsl(142.8 64.2% 24.1%)',
+      name: 'var(--nui-color-green-800)'
+   },
+   green900: {
+      value: 'hsl(143.8 61.2% 20.2%)',
+      name: 'var(--nui-color-green-900)'
+   },
+   green950: {
+      value: 'hsl(144.3 60.7% 12%)',
+      name: 'var(--nui-color-green-950)'
    },
 }
 
@@ -233,7 +312,7 @@ export const Theme: NapolkeUIThemes = {
          name: 'var(--nui-gap-quarter-negative)'
       },
       pageWidthWithMargin: {
-         value: '782pt',
+         value: '825pt',
          name: 'var(--nui-page-with-margin)'
       },
       breakpointMobile: {

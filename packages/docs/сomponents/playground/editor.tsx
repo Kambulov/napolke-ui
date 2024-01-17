@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { LiveEditor } from 'react-live'
 import { useConfigs } from 'lib/config-context'
 import { useToasts, useClipboard } from '@napolke-ui'
-import CopyIcon from '@napolke-ui/icons/Coins'
-import RightIcon from '@napolke-ui/icons/Coins'
+import CopyIcon from '@napolke-ui/icons/CopyFile'
+import RightIcon from '@napolke-ui/icons/ChevronRight'
 import {Theme} from "../../../core/components/themes/presets";
 
 interface Props {

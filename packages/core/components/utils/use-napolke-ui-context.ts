@@ -16,7 +16,7 @@ export type UpdateToastsLayoutFunction = (
 ) => any
 export type UpdateToastsIDFunction = (fn: () => string | null) => any
 
-export interface GeistUIContextParams {
+export interface NapolkeUIContextParams {
   toasts: Array<Toast>
   updateToasts: UpdateToastsFunction
   toastLayout: Required<ToastLayout>
@@ -25,7 +25,7 @@ export interface GeistUIContextParams {
   updateLastToastId: UpdateToastsIDFunction
 }
 
-const defaultParams: GeistUIContextParams = {
+const defaultParams: NapolkeUIContextParams = {
   toasts: [],
   toastLayout: defaultToastLayout,
   updateToastLayout: t => t,
@@ -34,8 +34,8 @@ const defaultParams: GeistUIContextParams = {
   updateLastToastId: () => null,
 }
 
-export const GeistUIContent: React.Context<GeistUIContextParams> =
+export const NapolkeUIContent: React.Context<NapolkeUIContextParams> =
   React.createContext<GeistUIContextParams>(defaultParams)
 
 export const useGeistUIContext = (): GeistUIContextParams =>
-  React.useContext<GeistUIContextParams>(GeistUIContent)
+  React.useContext<GeistUIContextParams>(NapolkeUIContent)

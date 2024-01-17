@@ -43,7 +43,7 @@ const GridContainerComponent: React.FC<React.PropsWithChildren<GridContainerProp
         ${SCALES.ml(0, 'var(--grid-container-margin)')};
     }
   `
-  const classes = useClasses(resolveClassName, className)
+  const classes = useClasses(className,resolveClassName)
 
   return (
     <GridBasicItem className={classes} {...props}>

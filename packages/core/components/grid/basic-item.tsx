@@ -109,7 +109,7 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
   )
 
   return (
-    <div className={useClasses('item', classes, className)} {...props}>
+    <div className={useClasses(className,'item', classes)} {...props}>
       {children}
       <style jsx>{`
         .item {

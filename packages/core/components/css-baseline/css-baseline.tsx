@@ -233,7 +233,7 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
         }
 
         code {
-          color: ${Theme.palette.primary500.name};
+          color: ${Theme.palette.blue500.name};
           font-family: ${Theme.font.mono};
           font-size: 0.9em;
           white-space: pre-wrap;
@@ -247,8 +247,7 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
         pre {
           padding: calc(${Theme.layout.gap.name} * 0.9) ${Theme.layout.gap.name};
           margin: ${Theme.layout.gap.name} 0;
-          border: 1px solid ${Theme.palette.gray200.name};
-          border-radius: ${Theme.layout.radius.name};
+         
           font-family: ${Theme.font.mono};
           white-space: pre;
           overflow: auto;
