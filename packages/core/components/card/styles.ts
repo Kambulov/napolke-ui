@@ -1,5 +1,5 @@
 import { CardTypes } from '../utils/prop-types'
-import { NapolkeIThemesPalette } from '../themes/presets'
+import { NapolkeUIThemesPalette } from '../themes/presets'
 
 export type CardStyles = {
   color: string
@@ -9,7 +9,7 @@ export type CardStyles = {
 
 export const getStyles = (
   type: CardTypes,
-  palette: NapolkeIThemesPalette,
+  palette: NapolkeUIThemesPalette,
   isShadow?: boolean,
 ): CardStyles => {
   const colors: { [key in CardTypes]: Omit<CardStyles, 'borderColor'> } = {

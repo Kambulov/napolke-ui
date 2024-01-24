@@ -91,6 +91,6 @@ const CardComponent: React.FC<React.PropsWithChildren<CardProps>> = ({
 }
 
 CardComponent.defaultProps = defaultProps
-CardComponent.displayName = 'GeistCard'
+CardComponent.displayName = 'NuiCard'
 const Card = withScale(CardComponent)
 export default Card

@@ -1,5 +1,5 @@
 import { NormalTypes } from '../utils/prop-types'
-import { GeistUIThemesPalette } from '../themes/presets'
+import {NapolkeUIThemesPalette, Theme} from '../themes/presets'
 
 export type SelectColor = {
   border: string
@@ -9,39 +9,39 @@ export type SelectColor = {
 }
 
 export const getColors = (
-  palette: GeistUIThemesPalette,
+  palette: NapolkeUIThemesPalette,
   status?: NormalTypes,
 ): SelectColor => {
   const colors: { [key in NormalTypes]: SelectColor } = {
     default: {
-      border: palette.border,
-      borderActive: palette.foreground,
-      iconBorder: palette.accents_5,
-      placeholderColor: palette.accents_3,
+      border: Theme.palette.border.name,
+      borderActive: Theme.palette.background.name,
+      iconBorder: Theme.palette.gray500.name,
+      placeholderColor: palette.gray300.name,
     },
     secondary: {
-      border: palette.border,
-      borderActive: palette.foreground,
-      iconBorder: palette.accents_5,
-      placeholderColor: palette.accents_3,
+      border: palette.border.name,
+      borderActive: palette.background.name,
+      iconBorder: palette.gray500.name,
+      placeholderColor: palette.gray300.name,
     },
     success: {
-      border: palette.successLight,
-      borderActive: palette.successDark,
-      iconBorder: palette.success,
-      placeholderColor: palette.accents_3,
+      border: palette.successLight.name,
+      borderActive: palette.success.name,
+      iconBorder: palette.success.name,
+      placeholderColor: palette.gray300.name,
     },
     warning: {
-      border: palette.warningLight,
-      borderActive: palette.warningDark,
-      iconBorder: palette.warning,
-      placeholderColor: palette.accents_3,
+      border: palette.warning.name,
+      borderActive: palette.warning.name,
+      iconBorder: palette.warning.name,
+      placeholderColor: palette.gray300.name,
     },
     error: {
-      border: palette.errorLight,
-      borderActive: palette.errorDark,
-      iconBorder: palette.error,
-      placeholderColor: palette.error,
+      border: palette.errorLight.name,
+      borderActive: palette.error.name,
+      iconBorder: palette.error.name,
+      placeholderColor: palette.error.name,
     },
   }
 

@@ -143,7 +143,7 @@ export const getButtonHoverColors = (
 ): ButtonColorGroup => {
   const { type, disabled, loading, shadow, ghost } = props
   const defaultColor = getButtonColors(palette, props)
-  console.log('defaultColor',defaultColor)
+
   const alphaBackground = addColorAlpha(defaultColor.bg, 0.75)
   const colors: {
     [key in ButtonTypes]: Omit<ButtonColorGroup, 'color'> & {

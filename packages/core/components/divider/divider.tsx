@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { DividerAlign, SnippetTypes } from '../utils/prop-types'
-import {NapolkeIThemesPalette, Theme} from '../themes/presets'
+import {NapolkeUIThemesPalette, Theme} from '../themes/presets'
 import useScale, { withScale } from '../use-scale'
 import useClasses from '../use-classes'
 
@@ -21,7 +21,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type DividerProps = Props & NativeAttrs
 
-const getColor = (type: DividerTypes, palette: NapolkeIThemesPalette) => {
+const getColor = (type: DividerTypes, palette: NapolkeUIThemesPalette) => {
   const colors: { [key in DividerTypes]: string } = {
     default: palette.border.name,
     lite: palette.gray50.name,
@@ -101,6 +101,6 @@ const DividerComponent: React.FC<React.PropsWithChildren<DividerProps>> = ({
 }
 
 DividerComponent.defaultProps = defaultProps
-DividerComponent.displayName = 'GeistDivider'
+DividerComponent.displayName = 'NuiDivider'
 const Divider = withScale(DividerComponent)
 export default Divider

@@ -53,6 +53,6 @@ const AvatarGroupComponent: React.FC<React.PropsWithChildren<AvatarGroupProps>> 
 }
 
 AvatarGroupComponent.defaultProps = defaultProps
-AvatarGroupComponent.displayName = 'GeistAvatarGroup'
+AvatarGroupComponent.displayName = 'NuiAvatarGroup'
 const AvatarGroup = withScale(AvatarGroupComponent)
 export default AvatarGroup

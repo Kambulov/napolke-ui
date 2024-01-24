@@ -1,4 +1,4 @@
-import { NapolkeIThemesPalette } from '../themes/presets'
+import { NapolkeUIThemesPalette } from '../themes/presets'
 
 export type BrowserColors = {
   color: string
@@ -10,7 +10,7 @@ export type BrowserColors = {
 
 export const getBrowserColors = (
   invert: boolean,
-  palette: NapolkeIThemesPalette,
+  palette: NapolkeUIThemesPalette,
 ): BrowserColors => {
   return invert
     ? {

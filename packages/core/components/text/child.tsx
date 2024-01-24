@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { NormalTypes } from '../utils/prop-types'
-import {NapolkeIThemesPalette, Theme} from '../themes/presets'
+import {NapolkeUIThemesPalette, Theme} from '../themes/presets'
 import useScale from '../use-scale'
 
 export interface Props {
@@ -14,7 +14,7 @@ const defaultProps = {
   className: '',
 }
 
-const getTypeColor = (type: NormalTypes, palette: NapolkeIThemesPalette) => {
+const getTypeColor = (type: NormalTypes, palette: NapolkeUIThemesPalette) => {
   const colors: { [key in NormalTypes]: string } = {
     default: 'inherit',
     secondary: palette.secondary.name,

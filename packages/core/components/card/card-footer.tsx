@@ -57,6 +57,6 @@ const CardFooterComponent: React.FC<React.PropsWithChildren<CardFooterProps>> = 
 }
 
 CardFooterComponent.defaultProps = defaultProps
-CardFooterComponent.displayName = 'GeistCardFooter'
+CardFooterComponent.displayName = 'NuiCardFooter'
 const CardFooter = withScale(CardFooterComponent)
 export default CardFooter

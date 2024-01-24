@@ -35,7 +35,7 @@ const defaultParams: NapolkeUIContextParams = {
 }
 
 export const NapolkeUIContent: React.Context<NapolkeUIContextParams> =
-  React.createContext<GeistUIContextParams>(defaultParams)
+  React.createContext<NapolkeUIContextParams>(defaultParams)
 
-export const useGeistUIContext = (): GeistUIContextParams =>
-  React.useContext<GeistUIContextParams>(NapolkeUIContent)
+export const useNapolkeUIContext = (): NapolkeUIContextParams =>
+  React.useContext<NapolkeUIContextParams>(NapolkeUIContent)

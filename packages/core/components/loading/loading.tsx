@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { NormalTypes } from '../utils/prop-types'
-import {NapolkeIThemesPalette, Theme} from '../themes/presets'
+import {NapolkeUIThemesPalette, Theme} from '../themes/presets'
 import useScale, { withScale } from '../use-scale'
 import useClasses from '../use-classes'
 
@@ -23,7 +23,7 @@ export type LoadingProps = Props & NativeAttrs
 
 const getIconBgColor = (
   type: LoadingTypes,
-  palette: NapolkeIThemesPalette,
+  palette: NapolkeUIThemesPalette,
   color?: string,
 ) => {
   const colors: { [key in LoadingTypes]: string } = {

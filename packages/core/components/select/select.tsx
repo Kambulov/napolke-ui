@@ -69,7 +69,7 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
       disabled,
       initialValue: init,
       value: customValue,
-      icon: Icon,
+      icon,
       onChange,
       pure,
       multiple,
@@ -170,7 +170,10 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
       const [, optionChildren] = pickChildByProps(children, 'value', value)
       return React.Children.map(optionChildren, child => {
         if (!React.isValidElement(child)) return null
-        const el = React.cloneElement(child, { preventAllEvents: true })
+         const el = React.cloneElement(
+            React.Children.only(children) as React.ReactElement,
+            { preventAllEvents: true } as React.HTMLAttributes<HTMLElement>
+         );
         if (!multiple) return el
         return (
           <SelectMultipleValue
@@ -227,9 +230,9 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
             getPopupContainer={getPopupContainer}>
             {children}
           </SelectDropdown>
-          {!pure && (
+          {(!pure) &&  (
             <div className="icon">
-              <Icon />
+               {icon}
             </div>
           )}
           <style jsx>{`

@@ -2,7 +2,7 @@ import { Toast, ToastAction } from './use-toast'
 import React from 'react'
 import Button from '../button'
 import { NormalTypes, tuple } from '../utils/prop-types'
-import {NapolkeIThemesPalette} from "../themes/presets";
+import {NapolkeUIThemesPalette} from "../themes/presets";
 
 export const makeToastActions = (actions: Toast['actions'], cancelHandle: () => void) => {
   const handler = (
@@ -16,7 +16,7 @@ export const makeToastActions = (actions: Toast['actions'], cancelHandle: () => 
     <Button
       auto
       scale={1 / 3}
-      font="13px"
+      fs="13px"
       type={action.passive ? 'default' : 'secondary'}
       key={`action-${index}`}
       onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
@@ -27,7 +27,7 @@ export const makeToastActions = (actions: Toast['actions'], cancelHandle: () => 
   ))
 }
 
-export const getColors = (palette: NapolkeIThemesPalette, type?: NormalTypes) => {
+export const getColors = (palette: NapolkeUIThemesPalette, type?: NormalTypes) => {
   const colors: { [key in NormalTypes]: string } = {
     default: palette.background.name,
     secondary: palette.secondary.name,

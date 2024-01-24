@@ -1,0 +1,100 @@
+import { Avatar, Spacer } from '@napolke-ui'
+import Layout from '../../../сomponents/layout'
+import  Playground from '../../../сomponents/playground'
+import  Attributes from '../../../сomponents/attributes'
+import Power from '@napolke-ui/icons/Coins'
+
+export const meta = {
+  title: 'Avatar',
+  group: 'Отображение данных',
+}
+
+## Avatar
+
+Аватары можно использовать для представления людей или объектов. Он поддерживает изображения, значки или буквы.
+
+<Playground
+  desc="`Avatar` можно представить в виде круга или квадрата."
+  scope={{ Avatar, Spacer, Power }}
+  code={`
+() => {
+  const url = 'https://i.pravatar.cc/300'
+  return (
+    <>
+      <Avatar  icon={<Power size={10}/>}/>
+      <Avatar src={url} />
+      <Avatar src={url} />
+      <Avatar src={url} />
+      <Spacer h={.5} />
+      <Avatar src={url} isSquare />
+      <Avatar src={url} isSquare />
+      <Avatar src={url} isSquare />
+      <Avatar src={url} isSquare />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Текст"
+  desc="Отобраение текста вместо изображения"
+  scope={{ Avatar }}
+  code={`
+<>
+  <Avatar text="W" />
+  <Avatar text="A" />
+  <Avatar text="W" />
+  <Avatar text="Joe" />
+</>
+`}
+/>
+
+<Playground
+  title="Групировка"
+  desc="Несколько аватаров могут накладываться друг на друга и складываться вместе."
+  scope={{ Avatar, Spacer }}
+  code={`
+() => {
+  const url = 'https://i.pravatar.cc/300'
+  return (
+    <>
+      <Avatar.Group>
+        <Avatar src={url} stacked />
+        <Avatar src={url} stacked />
+        <Avatar src={url} stacked />
+        <Avatar src={url} stacked />
+      </Avatar.Group>
+      <Spacer />
+      <Avatar.Group count={12}>
+        <Avatar src={url} stacked />
+        <Avatar text="W" stacked />
+        <Avatar text="Ana" stacked />
+      </Avatar.Group>
+    </>
+  )
+}
+`}
+/>
+
+<Attributes edit="/pages/ru-ru/components/avatar.mdx">
+<Attributes.Title>Avatar.Props</Attributes.Title>
+
+| Attribute    | Description                        | Type                | Accepted values                          | Default |
+| ------------ | ---------------------------------- | ------------------- | ---------------------------------------- | ------- |
+| **src**      | путь к файлу                       | `string`            | -                                        | -       |
+| **stacked**  | наложение аваторов                 | `boolean`           | -                                        | `false` |
+| **text**     | Текст для отображения              | `string`            | -                                        | -       |
+| **isSquare** | Квадратный вид                     | `boolean`           | -                                        | `false` |
+| ...          | остальные пропсы                   | `ImgHTMLAttributes` | `'alt', 'crossOrigin', 'className', ...` | -       |
+
+<Attributes.Title>Avatar.Group.Props</Attributes.Title>
+
+| Attribute | Description        | Type             | Accepted values                  | Default |
+| --------- | ------------------ | ---------------- | -------------------------------- | ------- |
+| **count** | Итоговое кол-во    | `number`         | -                                | -       |
+| ...       | остальные пропсы       | `HTMLAttributes` | `'id', 'name', 'className', ...` | -       |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -1,5 +1,5 @@
 import { SnippetTypes } from '../utils/prop-types'
-import { NapolkeIThemesPalette } from '../themes/presets'
+import { NapolkeUIThemesPalette } from '../themes/presets'
 
 export type TooltipColors = {
   bgColor: string
@@ -8,7 +8,7 @@ export type TooltipColors = {
 
 export const getColors = (
   type: SnippetTypes,
-  palette: NapolkeIThemesPalette,
+  palette: NapolkeUIThemesPalette,
 ): TooltipColors => {
   const colors: { [key in SnippetTypes]: string } = {
     default: palette.background.name,

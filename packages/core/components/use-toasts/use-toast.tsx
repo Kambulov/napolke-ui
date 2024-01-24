@@ -1,6 +1,6 @@
 import React, { CSSProperties, useEffect } from 'react'
 import type { NormalTypes } from '../utils/prop-types'
-import { defaultToastLayout, useGeistUIContext } from '../utils/use-napolke-ui-context'
+import {defaultToastLayout, useNapolkeUIContext} from '../utils/use-napolke-ui-context'
 import { getId } from '../utils/collections'
 import { ToastPlacement } from '../use-toasts/helpers'
 
@@ -49,7 +49,7 @@ export type ToastHooksResult = {
 
 const useToasts = (layout?: ToastLayout): ToastHooksResult => {
   const { updateToasts, toasts, updateToastLayout, updateLastToastId } =
-    useGeistUIContext()
+     useNapolkeUIContext()
 
   useEffect(() => {
     if (!layout) return

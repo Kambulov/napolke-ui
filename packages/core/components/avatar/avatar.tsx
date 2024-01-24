@@ -9,6 +9,7 @@ interface Props {
   text?: string
   isSquare?: boolean
   className?: string
+  icon?: React.ReactNode
 }
 
 const defaultProps = {
@@ -35,22 +36,27 @@ const AvatarComponent: React.FC<AvatarProps> = ({
   text,
   isSquare,
   className,
+  icon,
   ...props
 }: AvatarProps & typeof defaultProps) => {
   const { SCALES } = useScale()
-  const showText = !src
   const radius = isSquare ? Theme.layout.radius.name : '50%'
   const marginLeft = stacked ? SCALES.ml(-0.625) : SCALES.ml(0)
   const classes = useClasses('avatar', className)
 
   return (
     <span className={classes}>
-      {!showText && (
+      {(src && !icon) && (
         <img alt="avatar" className="avatar-img" src={src} draggable={false} {...props} />
       )}
-      {showText && (
+      {(!src && !icon) && (
         <span className="avatar-text" {...props}>
           {safeText(text)}
+        </span>
+      )}
+      {(!src && icon) && (
+        <span className="avatar-icon" {...props}>
+          {icon}
         </span>
       )}
 
@@ -78,6 +84,15 @@ const AvatarComponent: React.FC<AvatarProps> = ({
           border-radius: ${radius};
           user-select: none;
         }
+        
+        .avatar-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          user-select: none;
+        }
 
         .avatar-text {
           position: absolute;
@@ -95,6 +110,6 @@ const AvatarComponent: React.FC<AvatarProps> = ({
 }
 
 AvatarComponent.defaultProps = defaultProps
-AvatarComponent.displayName = 'GeistAvatar'
+AvatarComponent.displayName = 'NuiAvatar'
 const Avatar = withScale(AvatarComponent)
 export default Avatar
