@@ -170,10 +170,19 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
       const [, optionChildren] = pickChildByProps(children, 'value', value)
       return React.Children.map(optionChildren, child => {
         if (!React.isValidElement(child)) return null
-         const el = React.cloneElement(
-            React.Children.only(children) as React.ReactElement,
-            { preventAllEvents: true } as React.HTMLAttributes<HTMLElement>
-         );
+         // const el = React.Children.map(children, (child) => {
+         //    if (React.isValidElement(child)) {
+         //       return React.cloneElement(child, {
+         //          ...(child.props as React.HTMLAttributes<HTMLElement>),
+         //          preventAllEvents: true,
+         //       });
+         //    }
+         //    return child;
+         // });
+
+         const el =React.cloneElement(child, {
+            preventAllEvents: true,
+         } as React.HTMLAttributes<HTMLElement>);
         if (!multiple) return el
         return (
           <SelectMultipleValue

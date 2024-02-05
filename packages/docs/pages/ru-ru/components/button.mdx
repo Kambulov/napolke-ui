@@ -49,7 +49,7 @@ export const meta = {
 
 <Playground
   title="Shadow"
-  desc="The shadow highlights the level of the button."
+  desc="Добавление теней вокруг кнопки."
   scope={{ Button }}
   code={`
 <Button shadow type="secondary">Shadow</Button>
@@ -58,7 +58,7 @@ export const meta = {
 
 <Playground
   title="Types"
-  desc="Different state."
+  desc="Разное состояние кнопок. Сплошная заливка"
   scope={{ Button, Spacer, Grid }}
   code={`
 <Grid.Container gap={1.5}>
@@ -80,7 +80,7 @@ export const meta = {
 
 <Playground
   title="GHOST"
-  desc="The opposite color."
+  desc="Только цвет и контур"
   scope={{ Button, Grid }}
   code={`
 <Grid.Container gap={1.5}>
@@ -94,7 +94,7 @@ export const meta = {
 
 <Playground
   title="Scale"
-  desc="Buttons of different sizes."
+  desc="Размер кнопки"
   scope={{ Button, Grid }}
   code={`
 <Grid.Container gap={1.5}>
@@ -117,7 +117,7 @@ export const meta = {
 
 <Playground
   title="With Icons"
-  desc="The `color` and `size` of the icon will be set automatically."
+  desc="Используйте `icon` или `icon` для добавления иконок"
   scope={{ Button, Spacer, Settings, UserX, Power }}
   code={`
 <>
@@ -141,21 +141,21 @@ export const meta = {
 <Attributes edit="/pages/en-us/components/button.mdx">
 <Attributes.Title>Button.Props</Attributes.Title>
 
-| Attribute     | Description                               | Type                                            | Accepted values             | Default   |
+| Атрибут       | Описание                                  | Тип                                             | Принимаемые значения        | Деф. значение   |
 | ------------- | ----------------------------------------- | ----------------------------------------------- | --------------------------- | --------- |
-| **type**      | button type                               | `ButtonTypes`                                   | [ButtonTypes](#buttontypes) | `default` |
+| **type**      | Тип кнопки                                | `ButtonTypes`                                   | [ButtonTypes](#buttontypes) | `default` |
 | **ghost**     | the opposite color                        | `boolean`                                       | -                           | `false`   |
-| **loading**   | display loading indicator                 | `boolean`                                       | -                           | `false`   |
-| **shadow**    | display shadow                            | `boolean`                                       | -                           | `false`   |
-| **auto**      | autoscale width                           | `boolean`                                       | -                           | `false`   |
-| **effect**    | display animation                         | `boolean`                                       | -                           | `true`    |
-| **disabled**  | disable button                            | `boolean`                                       | -                           | `false`   |
+| **loading**   | Индикатор загрузки                        | `boolean`                                       | -                           | `false`   |
+| **shadow**    | Тень кнопки                               | `boolean`                                       | -                           | `false`   |
+| **auto**      | Автоматическое маштабирование             | `boolean`                                       | -                           | `false`   |
+| **effect**    | Анимация при нажатии                      | `boolean`                                       | -                           | `true`    |
+| **disabled**  | Заблокировать                             | `boolean`                                       | -                           | `false`   |
 | **onClick**   | click handler                             | `MouseEventHandler`                             | -                           | -         |
-| **icon**      | show icon in button                       | `ReactNode`                                     | -                           | -         |
-| **iconRight** | show icon on the other side of the button | `ReactNode`                                     | -                           | -         |
-| **htmlType**  | native type of button element             | `ButtonHTMLAttributes.type`                     | -                           | `button`  |
+| **icon**      | Иконка слева                              | `ReactNode`                                     | -                           | -         |
+| **iconRight** | Иконка справа                             | `ReactNode`                                     | -                           | -         |
+| **htmlType**  | Нативный тип кнопки                       | `ButtonHTMLAttributes.type`                     | -                           | `button`  |
 | **ref**       | forwardRef                                | <Code>Ref<HTMLButtonElement &#124; null></Code> | -                           | -         |
-| ...           | native props                              | `ButtonHTMLAttributes`                          | `'id', 'className', ...`    | -         |
+| ...           | стандартные пропсы                        | `ButtonHTMLAttributes`                          | `'id', 'className', ...`    | -         |
 
 <Attributes.Title>ButtonTypes</Attributes.Title>
 

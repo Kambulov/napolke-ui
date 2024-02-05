@@ -30,12 +30,12 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
       return (
          <>
             {apiTitles}
-            <Divider font="12px" mt="80px">
-               <Text p b type="secondary" style={{ userSelect: 'none' }}>
-                  {isRussian ? 'grgr' : 'Contributors'}
-               </Text>
-            </Divider>
-            <Contributors path={path} />
+            {/*<Divider font="12px" mt="80px">*/}
+            {/*   <Text p b type="secondary" style={{ userSelect: 'none' }}>*/}
+            {/*      {isRussian ? 'grgr' : 'Contributors'}*/}
+            {/*   </Text>*/}
+            {/*</Divider>*/}
+            {/*<Contributors path={path} />*/}
          </>
       )
    },

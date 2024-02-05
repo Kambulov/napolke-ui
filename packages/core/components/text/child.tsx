@@ -62,6 +62,7 @@ const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = ({
   }, [mx, my, px, py, fontSize, className])
 
   return (
+     // @ts-ignore
     <Component className={classNames} {...props}>
       {children}
       <style jsx>{`

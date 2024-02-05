@@ -3,7 +3,7 @@
 
 export { default as CssBaseline } from './css-baseline'
 export { default as useTheme } from './use-theme'
-export { default as DarkModeProvider } from './napolke-providers'
+export { default as NapolkeProvider } from './napolke-providers'
 
 export { default as Spacer } from './spacer'
 export type { SpacerProps } from './spacer'

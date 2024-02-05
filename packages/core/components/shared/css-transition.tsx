@@ -66,7 +66,8 @@ const CssTransition: React.FC<React.PropsWithChildren<CssTransitionProps>> = ({
 
   return React.cloneElement(children, {
     ...props,
-    className: `${(children?.props?.className || '')} ${className || ''}`,
+    // @ts-ignore
+    className: `${children?.props?.className || ''} ${className} ${classes}`,
   })
 }
 

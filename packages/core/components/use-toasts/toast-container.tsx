@@ -1,8 +1,7 @@
 import React, { useEffect, useMemo } from 'react'
 import { createPortal } from 'react-dom'
 import usePortal from '../utils/use-portal'
-import useTheme from '../use-theme'
-import { useGeistUIContext } from '../utils/use-napolke-ui-context'
+import { useNapolkeUIContext } from '../utils/use-napolke-ui-context'
 import ToastItem from './toast-item'
 import useClasses from '../use-classes'
 import { isLeftPlacement, isTopPlacement } from './helpers'
@@ -10,10 +9,9 @@ import useCurrentState from '../utils/use-current-state'
 import {Theme} from "../themes/presets";
 
 const ToastContainer: React.FC<React.PropsWithChildren<unknown>> = () => {
-  const theme = useTheme()
   const portal = usePortal('toast')
   const [, setHovering, hoveringRef] = useCurrentState<boolean>(false)
-  const { toasts, updateToasts, toastLayout, lastUpdateToastId } = useGeistUIContext()
+  const { toasts, updateToasts, toastLayout, lastUpdateToastId } = useNapolkeUIContext()
   const memoizedLayout = useMemo(() => toastLayout, [toastLayout])
   const toastElements = useMemo(
     () =>

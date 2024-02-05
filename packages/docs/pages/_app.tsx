@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { NextPage } from 'next'
 import { AppProps } from 'next/app'
 import React from 'react'
-import { CssBaseline, DarkModeProvider, Image } from '@napolke-ui'
+import { CssBaseline, NapolkeProvider, Image } from '@napolke-ui'
 import useDomClean from 'lib/use-dom-clean'
 import Menu from "../сomponents/layout/menu";
 import ConfigContext from "../lib/config-provider";
@@ -22,7 +22,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
         <meta property="og:site_name" content="Napolke UI" />
         <meta name="generator" content="Napolke UI" />
       </Head>
-      <DarkModeProvider>
+      <NapolkeProvider>
         <CssBaseline />
         <ConfigContext>
           <Menu />
@@ -42,7 +42,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
             --nui-page-scrollbar-width: 4px;
           }
         `}</style>
-      </DarkModeProvider>
+      </NapolkeProvider>
     </>
   )
 }

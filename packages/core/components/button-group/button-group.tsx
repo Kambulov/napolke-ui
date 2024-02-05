@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { ButtonTypes } from '../utils/prop-types'
 import { ButtonGroupContext, ButtonGroupConfig } from './button-group-context'
-import {NapolkeIThemesPalette, Theme} from '../themes/presets'
+import {NapolkeUIThemesPalette, Theme} from '../themes/presets'
 import useScale, { withScale } from '../use-scale'
 import useClasses from '../use-classes'
 
@@ -26,7 +26,7 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type ButtonGroupProps = Props & NativeAttrs
 
 const getGroupBorderColors = (
-  palette: NapolkeIThemesPalette,
+  palette: NapolkeUIThemesPalette,
   props: ButtonGroupProps & typeof defaultProps,
 ): string => {
   const { ghost, type } = props

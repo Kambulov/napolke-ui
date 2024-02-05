@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react'
-import useTheme from '../use-theme'
 import type { Toast, ToastLayout } from './use-toast'
 import CssTransition from '../shared/css-transition'
 import { makeToastActions, getColors, getTranslateByPlacement } from './helpers'
@@ -10,8 +9,7 @@ export interface ToastItemProps {
   layout: Required<ToastLayout>
 }
 
-const ToastItem: React.FC<ToastItemProps> = React.memo(({ toast, layout }) => {
-  const theme = useTheme()
+const ToastItem: React.FC<ToastItemProps> = React.memo(({ toast, layout }: ToastItemProps ) => {
   const { color, bgColor } = useMemo(
     () => getColors(Theme.palette, toast.type),
     [Theme.palette, toast.type],

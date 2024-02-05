@@ -89,9 +89,15 @@ const withScale = <T, P = {}>(
       getAllScaleProps: generateGetAllScaleProps(props),
     }
 
+
     return (
       <ScaleContext.Provider value={value}>
-        <Render {...(innerProps as P)} ref={ref}>
+        <
+           // @ts-ignore
+          Render
+           {...(innerProps as P)}
+           ref={ref}
+        >
           {children}
         </Render>
       </ScaleContext.Provider>
