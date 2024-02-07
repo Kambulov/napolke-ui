@@ -35,7 +35,9 @@ export const Sidebar: React.FC<Props> = React.memo(() => {
   useEffect(() => {
     Router.events.on('routeChangeStart', () => {
       if (!boxRef.current) return
-      updateSidebarScrollHeight(boxRef.current.scrollTop || 0)
+      if(updateSidebarScrollHeight){
+        updateSidebarScrollHeight(boxRef.current.scrollTop || 0)
+      }
     })
   }, [])
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Link } from '@napolke-ui'
+
 
 const PoweredBy: React.FC<unknown> = () => {
   return (

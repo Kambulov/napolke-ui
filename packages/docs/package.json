@@ -1,10 +1,14 @@
 {
   "name": "docs",
   "version": "0.0.1",
+  "homepage": "https://kambulov.github.io/napolke-ui/",
   "scripts": {
     "dev": "next dev ",
     "start": "next start",
-    "docs:collect": "node scripts/collect-meta.js"
+    "docs:collect": "node scripts/collect-meta.js",
+    "docs:build": "yarn docs:collect && next build",
+    "deploy": "gh-pages -d .next",
+    "predeploy": "yarn docs:build"
   },
   "keywords": [
     "napolke",
@@ -21,16 +25,18 @@
     "@mdx-js/react": "1.6.22",
     "@next/mdx": "^12.3.1",
     "@types/node": "20.10.4",
-    "@types/react": "18.2.45",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
     "@xstyled/styled-components": "^3.7.3",
     "date-fns": "^2.30.0",
     "extract-mdx-metadata": "^2.0.0",
     "fs-extra": "^10.0.0",
+    "gh-pages": "^6.1.1",
     "next": "^12.1.4",
     "prism-react-renderer": "1.3.5",
-    "react": "^18.2.0",
+    "react": "^17.0.2",
     "react-docgen": "^5.3.1",
-    "react-dom": "^18.2.0",
+    "react-dom": "^17.0.2",
     "react-live": "^3.1.2",
     "styled-components": "^6.1.8",
     "ts-loader": "^9.5.1",

@@ -117,10 +117,10 @@ const Menu: React.FC<unknown> = () => {
                 hideDivider
                 hideBorder
                 onChange={handleTabChange}>
-                <Tabs.Item font="14px" label={isRussian ? 'Главная' : 'Home'} value="" />
+                <Tabs.Item fs="14px" label={isRussian ? 'Главная' : 'Home'} value="" />
                 {allSides?.map((tab, index) => (
                   <Tabs.Item
-                    font="14px"
+                     fs="14px"
                     label={tab.localeName || tab.name}
                     value={tab.name}
                     key={`${tab.localeName || tab.name}-${index}`}

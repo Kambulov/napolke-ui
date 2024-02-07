@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
-import { Spacer, Divider, Text } from '@napolke-ui'
+import { Spacer } from '@napolke-ui'
 import { VirtualAnchor } from '../pures'
 import { useConfigs } from '../../lib/config-context'
-import Contributors from './contributors'
+
 import AttributesTitle from './attributes-title'
 import AttributesTable from './attributes-table'
 
@@ -11,9 +11,9 @@ export interface AttributesProps {
 }
 
 const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.memo(
-   ({ edit, children }) => {
+   ({  children }) => {
       const { isRussian } = useConfigs()
-      const path = edit.replace('/pages', 'pages')
+
       const apiTitles = useMemo(() => {
          if (React.Children.count(children) === 0) return null
          return (

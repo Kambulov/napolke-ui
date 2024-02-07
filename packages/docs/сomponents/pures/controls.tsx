@@ -51,7 +51,7 @@ const Controls: React.FC<unknown> = React.memo(() => {
       <Keyboard
         h="28px"
         command
-        font="12px"
+        fs="12px"
         className="shortcuts"
         title="Command + K to search.">
         K
@@ -64,7 +64,7 @@ const Controls: React.FC<unknown> = React.memo(() => {
         px={0}
         onClick={switchLanguages}
         title={isRussian ? 'Переключить язык' : 'switch language'}>
-        <Text font="13px" style={{ fontWeight: 500 }}>
+        <Text fs="13px" style={{ fontWeight: 500 }}>
           {isRussian ? 'Ru' : 'En'}
         </Text>
       </Button>
