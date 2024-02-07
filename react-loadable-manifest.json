@@ -1,0 +1,27 @@
+{
+  "..\\сomponents\\layout\\menu\\index.tsx -> ./menu": {
+    "id": 556,
+    "files": [
+      "static/chunks/556.f22eb209732b70fc.js"
+    ]
+  },
+  "..\\сomponents\\layout\\powered-by\\index.ts -> ./powered-by": {
+    "id": 3200,
+    "files": [
+      "static/chunks/200.b3c6f1b7c24aa0b1.js"
+    ]
+  },
+  "..\\сomponents\\layout\\sidebar\\index.tsx -> ./sidebar": {
+    "id": 6066,
+    "files": [
+      "static/chunks/66.6713eb23da8e9511.js"
+    ]
+  },
+  "..\\сomponents\\playground\\playground.tsx -> ./dynamic-live": {
+    "id": 1829,
+    "files": [
+      "static/chunks/664.031a63c43467a15e.js",
+      "static/chunks/829.35468603b3d42ddf.js"
+    ]
+  }
+}
