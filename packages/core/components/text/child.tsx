@@ -52,7 +52,7 @@ const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = ({
       { value: px, className: 'px' },
       { value: py, className: 'py' },
       { value: fontSize, className: 'font' },
-      { value: fontWeight, className: 'font-weight' },
+      { value: fontWeight, className: 'font' },
     ]
     const scaleClassNames = keys.reduce((pre, next) => {
       if (typeof next.value === 'undefined') return pre
