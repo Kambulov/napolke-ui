@@ -14,8 +14,8 @@ export const getBrowserColors = (
 ): BrowserColors => {
   return invert
     ? {
-        color: palette.black.name,
-        barBgColor: palette.background.name,
+        color: palette.white.name,
+        barBgColor: palette.black.name,
         inputBgColor: palette.gray950.name,
         borderColor: palette.gray700.name,
         titleColor: palette.gray200.name,

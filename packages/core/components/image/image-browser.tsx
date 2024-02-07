@@ -140,7 +140,7 @@ const ImageBrowserComponent = React.forwardRef<
             background-color: transparent;
             box-shadow: ${Theme.expressiveness.shadowLarge};
             max-width: 100%;
-            border-radius: ${Theme.layout.radius};
+            border-radius: ${Theme.layout.radius.name};
             overflow: hidden;
             font-size: ${SCALES.fs(1)};
             width: ${SCALES.width(1, 'max-content')};

@@ -14,30 +14,21 @@ export const meta = {
 
 <Playground
   title="Basic"
+  desc="Предварительно показываеся скилет, пока изображение загружается. (для проверки можно замедлить интернет)"
   scope={{ Image }}
   code={`
-<Image width="280px" height="160px" src='../../../images/banner_2.png' />
-`}
-/>
-
-<Playground
-  title="Skeleton"
-  desc="`Image` will show skeleton animation after `width` and `height` props are set."
-  scope={{ Image }}
-  code={`
-<Image width="280px" height="160px"
-  src='../../../images/banner_2.png' />
+<Image width="280px" height="160px"  maxDelay={4000} src='../../../images/banner_2.png' />
 `}
 />
 
 <Playground
   title="Browser"
-  desc="Add a browser style wrapper to the image."
+  desc="Добавьте к изображению оболочку в стиле браузера."
   scope={{ Image, Display, Code }}
   code={`
 <Image.Browser url="https://napolke.ru" anchorProps={{ rel: 'nofollow' }}>
   <Image width="525px" height="300px" src='../../../images/banner_1.png' />
-</Image.Browser>
+  </Image.Browser>
 `}
 />
 
@@ -46,7 +37,7 @@ export const meta = {
   scope={{ Image, Display, Code }}
   code={`
 <Image.Browser url="https://geist-ui.dev/en-us/guide/introduction" invert>
-  <Image width="525px" height="300px" src="/images/geist-banner-dark.png" />
+  <Image width="525px" height="300px" src="https://catherineasquithgallery.com/uploads/posts/2021-02/1614329632_9-p-raduzhnii-fon-dlya-intro-10.jpg" />
 </Image.Browser>
 `}
 />
@@ -79,7 +70,8 @@ export const meta = {
   code={`
 () => {
   const svg = \`<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15" fill="none">
-      <path d="M12.5 8V7.83333C12.5 7.09695 11.903 6.5 11.1667 6.5H10C9.17157 6.5 8.5 7.17157 8.5 8C8.5 8.82843 9.17157 9.5 10 9.5H11C11.8284 9.5 12.5 10.1716 12.5 11C12.5 11.8284 11.8284 12.5 11 12.5H10C9.17157 12.5 8.5 11.8284 8.5 11M8 6.5H3M5.5 6.5V13M0.5 0.5H14.5V14.5H0.5V0.5Z" stroke="black"/></svg>\`
+      <path d="M12.5 8V7.83333C12.5 7.09695 11.903 6.5 11.1667 6.5H10C9.17157 6.5 8.5 7.17157 8.5 8C8.5 8.82843 9.17157 9.5 10 9.5H11C11.8284 9.5 12.5 10.1716 12.5 11C12.5
+      11.8284 11.8284 12.5 11 12.5H10C9.17157 12.5 8.5 11.8284 8.5 11M8 6.5H3M5.5 6.5V13M0.5 0.5H14.5V14.5H0.5V0.5Z" stroke="black"/></svg>\`
   return <Image width="100px" height="50px" src={svg} />
 }
 `}
@@ -88,24 +80,24 @@ export const meta = {
 <Attributes edit="/pages/en-us/components/image.mdx">
 <Attributes.Title>Image.Props</Attributes.Title>
 
-| Attribute             | Description                             | Type                | Accepted values           | Default |
+	| Атрибут       | Описание                                  | Тип                                             | Принимаемые значения        | Деф. значение   |
 | --------------------- | --------------------------------------- | ------------------- | ------------------------- | ------- |
-| **src**               | image src                               | `string`            | -                         | -       |
-| **disableSkeleton**   | disable skeleton animation when loading | `boolean`           | -                         | `false` |
-| **disableAutoResize** | disable zooming when width is too small | `boolean`           | -                         | `false` |
-| **maxDelay**(ms)      | max duration of animation               | `number`            | -                         | `3000`  |
-| ...                   | native props                            | `ImgHTMLAttributes` | `'alt', 'className', ...` | -       |
+| **src**               | путь до файла                              | `string`            | -                         | -       |
+| **disableSkeleton**   | отключить анимацию скелета при загрузке | `boolean`           | -                         | `false` |
+| **disableAutoResize** | отключить масштабирование, если ширина слишком мала  | `boolean`           | -                         | `false` |
+| **maxDelay**(ms)      | максимальная продолжительность анимации              | `number`            | -                         | `3000`  |
+| ...                   | стандартные пропсы                          | `ImgHTMLAttributes` | `'alt', 'className', ...` | -       |
 
 <Attributes.Title>Image.Browser.Props</Attributes.Title>
 
-| Attribute        | Description                           | Type                   | Accepted values          | Default |
+	| Атрибут       | Описание                                  | Тип                                             | Принимаемые значения        | Деф. значение   |
 | ---------------- | ------------------------------------- | ---------------------- | ------------------------ | ------- |
-| **title**        | show text title (when "url" is unset) | `string`               | -                        | -       |
-| **url**          | show url on browser address input     | `string`               | -                        | -       |
-| **showFullLink** | show full url                         | `boolean`              | -                        | `false` |
-| **invert**       | invert colors                         | `boolean`              | -                        | `false` |
-| **anchorProps**  | props of element `a`                  | `AnchorHTMLAttributes` | -                        | `{}`    |
-| ...              | native props                          | `HTMLAttributes`       | `'id', 'className', ...` | -       |
+| **title**        | показывать текстовый заголовок (если "url" не задан) | `string`               | -                        | -       |
+| **url**          | показыват URL-адрес в заголовке     | `string`               | -                        | -       |
+| **showFullLink** | показать полный URL-адрес                       | `boolean`              | -                        | `false` |
+| **invert**       | инвертировать цвета                        | `boolean`              | -                        | `false` |
+| **anchorProps**  | props элемента `a`                  | `AnchorHTMLAttributes` | -                        | `{}`    |
+| ...              | стандартные пропсы                          | `HTMLAttributes`       | `'id', 'className', ...` | -       |
 
 </Attributes>
 
