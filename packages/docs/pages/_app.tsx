@@ -8,6 +8,8 @@ import Menu from "../сomponents/layout/menu";
 import ConfigContext from "../lib/config-provider";
 import {MDXProvider} from "@mdx-js/react";
 import {HybridLink} from "../сomponents/mdx-widgets";
+import {KBarProvider} from "kbar";
+import Navigation from "../src/components/Navigation/navigation";
 
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
@@ -21,12 +23,19 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
         <meta property="og:title" content="Napolke UI" />
         <meta property="og:site_name" content="Napolke UI" />
         <meta name="generator" content="Napolke UI" />
+         <link
+            rel="manifest"
+            href="../src/data/manifest.json"
+            crossOrigin="use-credentials"
+         />
       </Head>
       <NapolkeProvider>
         <CssBaseline />
         <ConfigContext>
-          <Menu />
+          {/*<Menu />*/}
         {/*  <Search />*/}
+           <KBarProvider>
+              <Navigation/>
           <MDXProvider
             components={{
                a: HybridLink,
@@ -34,6 +43,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
             }}>
             <Component {...pageProps} />
           </MDXProvider>
+           </KBarProvider>
         </ConfigContext>
         <style global jsx>{`
      

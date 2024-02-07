@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./",
+
     "paths": {
-      "@napolke-ui": [
-        "../core/components/index.ts"
-      ]
+      "*": ["*"],
+      "@napolke-ui": ["../core/components/index.ts"],
+      "@core/*": ["../core/components/*"],
     },
     "strictNullChecks": true,
     "moduleResolution": "node",

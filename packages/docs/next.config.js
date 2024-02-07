@@ -1,9 +1,13 @@
 const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
+  extension: /\.(md|mdx)?$/,
   options: {
-    providerImportSource: '@mdx-js/react',
-  },
+    rehypePlugins: [
+      require('@mapbox/rehype-prism'),
+      require('rehype-join-line')
+    ]
+  }
 })
+
 module.exports = withMDX({
   // Append the default value with md extensions
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
@@ -20,7 +24,9 @@ module.exports = withMDX({
           },
         },
       ],
-    });
+    },
+
+      );
 
     return config;
   },

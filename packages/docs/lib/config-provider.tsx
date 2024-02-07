@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
-import { ConfigContext, Configs } from 'lib/config-context'
+import { ConfigContext, Configs } from './config-context'
 import { useRouter } from 'next/router'
-import type { DeepPartial } from '../../core/components/utils/types'
+import type { DeepPartial } from '@core/components/utils/types'
 // import { useTheme } from '@napolke-ui'
 import { RUSSIAN_LANGUAGE_IDENT } from './constants'
 import {NapolkeUIThemes} from "../../core/components/themes/presets";

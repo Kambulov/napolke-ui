@@ -1,5 +1,7 @@
 import React from 'react'
 import { VirtualAnchor } from '../pures'
+import {isString} from "next/dist/build/webpack/plugins/jsconfig-paths-plugin";
+import {kebabCase} from "tiny-case";
 
 export type TitleProps = {
   title: React.ReactNode | string
@@ -25,7 +27,12 @@ const Title: React.FC<TitleProps> = React.memo(
     const isStringDesc = typeof desc === 'string'
     return (
       <>
-        <h3>
+
+        <h3
+           data-name={title}
+           id={`${isString(title) && kebabCase(title)}`}
+           className="linked-heading"
+        >
           <VirtualAnchor>{title}</VirtualAnchor>
         </h3>
         {desc && isStringDesc && (

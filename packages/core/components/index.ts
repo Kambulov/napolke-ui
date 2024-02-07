@@ -65,3 +65,9 @@ export { default as useClickAway } from './use-click-away'
 
 export { default as Tooltip } from './tooltip'
 export type { TooltipProps } from './tooltip'
+
+export { default as Container } from './container'
+export type { ContainerProps } from './container'
+
+export { default as Row } from './row'
+export type { RowProps } from './row'

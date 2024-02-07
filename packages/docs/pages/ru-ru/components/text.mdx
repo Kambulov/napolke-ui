@@ -1,12 +1,14 @@
-import Layout from '../../../сomponents/layout'
 import  Playground from '../../../сomponents/playground'
 import  Attributes from '../../../сomponents/attributes'
-import { Text } from '../../../../core/components'
+import { Text } from '@napolke-ui'
+import {Docs} from "../../../src/templates/Docs";
 
 export const meta = {
-  title: 'Text',
-  group: 'General',
-  index: 10,
+	title: 'Text',
+	description: 'Display text using well-defined typographic styles.',
+	sidebar: 'components',
+	group: 'Components',
+	index: 38
 }
 
 ## Text
@@ -128,4 +130,4 @@ type TextTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Docs meta={meta}>{children}</Docs>
