@@ -1,62 +1,50 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-import { Loading } from '@napolke-ui'
-import { useConfigs } from 'lib/config-context'
+import {Loading} from '@napolke-ui'
 import Title from './title'
-import {Theme} from '../../../core/components/themes/presets'
+
 const DynamicLive = dynamic(() => import('./dynamic-live'), {
-  ssr: false,
-  loading: () => (
-    <div style={{ padding: '20pt 0' }}>
-      <Loading />
-    </div>
-  ),
+   ssr: false,
+   // eslint-disable-next-line react/display-name
+   loading: () => (
+      <div style={{padding: '20pt 0'}}>
+         <Loading spaceRatio={5}/>
+      </div>
+   )
 })
 
 export type PlaygroundProps = {
-  title?: React.ReactNode | string
-  desc?: React.ReactNode | string
-  code: string
-  scope: {
-    [key: string]: any
-  }
+   title?: React.ReactNode | string
+   desc?: React.ReactNode | string
+   code: string
+   scope: {
+      [key: string]: unknown
+   }
 }
 
 const defaultProps = {
-  desc: '',
-  code: '',
-  bindings: {},
+   desc: '',
+   code: '',
+   bindings: {}
 }
 
-const Playground: React.FC<PlaygroundProps> = React.memo(
-  ({
-    title: inputTitle,
-    code: inputCode,
-    desc,
-    scope,
-  }: PlaygroundProps & typeof defaultProps) => {
-    const { isRussian } = useConfigs()
-    const code = inputCode.trim()
-    const title = inputTitle || (isRussian ? 'Главные' : 'General')
+function Playground({
+                       title: inputTitle,
+                       code: inputCode,
+                       desc,
+                       scope
+                    }: PlaygroundProps & typeof defaultProps) {
+   const code = inputCode.trim()
+   const title = inputTitle || 'General'
 
-    return (
+   return (
       <>
-        <Title title={title} desc={desc} />
-        <div className="playground">
-          <DynamicLive code={code} scope={scope} />
-          <style jsx>{`
-            .playground {
-              width: 100%;
-              border-radius: ${Theme.layout.radius.name};
-              border: 1px solid ${Theme.palette.gray200.name};
-            }
-          `}</style>
-        </div>
+         <Title title={title} desc={desc}/>
+         <DynamicLive code={code} scope={scope}/>
       </>
-    )
-  },
-)
+   )
+}
 
 Playground.defaultProps = defaultProps
-Playground.displayName = 'NuiPlayground'
-export default Playground
+Playground.displayName = 'BolioUIPlayground'
+export default React.memo(Playground)

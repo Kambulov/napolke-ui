@@ -37,7 +37,7 @@ const Editor: React.FC<Props> = ({ code }) => {
               <span className="arrow">
                 <RightIcon size={16} />
               </span>
-              <span>{isRussian ? 'Редактор кода' : 'Code Editor'}</span>
+              <span>{visible ?  'Скрыть код' : 'Показать код'}</span>
             </div>
             <div className="action">
               {visible && (
@@ -114,7 +114,7 @@ const Editor: React.FC<Props> = ({ code }) => {
           font-size: 1em;
           overflow: hidden;
           border-top: 1px solid ${Theme.palette.gray200.name};
-          padding: ${Theme.layout.gapHalf.name};
+          //padding: ${Theme.layout.gapHalf.name};
         }
 
         .arrow {

@@ -3,51 +3,59 @@ import {NapolkeUIThemes} from "../../../core/components/themes/presets";
 
 const makeCodeTheme = (theme: NapolkeUIThemes): PrismTheme => ({
   plain: {
-    backgroundColor: theme.palette.background.name,
-    color: theme.palette.gray400.name,
+    backgroundColor: 'rgb(54, 52, 80)',
+    color: '#FFF',
     fontWeight: '400',
     fontStyle: 'normal',
     fontFamily: theme.font.mono,
     fontSize: '.875rem',
     textRendering: 'geometricPrecision',
+    borderBottomLeftRadius: theme.layout.radius.name,
+    borderBottomRightRadius: theme.layout.radius.name
   },
   styles: [
     {
-      types: ['comment', 'prolog', 'doctype', 'cdata', 'punctuation'],
+      types: ['comment', 'prolog', 'doctype', 'cdata'],
       style: {
         color: 'theme.palette.accents_3',
-        opacity: 0.5,
-      },
+        opacity: 0.5
+      }
+    },
+    {
+      types: ['punctuation'],
+      style: {
+        color: '#fff'
+      }
     },
     {
       types: ['namespace'],
       style: {
-        opacity: 1,
-      },
+        opacity: 1
+      }
     },
     {
       types: ['tag', 'operator', 'number'],
       style: {
-        color: theme.palette.gray500.name,
-      },
+        color: theme.palette.warning.name
+      }
     },
     {
       types: ['property', 'function'],
       style: {
-        color: theme.palette.success.name,
-      },
+        color: theme.palette.primary.name
+      }
     },
     {
       types: ['tag-id', 'selector', 'atrule-id'],
       style: {
-        color: '#eeebff',
-      },
+        color: '#eeebff'
+      }
     },
     {
       types: ['attr-name'],
       style: {
-        color: theme.palette.warning.name,
-      },
+        color: theme.palette.warning.name
+      }
     },
     {
       types: [
@@ -64,49 +72,48 @@ const makeCodeTheme = (theme: NapolkeUIThemes): PrismTheme => ({
         'regex',
         'at-rule',
         'placeholder',
-        'variable',
+        'variable'
       ],
       style: {
-        color: theme.palette.success.name,
-      },
+        color: theme.palette.secondary.name
+      }
     },
     {
       types: ['deleted'],
       style: {
-        textDecorationLine: 'line-through',
-      },
+        textDecorationLine: 'line-through'
+      }
     },
     {
       types: ['language-javascript', 'script'],
       style: {
-        color: theme.palette.success.name,
-      },
+        color: theme.palette.primary.name
+      }
     },
     {
       types: ['inserted'],
       style: {
-        textDecorationLine: 'underline',
-      },
+        textDecorationLine: 'underline'
+      }
     },
     {
       types: ['italic'],
       style: {
-        fontStyle: 'italic',
-      },
+        fontStyle: 'italic'
+      }
     },
     {
       types: ['important', 'bold'],
       style: {
-        fontWeight: 'bold',
-      },
+        fontWeight: 'bold'
+      }
     },
     {
       types: ['important'],
       style: {
-        color: '#c4b9fe',
-      },
-    },
-  ],
+        color: '#c4b9fe'
+      }
+    }
+  ]
 })
-
 export default makeCodeTheme
