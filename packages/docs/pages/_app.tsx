@@ -4,7 +4,6 @@ import { AppProps } from 'next/app'
 import React from 'react'
 import { CssBaseline, NapolkeProvider, Image } from '@napolke-ui'
 import useDomClean from 'lib/use-dom-clean'
-import Menu from "../сomponents/layout/menu";
 import ConfigContext from "../lib/config-provider";
 import {MDXProvider} from "@mdx-js/react";
 import {HybridLink} from "../сomponents/mdx-widgets";
@@ -32,7 +31,6 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
       <NapolkeProvider>
         <CssBaseline />
         <ConfigContext>
-          {/*<Menu />*/}
         {/*  <Search />*/}
            <KBarProvider>
               <Navigation/>

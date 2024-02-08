@@ -1,0 +1,160 @@
+import {Avatar, Spacer,Grid} from '@napolke-ui'
+import {Docs} from "../../src/templates/Docs";
+import Playground from '../../сomponents/playground'
+import Attributes from '../../сomponents/attributes'
+import Power from '@napolke-ui/icons/Coins'
+
+export const meta = {
+    title: 'Avatar',
+    sidebar: 'components',
+    group: 'Components',
+    index: 1
+}
+
+## Avatar
+
+Это элемент пользовательского интерфейса, используемый для отображения изображения
+профиля пользователя или иконки, которая представляет его. Этот компонент
+представляет из себя круглое или квадратное изображение с возможностью добавления обводки или фона, чтобы выделить его на странице.
+
+<Playground
+    title="Дефолтное отображение"
+    desc="`Avatar` можно представить в виде круга или квадрата."
+    scope={{Avatar, Spacer, Power,Grid}}
+    code={`
+      <Grid.Container gap={2}>
+      <Grid>
+        <Avatar
+          src="https://i.pravatar.cc/150?img=60"
+          width={1.5}
+          height={1.5}
+        />
+      </Grid>
+      <Grid>
+        <Avatar text="Юля" isSquare width={1.5} height={1.5} />
+      </Grid>
+      <Grid>
+        <Avatar
+          src="https://i.pravatar.cc/150?img=30"
+          isSquare
+          width={1.5}
+          height={1.5}
+        />
+      </Grid>
+      <Grid>
+        <Avatar text="Max" isSquare width={1.5} height={1.5} />
+      </Grid>
+      <Grid>
+        <Avatar
+          src="https://i.pravatar.cc/150?img=20"
+          isSquare
+          width={1.5}
+          height={1.5}
+        />
+      </Grid>
+      <Grid>
+        <Avatar text="Дима" width={1.5} height={1.5} />
+      </Grid>
+    </Grid.Container>
+`}
+/>
+
+<Playground
+    title="Текст"
+    desc="Отобраение текста вместо изображения"
+    scope={{Avatar,Grid}}
+    code={`
+    <Grid.Container gap={2}>
+      <Grid>
+        <Avatar text="BA" width={1.5} height={1.5} />
+      </Grid>
+      <Grid>
+        <Avatar text="ES" width={1.5} height={1.5} />
+      </Grid>
+      <Grid>
+        <Avatar text="MB" width={1.5} height={1.5} />
+      </Grid>
+      <Grid>
+        <Avatar text="WL" width={1.5} height={1.5} />
+      </Grid>
+      <Grid>
+        <Avatar text="ML" width={1.5} height={1.5} />
+      </Grid>
+      <Grid>
+        <Avatar text="TR" width={1.5} height={1.5} />
+      </Grid>
+    </Grid.Container>
+`}
+/>
+
+<Playground
+    title="Группа"
+    desc="Несколько аватарок могут накладываться друг на друга и складываться вместе."
+    scope={{Avatar, Spacer, Grid}}
+    code={`
+        <Grid.Container gap={2} direction="column">
+          <Grid>
+            <Avatar.Group>
+              <Avatar
+                src="https://i.pravatar.cc/150?img=60"
+                width={1.5}
+                height={1.5}
+                stacked
+              />
+              <Avatar
+                src="https://i.pravatar.cc/150?img=30"
+                width={1.5}
+                height={1.5}
+                stacked
+              />
+              <Avatar
+                src="https://i.pravatar.cc/150?img=20"
+                width={1.5}
+                height={1.5}
+                stacked
+              />
+              <Avatar
+                src="https://i.pravatar.cc/150?img=10"
+                width={1.5}
+                height={1.5}
+                stacked
+              />
+            </Avatar.Group>
+          </Grid>
+          <Grid>
+            <Avatar.Group count={6}>
+              <Avatar
+                src="https://i.pravatar.cc/150?img=60"
+                width={1.5}
+                height={1.5}
+                stacked
+              />
+              <Avatar text="C" width={1.5} height={1.5} stacked />
+              <Avatar text="Mag" width={1.5} height={1.5} stacked />
+            </Avatar.Group>
+          </Grid>
+        </Grid.Container>
+    `}
+/>
+
+<Attributes edit="/pages/components/avatar.mdx">
+<Attributes.Title>Avatar.Props</Attributes.Title>
+
+    | Атрибут     | Описание              | Тип                 | Принимаемые значения     | Деф. значение|
+    | ----------- | --------------------- | ------------------- | ------------------------ | ------------ |
+    | **src**     | путь к файлу          | `string`            |           -              | -            |
+    | **stacked** | наложение аваторов    | `boolean`           |           -              | `false`      |
+    | **text**    | Текст для отображения | `string`            |           -              | -            |
+    | **isSquare**| Квадратный вид        | `boolean`           |           -              | `false`      |
+    | ...         | остальные пропсы      | `ImgHTMLAttributes` | `'alt', 'className', ...`| -            |
+
+    <Attributes.Title>Avatar.Group.Props</Attributes.Title>
+
+    | Атрибут   | Описание           | Тип              | Принимаемые значения     | Деф. значение|
+    | --------- | ------------------ | ---------------- | -----------------------  | ------------ |
+    | **count** | Итоговое кол-во    | `number`         | -                        | -            |
+    | ...       | остальные пропсы   | `HTMLAttributes` | `'id', 'className', ...` | -            |
+
+</Attributes>
+
+export default ({children}) => <Docs meta={meta}>{children}</Docs>

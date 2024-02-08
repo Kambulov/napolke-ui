@@ -14,7 +14,6 @@ import {
 import {
   Sun,
   Moon,
-  Heart,
   Github,
   Instagram,
   Menu
