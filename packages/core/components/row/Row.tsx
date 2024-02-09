@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import {Theme} from "../themes/presets";
+import { Theme } from '../themes/presets'
 
 type Justify = 'start' | 'end' | 'center' | 'space-around' | 'space-between'
 type Align = 'top' | 'middle' | 'bottom'
@@ -76,5 +76,5 @@ function Row({
 }
 
 Row.defaultProps = defaultProps
-Row.displayName = 'BolioUIRow'
+Row.displayName = 'NuiRow'
 export default Row

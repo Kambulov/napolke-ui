@@ -246,7 +246,7 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({
         pre {
           padding: calc(${Theme.layout.gap.name} * 0.9) ${Theme.layout.gap.name};
           margin: ${Theme.layout.gap.name} 0;
-
+          border-radius: ${Theme.layout.radius.name};
           font-family: ${Theme.font.mono};
           white-space: pre;
           overflow: auto;

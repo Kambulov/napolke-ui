@@ -20,48 +20,12 @@ module.exports = withMDX({
         {
           loader: 'ts-loader',
           options: {
-            transpileOnly: true,
-          },
-        },
-      ],
-    },
+            transpileOnly: true
+          }
+        }
+      ]
+    })
 
-      );
-
-    return config;
-  },
-  async redirects() {
-    return [
-      {
-        source: '/',
-        permanent: true,
-        destination: '/ru-ru',
-      },
-      {
-        source: '/icons',
-        permanent: true,
-        destination: '/ru-ru/components/icons',
-      },
-      {
-        source: '/ru-ru/customization',
-        destination: '/ru-ru',
-        permanent: true,
-      },
-      {
-        source: '/en-us/customization',
-        destination: '/en-us',
-        permanent: true,
-      },
-      {
-        source: '/en-us/guide/scaleable',
-        destination: '/en-us/guide/scale',
-        permanent: true,
-      },
-      {
-        source: '/en-us/guide/scaleable',
-        destination: '/en-us/guide/scale',
-        permanent: true,
-      },
-    ]
-  },
+    return config
+  }
 })

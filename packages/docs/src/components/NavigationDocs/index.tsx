@@ -1,11 +1,9 @@
 import React from 'react'
 import NextLink from 'next/link'
 import { Grid, Card, Row, Text } from '@napolke-ui'
-import {
-  ChevronRight as ChevronRightIcon,
-} from '@napolke-ui/icons'
+import { ChevronRight as ChevronRightIcon } from '@napolke-ui/icons'
 import { useIsMobile } from 'src/utils/use-media-query'
-import {Theme} from "@core/themes/presets";
+import { Theme } from '@core/themes/presets'
 
 export interface NavigationDocsProps {
   next: Docs
@@ -39,7 +37,7 @@ function NavigationDocs({ next, previous }: NavigationDocsProps) {
               <Row align="middle" justify="space-between">
                 <ChevronRightIcon />
                 <div style={{ textAlign: 'right' }}>
-                  <Text my={0}>Previous</Text>
+                  <Text my={0}>Предыдущая страница</Text>
                   <Text
                     fs={0.9}
                     my={0}
@@ -69,7 +67,7 @@ function NavigationDocs({ next, previous }: NavigationDocsProps) {
             >
               <Row align="middle" justify="space-between">
                 <div style={{ textAlign: 'left' }}>
-                  <Text my={0}>Next</Text>
+                  <Text my={0}>Следующая страница</Text>
                   <Text
                     fs={0.9}
                     my={0}

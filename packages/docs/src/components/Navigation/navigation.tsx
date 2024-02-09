@@ -11,26 +11,15 @@ import {
   useTheme,
   useBodyScroll
 } from '@napolke-ui'
-import {
-  Sun,
-  Moon,
-  Github,
-  Instagram,
-  Menu
-} from '@napolke-ui/icons'
+import { Sun, Moon, Github, Instagram, Menu } from '@napolke-ui/icons'
 import { useMediaQuery } from 'src/utils/use-media-query'
-import { useSettings } from 'src/utils/use-settings'
 import Logo from 'src/components/Logo'
 import NavigationMobile from 'src/components/NavigationMobile'
-import {Theme} from "@core/themes/presets";
-
-// const SearchInput = dynamic(() => import('../Search/instant-search'), {
-//   ssr: true
-// })
+import { Theme } from '@core/themes/presets'
+import { GITHUB_URL } from '../../utils/constants'
 
 const Navigation: React.FC = () => {
-  const {mode} = useTheme()
-  const settings = useSettings()
+  const { mode, toggleMode } = useTheme()
   const router = useRouter()
   const [expanded, setExpanded] = useState<boolean>(false)
   const [, setBodyHidden] = useBodyScroll(null, { delayReset: 300 })
@@ -63,11 +52,7 @@ const Navigation: React.FC = () => {
             <Grid.Container gap={1} justify="center">
               {!isMobile ? (
                 <>
-                  <Grid
-                    xs={6}
-                    md={4}
-                    justify="flex-start"
-                  >
+                  <Grid xs={6} md={4} justify="flex-start">
                     <Logo />
                   </Grid>
 
@@ -100,9 +85,9 @@ const Navigation: React.FC = () => {
                     <div className="controls">
                       <>
                         <Link
-                          href="https://github.com/bolio-ui/bolio-ui"
+                          href={GITHUB_URL}
                           target="_blank"
-                          aria-label="Link to Github Bolio UI"
+                          aria-label="Link to Github Napolke UI"
                         >
                           <Button
                             w="28px"
@@ -117,26 +102,9 @@ const Navigation: React.FC = () => {
                           </Button>
                         </Link>
                         <Link
-                          href="https://www.twitter.com/bolio_ui/"
+                          href="https://www.instagram.com/kambulov161/"
                           target="_blank"
-                          aria-label="Link to Twitter Bolio UI"
-                        >
-                          {/*<Button*/}
-                          {/*  w="28px"*/}
-                          {/*  h="28px"*/}
-                          {/*  py={0}*/}
-                          {/*  px={0}*/}
-                          {/*  className="theme-button"*/}
-                          {/*  aria-label="Twitter Bolio UI"*/}
-                          {/*  type="abort"*/}
-                          {/*>*/}
-                          {/*  <Twitter fontSize={16} />*/}
-                          {/*</Button>*/}
-                        </Link>
-                        <Link
-                          href="https://www.instagram.com/bolio.ui/"
-                          target="_blank"
-                          aria-label="Link to Instagram Bolio UI"
+                          aria-label="Link to Instagram"
                         >
                           <Button
                             w="28px"
@@ -144,7 +112,7 @@ const Navigation: React.FC = () => {
                             py={0}
                             px={0}
                             className="theme-button"
-                            aria-label="Instagram Bolio UI"
+                            aria-label="Instagram Kambulov"
                             type="abort"
                           >
                             <Instagram fontSize={16} />
@@ -158,11 +126,7 @@ const Navigation: React.FC = () => {
                           aria-label="Toggle Dark mode"
                           className="theme-button"
                           type="abort"
-                          onClick={() =>
-                            settings.switchTheme(
-                               mode === 'dark' ? 'light' : 'dark'
-                            )
-                          }
+                          onClick={toggleMode}
                         >
                           {mode === 'dark' ? (
                             <Sun fontSize={16} />
@@ -171,7 +135,6 @@ const Navigation: React.FC = () => {
                           )}
                         </Button>
                         <Spacer w={0.5} />
-                        {/*<SearchInput />*/}
                         <Spacer w={1} />
                       </>
                     </div>
@@ -179,11 +142,7 @@ const Navigation: React.FC = () => {
                 </>
               ) : (
                 <>
-                  <Grid
-                    xs={2}
-                    md={4}
-                    justify="flex-start"
-                  >
+                  <Grid xs={2} md={4} justify="flex-start">
                     <Logo name="Bolio UI" />
                   </Grid>
 
@@ -199,11 +158,7 @@ const Navigation: React.FC = () => {
                         aria-label="Toggle Dark mode"
                         className="theme-button"
                         type="abort"
-                        onClick={() =>
-                          settings.switchTheme(
-                            mode === 'dark' ? 'light' : 'dark'
-                          )
-                        }
+                        onClick={toggleMode}
                       >
                         {mode === 'dark' ? (
                           <Sun fontSize={16} />

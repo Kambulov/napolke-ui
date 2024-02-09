@@ -14,8 +14,8 @@ import { guide, components, hooks } from 'src/data/sidebar'
 export interface Meta {
   title: string
   description: string
-  sidebar: "guide" | "components" | "hooks"
-   group: string
+  sidebar: 'guide' | 'components' | 'hooks'
+  group: string
   index: number
 }
 
@@ -24,14 +24,15 @@ export type DocsTemplateProps = {
   meta: Meta
 }
 
-const sidebarItems:any = {
+const sidebarItems: any = {
   guide: guide,
   components: components,
   hooks: hooks
 }
 
-export const Docs: React.FC<React.PropsWithChildren<DocsTemplateProps>> = React.memo(
-   ({ children, meta }) => {
+export const Docs: React.FC<React.PropsWithChildren<
+  DocsTemplateProps
+>> = React.memo(({ children, meta }) => {
   const router = useRouter()
   const isMobile = useMediaQuery(650)
 
@@ -41,9 +42,7 @@ export const Docs: React.FC<React.PropsWithChildren<DocsTemplateProps>> = React.
     setHeadings(getHeadings())
   }, [])
 
-  const { title} = meta
-
-
+  const { title } = meta
 
   const homeAction: Action = React.useMemo(() => {
     return {
@@ -64,7 +63,7 @@ export const Docs: React.FC<React.PropsWithChildren<DocsTemplateProps>> = React.
     return sidebarItems[meta.sidebar]
   }, [meta.sidebar])
 
-  const currentPostIndex = items.findIndex((p:any) => p.name === title)
+  const currentPostIndex = items.findIndex((p: any) => p.name === title)
   const nextPost = items[currentPostIndex + 1] ?? null
   const prevPost = items[currentPostIndex - 1] ?? null
 
@@ -75,8 +74,7 @@ export const Docs: React.FC<React.PropsWithChildren<DocsTemplateProps>> = React.
           <Grid xs={0} sm={0} md={0} lg={2}>
             <aside
               style={{
-                height:
-                  'calc(100% - 2rem - 96px + var(--bolioui-page-nav-height))',
+                height: 'calc(100% - 2rem - 96px + var(--nui-page-nav-height))',
                 position: 'fixed',
                 top: '80px',
                 bottom: '2rem',
@@ -105,8 +103,7 @@ export const Docs: React.FC<React.PropsWithChildren<DocsTemplateProps>> = React.
           <Grid xs={0} sm={0} md={0} lg={2}>
             <aside
               style={{
-                height:
-                  'calc(100% - 2rem - 96px + var(--bolioui-page-nav-height))',
+                height: 'calc(100% - 2rem - 96px + var(--nui-page-nav-height))',
                 position: 'fixed',
                 top: '80px',
                 bottom: '2rem',
@@ -175,5 +172,4 @@ export const Docs: React.FC<React.PropsWithChildren<DocsTemplateProps>> = React.
       )}
     </>
   )
-});
-
+})

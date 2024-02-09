@@ -1,5 +1,5 @@
-import  Playground from '../../сomponents/playground'
-import  Attributes from '../../сomponents/attributes'
+import Playground from '../../src/components/Playground'
+import Attributes from '../../src/components/Attributes'
 import { Text } from '@napolke-ui'
 import {Docs} from "../../src/templates/Docs";
 
@@ -138,9 +138,18 @@ export const meta = {
 | ...            | native props      | `HTMLAttributes`    | `'id', 'className', ...` | -            |
 
 <Attributes.Title>TextTypes</Attributes.Title>
+
 ```ts
-type TextTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type TextTypes =
+	| 'default'
+	| 'primary'
+	| 'secondary'
+	| 'success'
+	| 'warning'
+	| 'error'
+	| 'info'
 ```
+
 </Attributes>
 
 export default ({ children }) => <Docs meta={meta}>{children}</Docs>
