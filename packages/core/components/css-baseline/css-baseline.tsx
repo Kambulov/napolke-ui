@@ -237,7 +237,7 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({
         }
 
         code {
-          color: ${Theme.palette.market.name};
+          color: ${Theme.palette.primary.name};
           font-family: ${Theme.font.mono};
           font-size: 0.9em;
           white-space: pre-wrap;

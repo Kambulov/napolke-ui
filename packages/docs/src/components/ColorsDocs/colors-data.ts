@@ -46,6 +46,10 @@ export const mainColors: Array<{ name: string; value: string }> = [
     value: Theme.palette.info.name
   },
   {
+    name: 'border',
+    value: Theme.palette.border.name
+  },
+  {
     name: 'background',
     value: Theme.palette.background.name
   }
