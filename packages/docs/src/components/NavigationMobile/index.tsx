@@ -4,7 +4,7 @@ import { Text, Link } from '@napolke-ui'
 import { ChevronRight } from '@napolke-ui/icons'
 import { useRouter } from 'next/router'
 import { menuMobile } from 'src/data/menuMobile'
-import {Theme} from "@core/themes/presets";
+import { Theme } from '@core/themes/presets'
 
 interface Props {
   expanded: boolean
@@ -53,7 +53,7 @@ const MenuMobile: React.FC<Props> = ({ expanded }) => {
                 {item.children.map((section) => (
                   <div key={section.name}>
                     <span className="section-name">{section.name}</span>
-                    {section.children.map((item) => {
+                    {section.children.map((item: any) => {
                       const Component = item.target ? Link : NextLink
                       return (
                         <Component
@@ -91,10 +91,10 @@ const MenuMobile: React.FC<Props> = ({ expanded }) => {
           margin: 0;
           width: 100%;
           /* height: 100vh; */
-          -webkit-transition: height.25s ease;
-          -moz-transition: height.25s ease;
-          -o-transition: height.25s ease;
-          transition: height.25s ease;
+          -webkit-transition: height 0.25s ease;
+          -moz-transition: height 0.25s ease;
+          -o-transition: height 0.25s ease;
+          transition: height 0.25s ease;
           will-change: height;
           overflow-y: scroll;
           overflow-x: hidden;
@@ -107,11 +107,13 @@ const MenuMobile: React.FC<Props> = ({ expanded }) => {
           transition: box-shadow 1s ease;
           transition: backdrop-filter 1s ease;
         }
+
         .fadein {
           animation: fadeIn 200ms ease;
           animation-fill-mode: forwards;
           opacity: 0;
         }
+
         .menu-item {
           padding: 0 ${Theme.layout.pageMargin.name};
           height: 48px;
@@ -126,21 +128,26 @@ const MenuMobile: React.FC<Props> = ({ expanded }) => {
           color: ${Theme.palette.gray700.name};
           cursor: pointer;
         }
+
         .menu-item :global(svg) {
           transform: translateX(${Theme.layout.gapQuarterNegative.name});
           transition: transform 250ms ease;
         }
+
         .menu-item.expanded {
           border-bottom: none;
         }
+
         .menu-item.expanded :global(svg) {
           transform: rotate(90deg) translateY(${Theme.layout.gapQuarter.name});
         }
+
         .group {
           /* background: ${Theme.palette.gray100.name}; */
           padding: 1px ${Theme.layout.gap} ${Theme.layout.gap.name}
             calc(${Theme.layout.gap.name} * 1.5);
         }
+
         .section-name {
           display: block;
           font-size: 0.75rem;
@@ -149,6 +156,7 @@ const MenuMobile: React.FC<Props> = ({ expanded }) => {
           margin-top: ${Theme.layout.gap.name};
           margin-bottom: ${Theme.layout.gapHalf.name};
         }
+
         .section-item {
           padding: ${Theme.layout.gapQuarter.name} ${Theme.layout.gap.name};
           margin: 0 ${Theme.layout.gapQuarter.name};
@@ -161,10 +169,12 @@ const MenuMobile: React.FC<Props> = ({ expanded }) => {
           color: ${Theme.palette.gray600.name};
           border-left: 1px solid ${Theme.palette.gray200.name};
         }
+
         .active {
           color: ${Theme.palette.link.name};
           font-weight: 500;
         }
+
         @keyframes fadeIn {
           from {
             transform: translate3d(0, 0.375rem, 0);

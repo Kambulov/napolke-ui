@@ -11,7 +11,7 @@ import {
   useTheme,
   useBodyScroll
 } from '@napolke-ui'
-import { Sun, Moon, Github, Instagram, Menu } from '@napolke-ui/icons'
+import { Sun, Moon, Github, Instagram, Menu } from '../../../../icons/dist'
 import { useMediaQuery } from 'src/utils/use-media-query'
 import Logo from 'src/components/Logo'
 import NavigationMobile from 'src/components/NavigationMobile'
@@ -67,15 +67,15 @@ const Navigation: React.FC = () => {
                       >
                         <Tabs.Item
                           label="Инструкции"
-                          value="/docs/guide/getting-started"
+                          value="/guide/getting-started"
                         />
                         <Tabs.Item
                           label="Компоненты"
-                          value="/docs/components/avatar"
+                          value="/components/avatar"
                         />
                         <Tabs.Item
                           label="Хуки"
-                          value="/docs/hooks/use-body-scroll"
+                          value="/hooks/use-body-scroll"
                         />
                       </Tabs>
                     </div>
@@ -95,7 +95,7 @@ const Navigation: React.FC = () => {
                             py={0}
                             px={0}
                             className="theme-button"
-                            aria-label="Github Bolio UI"
+                            aria-label="Github Napolke UI"
                             type="abort"
                           >
                             <Github fontSize={16} />
@@ -191,8 +191,8 @@ const Navigation: React.FC = () => {
           overflow: hidden;
           z-index: 99;
         }
+
         .menu_sticky {
-          z-index: 1;
           position: fixed;
           z-index: 1100;
           top: 0;
@@ -207,6 +207,7 @@ const Navigation: React.FC = () => {
           padding-left: 15px;
           padding-right: 15px;
         }
+
         .menu_wrapper :global(.theme-button) {
           display: flex;
           align-items: center;
@@ -220,13 +221,16 @@ const Navigation: React.FC = () => {
           padding: 0 ${Theme.layout.gap.name};
           margin-bottom: 3px;
         }
+
         .tabs {
           padding: 0 ${Theme.layout.gap.name};
           margin-bottom: 3px;
         }
+
         .tabs :global(.content) {
           display: none;
         }
+
         @media only screen and (max-width: ${Theme.breakpoints.md.max}) {
           .tabs {
             display: none;
@@ -239,6 +243,7 @@ const Navigation: React.FC = () => {
           justify-content: flex-end;
           height: 50px;
         }
+
         .controls :global(.menu-toggle) {
           display: flex;
           align-items: center;

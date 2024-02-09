@@ -11,15 +11,21 @@ interface Props {
 const getColorItem = (type: string) => {
   return (
     <div className="color" key={`color-item-${0}`}>
-      <Grid.Container justify="flex-start" alignItems="center" gap={2} mt={1}>
-        <Grid direction="column" xs={6}>
+      <Grid.Container
+        justify="flex-start"
+        alignItems="center"
+        direction="row"
+        gap={2}
+        mt={1}
+      >
+        <Grid direction="column">
           <Grid alignItems="center">
             <Text h3 margin={0}>
               {capitalizeFLetter(type)}
             </Text>
           </Grid>
           <Grid mt={-1}>
-            <Text i fs="13px">{`--npui-color-${type}-{n}`}</Text>
+            <Text i fs="13px">{`--nui-color-${type}-{n}`}</Text>
           </Grid>
         </Grid>
         <Grid.Container
@@ -29,12 +35,12 @@ const getColorItem = (type: string) => {
           xs={17}
           wrap="nowrap"
         >
-          {colorIndex.map((item) => {
+          {colorIndex.map((item, index) => {
             const key: string = `${type}${item}`
             const bg: string =
               Theme.palette[key as keyof NapolkeUIThemesPalette].name
             return (
-              <Grid width="100%">
+              <Grid width="100%" key={index}>
                 <Grid>
                   <Grid
                     className="container"
@@ -54,7 +60,7 @@ const getColorItem = (type: string) => {
         </Grid.Container>
       </Grid.Container>
       <style jsx>{`
-        .color:global(.container) {
+        .color :global(.container) {
           width: 50px;
           height: 50px;
           border-radius: 5px;
@@ -65,25 +71,13 @@ const getColorItem = (type: string) => {
 }
 
 const Colors: React.FC<Props> = () => {
-  // const theme = useTheme()
-  // const { copy } = useClipboard()
-  // const { setToast } = useToasts()
-  // const copyText = (text: string) => {
-  //   copy(text)
-  //   setToast({
-  //     text: (
-  //       <span>
-  //         Copied <Code>{text}</Code>
-  //       </span>
-  //     ),
-  //   })
-  // }
-
   return (
     <div className="colors">
-      {getColorItem('gray')}
-      {getColorItem('blue')}
-      {getColorItem('green')}
+      <div style={{ width: '100%' }}>
+        {getColorItem('gray')}
+        {getColorItem('green')}
+        {getColorItem('blue')}
+      </div>
       <style jsx>{`
         .colors {
           display: flex;

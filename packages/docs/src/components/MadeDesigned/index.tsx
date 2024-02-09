@@ -9,7 +9,7 @@ function NameMadeDesigned() {
       target="_blank"
       rel="noopener"
       underline
-      aria-label="Link to Github Bruno Andrade"
+      aria-label="Link to Github Kambulov Danil"
     >
       Kambulov Danil
     </Link>

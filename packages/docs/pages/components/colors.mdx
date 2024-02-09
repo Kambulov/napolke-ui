@@ -1,0 +1,29 @@
+import {Docs} from "../../src/templates/Docs";
+import Colors from '../../src/components/ColorsDocs'
+import {Avatar, Spacer,Grid} from '@napolke-ui'
+import Playground from "../../src/components/Playground";
+import ColorsMain from "../../src/components/ColorsDocs/colors-main";
+
+
+export const meta = {
+	title: 'Avatar',
+	sidebar: 'components',
+	group: 'Components',
+	index: 1
+}
+
+
+## Цветовая палитра
+
+Цветовые маркеры помогают поддерживать согласованное использование цвета во всем приложении.
+
+Ссылки на цветовые маркеры выполняются с помощью пользовательского
+свойства --nui-color-{name}-{n} CSS, где {name} - это название палитры, а {n} - числовое значение желаемого образца.
+
+### Основные цвета
+
+<ColorsMain type='rr'/>
+<Colors type='rr'/>
+
+
+export default ({ children }) => <Docs meta={meta}>{children}</Docs>

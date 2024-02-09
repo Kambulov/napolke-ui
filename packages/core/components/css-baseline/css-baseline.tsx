@@ -46,17 +46,17 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({
       <style global jsx>{`
         ${result}
         :root[data-theme="dark"] {
-          --npui-color-gray-50: hsl(240 5.1% 15%);
-          --npui-color-gray-100: hsl(240 5.7% 18.2%);
-          --npui-color-gray-200: hsl(240 4.6% 22%);
-          --npui-color-gray-300: hsl(240 5% 27.6%);
-          --npui-color-gray-400: hsl(240 5% 35.5%);
-          --npui-color-gray-500: hsl(240 3.7% 44%);
-          --npui-color-gray-600: hsl(240 5.3% 58%);
-          --npui-color-gray-700: hsl(240 5.6% 73%);
-          --npui-color-gray-800: hsl(240 7.3% 84%);
-          --npui-color-gray-900: hsl(240 9.1% 91.8%);
-          --npui-color-gray-950: hsl(0 0% 95%);
+          --nui-color-gray-50: hsl(240 5.1% 15%);
+          --nui-color-gray-100: hsl(240 5.7% 18.2%);
+          --nui-color-gray-200: hsl(240 4.6% 22%);
+          --nui-color-gray-300: hsl(240 5% 27.6%);
+          --nui-color-gray-400: hsl(240 5% 35.5%);
+          --nui-color-gray-500: hsl(240 3.7% 44%);
+          --nui-color-gray-600: hsl(240 5.3% 58%);
+          --nui-color-gray-700: hsl(240 5.6% 73%);
+          --nui-color-gray-800: hsl(240 7.3% 84%);
+          --nui-color-gray-900: hsl(240 9.1% 91.8%);
+          --nui-color-gray-950: hsl(0 0% 95%);
         }
         html,
         body {

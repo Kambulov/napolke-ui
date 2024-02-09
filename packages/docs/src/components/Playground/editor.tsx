@@ -13,6 +13,7 @@ const Editor: React.FC<Props> = ({ code }) => {
   const { copy } = useClipboard()
   const [visible, setVisible] = useState(true)
   const { setToast } = useToasts()
+
   const clickHandler = (event: React.MouseEvent) => {
     event.stopPropagation()
     event.preventDefault()

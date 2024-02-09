@@ -51,7 +51,7 @@ const Attributes: React.FC<React.PropsWithChildren<
         fs={0.75}
         style={{ userSelect: 'none' }}
       >
-        Edit this page on GitHub
+        Редактировать страницу в GitHub
       </Link>
     </>
   )

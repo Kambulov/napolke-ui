@@ -9,17 +9,21 @@ export const palette: NapolkeUIThemesPalette = {
     value: '#000',
     name: 'var(--nui-color-black)'
   },
-  link: {
+  primary: {
+    value: '#f8371c',
+    name: 'var(--nui-color-primary)'
+  },
+  primaryLight: {
+    value: '#f8472f',
+    name: 'var(--nui-color-primary-light)'
+  },
+  secondary: {
     value: '#0070f3',
-    name: 'var(--nui-color-link)'
+    name: 'var(--nui-color-secondary)'
   },
-  background: {
-    value: '#fff',
-    name: 'var(--nui-color-background)'
-  },
-  border: {
-    value: '#eaeaea',
-    name: 'var(--nui-color-border-default)'
+  secondaryLight: {
+    value: '#3291ff',
+    name: 'var(--nui-color-secondary-light)'
   },
   success: {
     value: '#4b9806',
@@ -29,18 +33,6 @@ export const palette: NapolkeUIThemesPalette = {
     value: '#68b921',
     name: 'var(--nui-color-success-light)'
   },
-  primary: {
-    value: '#0070f3',
-    name: 'var(--nui-color-primary)'
-  },
-  primaryLight: {
-    value: '#3291ff',
-    name: 'var(--nui-color-primary-light)'
-  },
-  secondary: {
-    value: '#666',
-    name: 'var(--nui-color-secondary)'
-  },
   error: {
     value: '#e00',
     name: 'var(--nui-color-error)'
@@ -49,58 +41,75 @@ export const palette: NapolkeUIThemesPalette = {
     value: '#ff1a1a',
     name: 'var(--nui-color-error-light)'
   },
+  link: {
+    value: '#0070f3',
+    name: 'var(--nui-color-link)'
+  },
+  background: {
+    value: '#f8f8f8', //black 111827
+    name: 'var(--nui-color-background)'
+  },
   warning: {
-    value: '#f5a623',
-    name: 'var(--nui-color-secondary)'
+    value: '#fb923c',
+    name: 'var(--nui-color-warning)'
+  },
+  info: {
+    value: 'hsl(200.6 94.4% 86.1%)',
+    name: 'var(--nui-color-info)'
+  },
+  border: {
+    value: '#eaeaea',
+    name: 'var(--nui-color-border-default)'
   },
   market: {
-    value: '#f8371c',
+    value: '#0070f3',
     name: 'var(--nui-color-market)'
   },
+
   // *** GRAY ***
   gray50: {
     value: 'hsl(0 0% 98%)',
-    name: 'var(--npui-color-gray-50)'
+    name: 'var(--nui-color-gray-50)'
   },
   gray100: {
     value: 'hsl(240 4.8% 95.9%)',
-    name: 'var(--npui-color-gray-100)'
+    name: 'var(--nui-color-gray-100)'
   },
   gray200: {
     value: 'hsl(240 5.9% 90%)',
-    name: 'var(--npui-color-gray-200)'
+    name: 'var(--nui-color-gray-200)'
   },
   gray300: {
     value: 'hsl(240 4.9% 83.9%)',
-    name: 'var(--npui-color-gray-300)'
+    name: 'var(--nui-color-gray-300)'
   },
   gray400: {
     value: 'hsl(240 5% 64.9%)',
-    name: 'var(--npui-color-gray-400)'
+    name: 'var(--nui-color-gray-400)'
   },
   gray500: {
     value: 'hsl(240 3.8% 46.1%)',
-    name: 'var(--npui-color-gray-500)'
+    name: 'var(--nui-color-gray-500)'
   },
   gray600: {
     value: 'hsl(240 5.2% 33.9%)',
-    name: 'var(--npui-color-gray-500)'
+    name: 'var(--nui-color-gray-500)'
   },
   gray700: {
     value: 'hsl(240 5.3% 26.1%)',
-    name: 'var(--npui-color-gray-700)'
+    name: 'var(--nui-color-gray-700)'
   },
   gray800: {
     value: 'hsl(240 3.7% 15.9%)',
-    name: 'var(--npui-color-gray-700)'
+    name: 'var(--nui-color-gray-700)'
   },
   gray900: {
     value: 'hsl(240 5.9% 10%)',
-    name: 'var(--npui-color-gray-700)'
+    name: 'var(--nui-color-gray-700)'
   },
   gray950: {
     value: 'hsl(240 7.3% 8%)',
-    name: 'var(--npui-color-gray-950)'
+    name: 'var(--nui-color-gray-950)'
   },
   // *** GRAY ***
   blue50: {

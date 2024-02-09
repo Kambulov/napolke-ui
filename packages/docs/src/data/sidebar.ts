@@ -13,6 +13,10 @@ export const guide: SidebarItemsI[] = [
   {
     name: 'Getting Started',
     url: '/guide/getting-started'
+  },
+  {
+    name: 'Colors',
+    url: '/guide/getting-started'
   }
 ]
 
