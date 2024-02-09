@@ -137,24 +137,26 @@ export const meta = {
     `}
 />
 
-<Attributes edit="/pages/components/avatar.mdx">
-<Attributes.Title>Avatar.Props</Attributes.Title>
 
-    | Атрибут     | Описание              | Тип                 | Принимаемые значения     | Деф. значение|
-    | ----------- | --------------------- | ------------------- | ------------------------ | ------------ |
-    | **src**     | путь к файлу          | `string`            |           -              | -            |
-    | **stacked** | наложение аваторов    | `boolean`           |           -              | `false`      |
-    | **text**    | Текст для отображения | `string`            |           -              | -            |
-    | **isSquare**| Квадратный вид        | `boolean`           |           -              | `false`      |
-    | ...         | остальные пропсы      | `ImgHTMLAttributes` | `'alt', 'className', ...`| -            |
+<Attributes edit="/pages/docs/components/avatar.mdx">
+	<Attributes.Title>Avatar.Props</Attributes.Title>
 
-    <Attributes.Title>Avatar.Group.Props</Attributes.Title>
+| Атрибут      | Описание                           | Тип                 | Значение                            | Деф. значение|
+| ------------ | ---------------------------------- | ------------------- | ------------------------------------| ------------ |
+| **src**      | image src                          | `string`            | -                                   | -            |
+| **stacked**  | stacked display group              | `boolean`           | -                                   | `false`      |
+| **text**     | display text when image is missing | `string`            | -                                   | -            |
+| **isSquare** | avatar shape                       | `boolean`           | -                                   | `false`      |
+| ...          | native props                       | `ImgHTMLAttributes` | `'alt', 'className', ...`           | -            |
 
-    | Атрибут   | Описание           | Тип              | Принимаемые значения     | Деф. значение|
-    | --------- | ------------------ | ---------------- | -----------------------  | ------------ |
-    | **count** | Итоговое кол-во    | `number`         | -                        | -            |
-    | ...       | остальные пропсы   | `HTMLAttributes` | `'id', 'className', ...` | -            |
+<Attributes.Title>Avatar.Group.Props</Attributes.Title>
+
+| Атрибут   | Описание           | Тип              | Значение                         | Деф. значение|
+| --------- | ------------------ | ---------------- | -------------------------------- | ------------ |
+| **count** | show total members | `number`         | -                                | -            |
+| ...       | native props       | `HTMLAttributes` | `'id', 'name', 'className', ...` | -            |
 
 </Attributes>
+
 
 export default ({children}) => <Docs meta={meta}>{children}</Docs>

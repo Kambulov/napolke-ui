@@ -40,7 +40,7 @@
     "react-dom": "^17.0.2",
     "react-live": "^3.1.2",
     "rehype-join-line": "^1.0.2",
-    "styled-components": "^6.1.8",
+    "styled-components": "^5.3.11",
     "ts-loader": "^9.5.1",
     "typescript": "5.3.3",
     "yup": "1.2.0"

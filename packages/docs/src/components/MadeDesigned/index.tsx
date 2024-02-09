@@ -5,13 +5,13 @@ import { Github } from '@napolke-ui/icons'
 function NameMadeDesigned() {
   return (
     <Link
-      href="https://github.com/brunnoandrade/"
+      href="https://github.com/Kambulov"
       target="_blank"
       rel="noopener"
       underline
       aria-label="Link to Github Bruno Andrade"
     >
-      BRUNO ANDRADE
+      Kambulov Danil
     </Link>
   )
 }
@@ -21,15 +21,13 @@ function MadeDesigned() {
     <Grid.Container justify="flex-end">
       <Grid my={2}>
         <Text fs={0.75} b my={0}>
-          MADE & DESIGNED WITH
+          Сделано с любовью
           <Github
-            fill="red"
-            stroke="red"
             height={12}
             width={12}
             style={{ marginLeft: 3, marginRight: 3 }}
           />
-          BY <NameMadeDesigned />
+          <NameMadeDesigned />
         </Text>
       </Grid>
     </Grid.Container>

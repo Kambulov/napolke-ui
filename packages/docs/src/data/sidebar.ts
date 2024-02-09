@@ -1,12 +1,10 @@
-
-
 export interface SidebarItemsI {
-  name: string,
-  url?: string,
-  icon?: string,
+  name: string
+  url?: string
+  icon?: string
   target?: string
 }
-export const guide:SidebarItemsI[] = [
+export const guide: SidebarItemsI[] = [
   {
     name: 'Guide',
     url: '',
@@ -69,7 +67,7 @@ export const guide:SidebarItemsI[] = [
   }
 ]
 
-export const components:SidebarItemsI[] = [
+export const components: SidebarItemsI[] = [
   {
     name: 'Компоненты',
     url: '',
@@ -77,183 +75,15 @@ export const components:SidebarItemsI[] = [
   },
   {
     name: 'Avatar',
-    url: '/docs/components/avatar'
-  },
-  {
-    name: 'Badge',
-    url: '/docs/components/badge'
-  },
-  {
-    name: 'Breadcrumbs',
-    url: '/docs/components/breadcrumbs'
-  },
-  {
-    name: 'Button',
-    url: '/docs/components/button'
-  },
-  {
-    name: 'Button Dropdown',
-    url: '/docs/components/button-dropdown'
-  },
-  {
-    name: 'Button Group',
-    url: '/docs/components/button-group'
-  },
-  {
-    name: 'Capacity',
-    url: '/docs/components/capacity'
-  },
-  {
-    name: 'Card',
-    url: '/docs/components/card'
-  },
-  {
-    name: 'Checkbox',
-    url: '/docs/components/checkbox'
-  },
-  {
-    name: 'Code',
-    url: '/docs/components/code'
-  },
-  {
-    name: 'Collapse',
-    url: '/docs/components/collapse'
-  },
-  {
-    name: 'Description',
-    url: '/docs/components/description'
-  },
-  {
-    name: 'Display',
-    url: '/docs/components/display'
-  },
-  {
-    name: 'Divider',
-    url: '/docs/components/divider'
-  },
-  {
-    name: 'Dot',
-    url: '/docs/components/dot'
-  },
-  {
-    name: 'Drawer',
-    url: '/docs/components/drawer'
-  },
-  {
-    name: 'Fieldset',
-    url: '/docs/components/fieldset'
-  },
-  {
-    name: 'Grid',
-    url: '/docs/components/grid'
-  },
-  {
-    name: 'Icons',
-    url: '/docs/components/icons'
-  },
-  {
-    name: 'Image',
-    url: '/docs/components/image'
-  },
-  {
-    name: 'Input',
-    url: '/docs/components/input'
-  },
-  {
-    name: 'Keyboard',
-    url: '/docs/components/keyboard'
-  },
-  {
-    name: 'Link',
-    url: '/docs/components/link'
-  },
-  {
-    name: 'Loading',
-    url: '/docs/components/loading'
-  },
-  {
-    name: 'Modal',
-    url: '/docs/components/modal'
-  },
-  {
-    name: 'Note',
-    url: '/docs/components/note'
-  },
-  {
-    name: 'Page',
-    url: '/docs/components/page'
-  },
-  {
-    name: 'Pagination',
-    url: '/docs/components/pagination'
-  },
-  {
-    name: 'Popover',
-    url: '/docs/components/popover'
-  },
-  {
-    name: 'Progress',
-    url: '/docs/components/progress'
-  },
-  {
-    name: 'Radio',
-    url: '/docs/components/radio'
-  },
-  {
-    name: 'Rating',
-    url: '/docs/components/rating'
-  },
-  {
-    name: 'Select',
-    url: '/docs/components/select'
-  },
-  {
-    name: 'Slider',
-    url: '/docs/components/slider'
-  },
-  {
-    name: 'Snippet',
-    url: '/docs/components/snippet'
-  },
-  {
-    name: 'Spacer',
-    url: '/docs/components/spacer'
-  },
-  {
-    name: 'Spinner',
-    url: '/docs/components/spinner'
-  },
-  {
-    name: 'Table',
-    url: '/docs/components/table'
-  },
-  {
-    name: 'Tabs',
-    url: '/docs/components/tabs'
-  },
-  {
-    name: 'Tag',
-    url: '/docs/components/tag'
+    url: '/components/avatar'
   },
   {
     name: 'Text',
     url: '/components/text'
-  },
-  {
-    name: 'Textarea',
-    url: '/docs/components/textarea'
-  },
-  {
-    name: 'Toggle',
-    url: '/docs/components/toggle'
-  },
-  {
-    name: 'Tooltip',
-    url: '/docs/components/tooltip'
   }
 ]
 
-export const hooks:SidebarItemsI[] = [
+export const hooks: SidebarItemsI[] = [
   {
     name: 'Hooks22',
     url: '',

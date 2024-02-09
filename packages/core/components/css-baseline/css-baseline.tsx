@@ -1,40 +1,44 @@
 import React, { ReactElement } from 'react'
 import flush, { flushToHTML } from 'styled-jsx/server'
-import {Theme} from "../themes/presets";
+import { Theme } from '../themes/presets'
 
-export type FlushToReact = <T>(opts?: { nonce?: string }) => Array<ReactElement<T>>
+export type FlushToReact = <T>(opts?: {
+  nonce?: string
+}) => Array<ReactElement<T>>
 export type FlushToHTML = (opts?: { nonce?: string }) => string
 
-const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
+const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({
+  children
+}) => {
   console.log(' Object.keys(Theme.palette)', Object.keys(Theme.palette))
-  let obj = {};
-  Object.keys(Theme.palette).forEach((item)=> {
-    const regex = /var\(([^)]+)\)/;
+  let obj = {}
+  Object.keys(Theme.palette).forEach((item) => {
+    const regex = /var\(([^)]+)\)/
     // @ts-ignore
-    const matches = Theme.palette[item].name.match(regex);
+    const matches = Theme.palette[item].name.match(regex)
     obj = {
       ...obj,
       // @ts-ignore
-      [matches[1]] : Theme.palette[item].value
+      [matches[1]]: Theme.palette[item].value
     }
   })
 
-  Object.keys(Theme.layout).forEach((item)=> {
-    const regex = /var\(([^)]+)\)/;
+  Object.keys(Theme.layout).forEach((item) => {
+    const regex = /var\(([^)]+)\)/
     // @ts-ignore
-    const matches = Theme.layout[item].name.match(regex);
+    const matches = Theme.layout[item].name.match(regex)
     obj = {
       ...obj,
       // @ts-ignore
-      [matches[1]] : Theme.layout[item].value
+      [matches[1]]: Theme.layout[item].value
     }
   })
   const cssString = Object.entries(obj)
-     .map(([key, value]) => `  ${key}: ${value};`)
-     .join('\n');
+    .map(([key, value]) => `  ${key}: ${value};`)
+    .join('\n')
 
-  const result = `:root[data-theme="light"] {\n${cssString}\n}`;
-  console.log(result);
+  const result = `:root[data-theme="light"] {\n${cssString}\n}`
+  console.log(result)
 
   return (
     <>
@@ -144,8 +148,8 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
         ol {
           padding: 0;
           list-style-type: none;
-          margin: ${Theme.layout.gapHalf.name} ${Theme.layout.gapHalf.name} ${Theme.layout.gapHalf.name}
-            ${Theme.layout.gap};
+          margin: ${Theme.layout.gapHalf.name} ${Theme.layout.gapHalf.name}
+            ${Theme.layout.gapHalf.name} ${Theme.layout.gap};
           color: ${Theme.palette.black.name};
         }
 
@@ -233,21 +237,16 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
         }
 
         code {
-          color: #f7371c;
+          color: ${Theme.palette.market.name};
           font-family: ${Theme.font.mono};
           font-size: 0.9em;
           white-space: pre-wrap;
         }
 
-        code:before,
-        code:after {
-          content: '\`';
-        }
-
         pre {
           padding: calc(${Theme.layout.gap.name} * 0.9) ${Theme.layout.gap.name};
           margin: ${Theme.layout.gap.name} 0;
-         
+
           font-family: ${Theme.font.mono};
           white-space: pre;
           overflow: auto;
@@ -320,7 +319,8 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
         }
 
         blockquote {
-          padding: calc(0.667 * ${Theme.layout.gap.name}) ${Theme.layout.gap.name};
+          padding: calc(0.667 * ${Theme.layout.gap.name})
+            ${Theme.layout.gap.name};
           color: ${Theme.palette.gray500.name};
           background-color: ${Theme.palette.gray200.name};
           border-radius: ${Theme.layout.radius.name};
