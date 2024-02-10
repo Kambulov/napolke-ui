@@ -7,7 +7,7 @@ import {
   allModulesBabelConfig,
   makeBasicDefinition
 } from './utils'
-import svgoConfig from './svgo.config'
+// import svgoConfig from './svgo.config'
 
 const outputDir = path.join(__dirname, '../', 'dist')
 const sourceFile = path.join(__dirname, '../', 'source')
@@ -27,17 +27,7 @@ export default (async () => {
         const content = fs.readFileSync(filePath, 'utf-8')
 
         const result = optimize(content, {
-          plugins: [
-            { name: 'removeXMLNS' },
-            { name: 'removeTitle' },
-            {
-              name: 'convertAttributes',
-              // @ts-ignore
-              params: {
-                attrs: [{ name: 'stroke-width', convert: true }]
-              }
-            }
-          ]
+          plugins: [{ name: 'removeXMLNS' }, { name: 'removeTitle' }]
         })
 
         const svgString = groupSvgContent(result.data)
@@ -81,6 +71,10 @@ const groupSvgContent = (svgString) => {
     .toString()
     .replace(/clip-rule/g, 'clipRule')
     .replace(/fill-rule/g, 'fillRule')
+    .replace(/stroke-width/g, 'strokeWidth')
+    .replace(/stroke-opacity/g, 'strokeOpacity')
+    .replace(/stroke-linecap/g, 'strokeLinecap')
+    .replace(/stroke-linejoin/g, 'strokeLinejoin')
     .replace(
       /<svg([^>]+)>/,
       `<svg$1 {...props} height={size} width={size} style={{color: color || 'currentColor'}}> `

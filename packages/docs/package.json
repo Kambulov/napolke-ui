@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.16.7",
-    "@napolke-ui/icons": "^0.0.29",
+    "@napolke-ui/icons": "^0.0.38",
     "kbar": "^0.1.0-beta.45"
   }
 }
