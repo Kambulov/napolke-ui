@@ -74,3 +74,7 @@ export type { RowProps } from './row'
 
 export { default as Snippet } from './snippet'
 export type { SnippetProps } from './snippet'
+
+
+export { default as ButtonGroup } from './button-group'
+export type { ButtonGroupProps } from './button-group'

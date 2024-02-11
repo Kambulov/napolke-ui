@@ -30,7 +30,7 @@ const getGroupBorderColors = (
   props: ButtonGroupProps & typeof defaultProps,
 ): string => {
   const { ghost, type } = props
-  if (!ghost && type !== 'default') return palette.background.name
+  // if (!ghost && type !== 'default') return palette.background.name
   const colors: { [key in ButtonTypes]?: string } = {
     default: palette.border.name,
     success: palette.success.name,

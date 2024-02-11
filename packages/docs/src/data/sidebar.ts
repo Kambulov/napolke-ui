@@ -35,6 +35,10 @@ export const components: SidebarItemsI[] = [
     url: '/components/button'
   },
   {
+    name: 'Button group',
+    url: '/components/button-group'
+  },
+  {
     name: 'Text',
     url: '/components/text'
   },
