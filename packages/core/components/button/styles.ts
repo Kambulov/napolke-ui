@@ -98,9 +98,9 @@ export const getButtonColors = (
   }
   if (disabled)
     return {
-      bg: palette.gray50.value,
+      bg: palette.gray300.value,
       border: palette.gray200.name,
-      color: palette.gray300.name,
+      color: palette.gray500.name,
     }
 
   /**
@@ -211,9 +211,9 @@ export const getButtonHoverColors = (
   }
   if (disabled)
     return {
-      bg: palette.gray50.value,
-      border: palette.gray200.value,
-      color: palette.gray500.value,
+      bg: palette.gray300.value,
+      border: palette.gray200.name,
+      color: palette.gray500.name,
     }
   if (loading)
     return {

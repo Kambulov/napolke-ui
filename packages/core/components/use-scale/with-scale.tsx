@@ -1,4 +1,4 @@
-import React, {forwardRef} from 'react';
+import React, {AnchorHTMLAttributes, ComponentType, forwardRef} from 'react';
 import {
   DynamicLayoutPipe,
   ScaleConfig,
@@ -15,9 +15,7 @@ const reduceScaleCoefficient = (scale: number) => {
 };
 
 const withScale = <T, P = {}>(
-  Render:React.ForwardRefExoticComponent<Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof null> & {
-    children?: React.ReactNode;
-  } & React.RefAttributes<HTMLAnchorElement>>,
+  Render: React.ComponentType<P & { ref?: React.Ref<T> }>
 ) => {
   const ScaleFC = forwardRef<T, P & ScaleProps>(({ children, ...props }, ref) => {
     const {
@@ -116,7 +114,9 @@ const withScale = <T, P = {}>(
             React.cloneElement(Render, {ref, ...innerProps})
           ) : (
             // Иначе передаем без ref
-            <Render {...innerProps}>{children}</Render>
+            <
+              // @ts-ignore
+              Render {...innerProps}>{children}</Render>
           )
         )}
       </ScaleContext.Provider>

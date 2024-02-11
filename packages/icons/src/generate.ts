@@ -75,6 +75,8 @@ const groupSvgContent = (svgString) => {
     .replace(/stroke-opacity/g, 'strokeOpacity')
     .replace(/stroke-linecap/g, 'strokeLinecap')
     .replace(/stroke-linejoin/g, 'strokeLinejoin')
+    .replace(/stop-opacity/g, 'stopOpacity')
+    .replace(/stop-color/g, 'stopColor')
     .replace(
       /<svg([^>]+)>/,
       `<svg$1 {...props} height={size} width={size} style={{color: color || 'currentColor'}}> `

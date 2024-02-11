@@ -71,3 +71,6 @@ export type { ContainerProps } from './container'
 
 export { default as Row } from './row'
 export type { RowProps } from './row'
+
+export { default as Snippet } from './snippet'
+export type { SnippetProps } from './snippet'

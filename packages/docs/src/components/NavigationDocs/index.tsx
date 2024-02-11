@@ -2,6 +2,7 @@ import React from 'react'
 import NextLink from 'next/link'
 import { Grid, Card, Row, Text } from '@napolke-ui'
 import { ChevronRight as ChevronRightIcon } from '@napolke-ui/icons'
+import { ChevronLeft as ChevronLeftIcon } from '@napolke-ui/icons'
 import { useIsMobile } from 'src/utils/use-media-query'
 import { Theme } from '@core/themes/presets'
 
@@ -35,7 +36,7 @@ function NavigationDocs({ next, previous }: NavigationDocsProps) {
               width="100%"
             >
               <Row align="middle" justify="space-between">
-                <ChevronRightIcon />
+                <ChevronLeftIcon />
                 <div style={{ textAlign: 'right' }}>
                   <Text my={0}>Предыдущая страница</Text>
                   <Text

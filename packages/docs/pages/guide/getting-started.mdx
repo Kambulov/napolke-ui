@@ -1,0 +1,65 @@
+import {Docs} from "../../src/templates/Docs";
+import { Tabs, Spacer, Snippet} from '@napolke-ui'
+import Attributes from '../../src/components/Attributes'
+
+export const meta = {
+  title: 'Начало работы',
+  sidebar: 'guide',
+  group: 'Guide'
+}
+
+## Начало работы c Napolke UI
+
+<Spacer h={2} />
+
+#### Добро пожаловать в документацию
+
+Napolke UI позволяет создавать красивые, современные и быстрые веб-сайты/приложения независимо от вашего опыта в дизайне, созданные с <a href="https://reactjs.org/" rel="noreferrer" target="_blank">React.js</a>.
+
+<Spacer h={2} />
+
+### Установка
+
+Внутри вашего каталога проекта React установите Napolke UI, выполнив одну из следующих команд:
+
+<Spacer h={3} />
+
+<Tabs initialValue="yarn" hideDivider hideBorder align="flex-start" mt="-46px">
+  <Tabs.Item label="Yarn" value="yarn">
+    <Snippet text="yarn add @apolke-ui/core" />
+  </Tabs.Item>
+  <Tabs.Item label="Npm" value="npm">
+    <Snippet text="npm i @apolke-ui/core" />
+  </Tabs.Item>
+</Tabs>
+
+<Spacer h={3} />
+
+### Настройка
+
+Чтобы Napolke UI работал корректно, необходимо подключить NapolkeProvider в корне вашего приложения.
+
+<Spacer h={1} />
+
+#### React
+
+Go to the root of your application and do this:
+
+```tsx
+import * as React from 'react'
+import { NapolkeProvider } from '@napolke-ui/core'
+
+function App({ Component }) {
+  // 2. Use at the root of your app
+  return (
+    <NapolkeProvider>
+      <Component />
+    </NapolkeProvider>
+  )
+}
+```
+
+<Spacer h={2} />
+
+
+export default ({ children }) => <Docs meta={meta}>{children}</Docs>

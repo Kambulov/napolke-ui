@@ -153,41 +153,24 @@ export const meta = {
 
 <Attributes.Title>Button.Props</Attributes.Title>
 
-
 | Атрибут       | Описание                                  | Тип                                             | Принимаемые значения        | Деф. значение   |
-
 | ------------- | ----------------------------------------- | ----------------------------------------------- | --------------------------- | --------- |
-
 | **type**      | Тип кнопки                                | `ButtonTypes`                                   | [ButtonTypes](#buttontypes) | `default` |
-
-| **ghost**     | the opposite color                        | `boolean`                                       | -                           | `false`   |
-
+| **ghost**     | Прозрачность                              | `boolean`                                       | -                           | `false`   |
 | **loading**   | Индикатор загрузки                        | `boolean`                                       | -                           | `false`   |
-
 | **shadow**    | Тень кнопки                               | `boolean`                                       | -                           | `false`   |
-
 | **auto**      | Автоматическое маштабирование             | `boolean`                                       | -                           | `false`   |
-
 | **effect**    | Анимация при нажатии                      | `boolean`                                       | -                           | `true`    |
-
 | **disabled**  | Заблокировать                             | `boolean`                                       | -                           | `false`   |
-
-| **onClick**   | click handler                             | `MouseEventHandler`                             | -                           | -         |
-
 | **icon**      | Иконка слева                              | `ReactNode`                                     | -                           | -         |
-
 | **iconRight** | Иконка справа                             | `ReactNode`                                     | -                           | -         |
-
 | **htmlType**  | Нативный тип кнопки                       | `ButtonHTMLAttributes.type`                     | -                           | `button`  |
-
 | **ref**       | forwardRef                                | <Code>Ref<HTMLButtonElement &#124; null></Code> | -                           | -         |
-
 | ...           | стандартные пропсы                        | `ButtonHTMLAttributes`                          | `'id', 'className', ...`    | -         |
 
 <Attributes.Title>ButtonTypes</Attributes.Title>
 
 ```ts
-
 type ButtonTypes =
   | 'default'
   | 'secondary'
