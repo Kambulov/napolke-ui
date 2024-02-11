@@ -36,14 +36,17 @@ export interface NapolkeUIThemesPalette {
   border: PaleteItem
   success: PaleteItem
   successLight: PaleteItem
-  primaryLight: PaleteItem
   primary: PaleteItem
+  primaryLight: PaleteItem
   secondary: PaleteItem
+  secondaryLight: PaleteItem
   error: PaleteItem
   errorLight: PaleteItem
   warning: PaleteItem
+  warningLight: PaleteItem
+  tertiary: PaleteItem
+  tertiaryLight: PaleteItem
   black: PaleteItem
-  secondaryLight: PaleteItem
   info: PaleteItem
   gray50: PaleteItem
   gray100: PaleteItem

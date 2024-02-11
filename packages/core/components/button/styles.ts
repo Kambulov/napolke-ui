@@ -16,8 +16,18 @@ export const getButtonGhostColors = (
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
     secondary: {
       bg: palette.background.name,
-      border: palette.black.name,
-      color: palette.black.name,
+      border: palette.secondary.name,
+      color: palette.secondary.name,
+    },
+    primary: {
+      bg: palette.background.name,
+      border: palette.primary.name,
+      color: palette.primary.name,
+    },
+    tertiary: {
+      bg: palette.background.name,
+      border: palette.tertiary.name,
+      color: palette.tertiary.name,
     },
     success: {
       bg: palette.background.name,
@@ -51,9 +61,9 @@ export const getButtonColors = (
       color: palette.gray500.name,
     },
     secondary: {
-      bg: palette.black.value,
-      border: palette.black.name,
-      color: palette.background.name,
+      bg: palette.secondary.value,
+      border: palette.secondary.name,
+      color: palette.white.name,
     },
     success: {
       bg: palette.success.value,
@@ -70,9 +80,9 @@ export const getButtonColors = (
       border: palette.error.name,
       color: palette.white.name,
     },
-    market: {
-      bg: palette.market.value,
-      border: palette.market.name,
+    tertiary: {
+      bg: palette.tertiary.value,
+      border: palette.tertiary.name,
       color: palette.white.name,
     },
     primary: {
@@ -112,24 +122,34 @@ export const getButtonGhostHoverColors = (
   type: ButtonTypes,
 ): ButtonColorGroup | null => {
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
+    primary: {
+      bg: palette.primary.name,
+      border: palette.primary.name,
+      color: palette.white.name,
+    },
     secondary: {
-      bg: palette.black.name,
-      border: palette.background.name,
-      color: palette.background.name,
+      bg: palette.secondary.name,
+      border: palette.secondary.name,
+      color: palette.white.name,
+    },
+    tertiary: {
+      bg: palette.tertiary.name,
+      border: palette.tertiary.name,
+      color: palette.white.name,
     },
     success: {
       bg: palette.success.name,
-      border: palette.background.name,
-      color: palette.black.name,
+      border: palette.success.name,
+      color: palette.white.name,
     },
     warning: {
       bg: palette.warning.name,
-      border: palette.background.name,
+      border: palette.warning.name,
       color: palette.white.name,
     },
     error: {
       bg: palette.error.name,
-      border: palette.background.name,
+      border: palette.error.name,
       color: palette.white.name,
     },
   }
@@ -144,7 +164,6 @@ export const getButtonHoverColors = (
   const { type, disabled, loading, shadow, ghost } = props
   const defaultColor = getButtonColors(palette, props)
 
-  const alphaBackground = addColorAlpha(defaultColor.bg, 0.75)
   const colors: {
     [key in ButtonTypes]: Omit<ButtonColorGroup, 'color'> & {
       color?: string
@@ -155,53 +174,39 @@ export const getButtonHoverColors = (
       border: palette.black.value,
     },
     secondary: {
-      bg: palette.background.value,
-      border: palette.black.value,
+      bg: palette.secondaryLight.value,
+      border: palette.secondaryLight.name,
+      color: palette.white.name,
     },
     success: {
-      bg: palette.background.value,
-      border: palette.success.value,
+      bg: palette.successLight.value,
+      border: palette.successLight.name,
+      color: palette.white.name,
     },
     warning: {
-      bg: palette.background.value,
-      border: palette.warning.value,
+      bg: palette.warningLight.value,
+      border: palette.warningLight.value,
+      color: palette.white.name,
     },
-    market: {
-      bg: palette.background.value,
-      border: palette.market.value,
+    tertiary: {
+      bg: palette.tertiaryLight.value,
+      border: palette.tertiaryLight.value,
+      color: palette.white.name,
     },
     error: {
-      bg: palette.background.value,
+      bg: palette.errorLight.value,
       border: palette.error.value,
+      color: palette.white.name,
     },
     primary: {
-      bg: palette.background.value,
-      border: palette.primary.name,
+      bg: palette.primaryLight.value,
+      border: palette.primaryLight.name,
+      color: palette.white.name,
     },
     abort: {
-      bg: 'transparent',
-      border: 'transparent',
-      color: palette.gray500.value,
-    },
-    'secondary-light': {
-      ...defaultColor,
-      bg: alphaBackground,
-    },
-    'success-light': {
-      ...defaultColor,
-      bg: alphaBackground,
-    },
-    'warning-light': {
-      ...defaultColor,
-      bg: alphaBackground,
-    },
-    'error-light': {
-      ...defaultColor,
-      bg: alphaBackground,
-    },
-    'market-light': {
-      ...defaultColor,
-      bg: alphaBackground,
+      bg: palette.gray200.value,
+      border: palette.gray200.name,
+      color: palette.gray500.name,
     },
   }
   if (disabled)

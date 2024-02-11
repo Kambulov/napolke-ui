@@ -1,11 +1,7 @@
 import { Button, Spacer, Grid, Code } from '@napolke-ui'
-
-import Settings from '@napolke-ui/icons/Coins'
-
-import UserX from '@napolke-ui/icons/Coins'
-
-import Power from '@napolke-ui/icons/Coins'
-
+import Fire from '@napolke-ui/icons/Fire'
+import Instagram from '@napolke-ui/icons/Instagram'
+import Chat from '@napolke-ui/icons/Chat'
 import {Docs} from "../../src/templates/Docs";
 import Playground from '../../src/components/Playground'
 import Attributes from '../../src/components/Attributes'
@@ -14,91 +10,89 @@ export const meta = {
 	title: 'Button',
 	sidebar: 'components',
 	group: 'Components',
-	index: 1
+	index: 2
 }
-
 
 ## Button
 
 
-Компонент кнопки
-
+Компонент `Button` поддерживает различные варианты использования,
+включая обычные кнопки, кнопки с иконками, кнопки с текстом и изображениями,
+а также кастомные кнопки с уникальным оформлением.
 
 <Playground
-  title="Дефолтное отображение"
+  title="Дефолтное отображение."
   desc="Базовое отображение `Button` без пропсов"
   scope={{ Button }}
   code={`
-<Button>Action</Button>
-`}
+		<Button>Отправить</Button>
+	`}
 />
 
 
 <Playground
-  title="Loading"
-  desc="Отображение лоадера при загрузке"
+  title="Загрузка"
+  desc="Отображение лоадера при загрузке."
   scope={{ Button, Spacer }}
   code={`
 <>
-  <Button loading>Action</Button>
-  <Spacer h={.5} />
-  <Button loading scale={0.75}>Action</Button>
-  <Spacer h={.5} />
-  <Button loading auto type="success" scale={2/3}>Action</Button>
+	<Button loading>Отправить</Button>
+	<Spacer h={.5} />
+	<Button loading scale={0.75}>Отправить</Button>
+	<Spacer h={.5} />
+	<Button loading auto type="success" scale={2/3}>Отправить</Button>
 </>
 `}
 />
 
-
 <Playground
-  title="Disabled"
-  desc="Заблокированная кнопка"
+  title="Блокировка"
+  desc="Для того чтобы заблокировать кнопку. используйте пропс `disabled`."
   scope={{ Button }}
   code={`
-<Button disabled>Action</Button>
-`}
+		<Button disabled>Отправить</Button>
+	`}
 />
 
 <Playground
-  title="Shadow"
-  desc="Добавление теней вокруг кнопки."
+  title="Тень"
+  desc="Добавление тени вокруг кнопки."
   scope={{ Button }}
   code={`
-<Button shadow type="secondary">Shadow</Button>
-`}
+		<Button shadow type="warning">Тень</Button>
+	`}
 />
 
 
 <Playground
-  title="Types"
-  desc="Разное состояние кнопок. Сплошная заливка"
+  title="Типы"
+  desc="Разное состояние кнопок"
   scope={{ Button, Spacer, Grid }}
   code={`
 <Grid.Container gap={1.5}>
+  <Grid><Button auto type="default">Default</Button></Grid>
   <Grid><Button auto type="primary">Primary</Button></Grid>
   <Grid><Button auto type="secondary">Secondary</Button></Grid>
+  <Grid><Button auto type="tertiary">Tertiary</Button></Grid>
   <Grid><Button auto type="success">Success</Button></Grid>
   <Grid><Button auto type="warning">Warning</Button></Grid>
-  <Grid><Button auto type="market">Market</Button></Grid>
   <Grid><Button auto type="error">Error</Button></Grid>
   <Grid><Button auto type="abort">Abort</Button></Grid>
-  <Grid><Button auto type="secondary-light">Secondary Light</Button></Grid>
-  <Grid><Button auto type="success-light">Success Light</Button></Grid>
-  <Grid><Button auto type="warning-light">Warning Light</Button></Grid>
-  <Grid><Button auto type="market-light">Market Light</Button></Grid>
-  <Grid><Button auto type="error-light">Error Light</Button></Grid>
 </Grid.Container>
 `}
 />
 
 
 <Playground
-  title="GHOST"
+  title="Прозрачность"
   desc="Только цвет и контур"
   scope={{ Button, Grid }}
   code={`
 <Grid.Container gap={1.5}>
+  <Grid><Button type="default" ghost auto scale={0.7}>Default</Button></Grid>
+  <Grid><Button type="primary" ghost auto scale={0.7}>Primary</Button></Grid>
   <Grid><Button type="secondary" ghost auto scale={0.7}>Secondary</Button></Grid>
+  <Grid><Button type="tertiary" ghost auto scale={0.7}>Tertiary</Button></Grid>
   <Grid><Button type="success" ghost auto scale={0.7}>Success</Button></Grid>
   <Grid><Button type="warning" ghost auto scale={0.7}>Warning</Button></Grid>
   <Grid><Button type="error" ghost auto scale={0.7}>Error</Button></Grid>
@@ -108,8 +102,8 @@ export const meta = {
 
 
 <Playground
-  title="Scale"
-  desc="Размер кнопки"
+  title="Размер"
+  desc="Позволяет гибко настраивать размер кнопки"
   scope={{ Button, Grid }}
   code={`
 <Grid.Container gap={1.5}>
@@ -117,14 +111,14 @@ export const meta = {
   <Grid><Button auto scale={0.35}>0.35</Button></Grid>
   <Grid><Button auto scale={1/2}>1 / 2</Button></Grid>
   <Grid><Button auto scale={0.75}>0.75</Button></Grid>
-  <Grid><Button auto padding={0}>NoPadding</Button></Grid>
-  <Grid><Button auto font={0.25}>Small Font</Button></Grid>
-  <Grid><Button auto pl={0} ml="25px">Offset</Button></Grid>
-  <Grid xs={12}><Button width="100%">Full Width</Button></Grid>
+  <Grid><Button auto padding={0}>нет отступа</Button></Grid>
+  <Grid><Button auto fs={0.72}>Шрифтк</Button></Grid>
+  <Grid><Button auto pl={0} ml="25px">Сдвиг</Button></Grid>
+  <Grid xs={12}><Button width="100%">На всю ширину</Button></Grid>
   <Grid xs={12}>
-    <Button auto width="30%" mx="5px">proportion</Button>
-    <Button auto width="30%" mx="5px">proportion</Button>
-    <Button auto width="30%" mx="5px">proportion</Button>
+    <Button auto width="30%" mx="5px">1/3</Button>
+    <Button auto width="30%" mx="5px">1/3</Button>
+    <Button auto width="30%" mx="5px">1/3</Button>
   </Grid>
 </Grid.Container>
 `}
@@ -132,30 +126,30 @@ export const meta = {
 
 
 <Playground
-  title="With Icons"
-  desc="Используйте `icon` или `icon` для добавления иконок"
-  scope={{ Button, Spacer, Settings, UserX, Power }}
+  title="Иконки"
+  desc="Для добавления иконок, используте пропсы `icon` или `iconRight`"
+  scope={{ Button, Spacer, Fire, Instagram, Chat }}
   code={`
 <>
-  <Button iconRight={<Power />} auto scale={2/3} />
+  <Button icon={<Fire />} auto scale={2/3} />
   <Spacer w={.5} inline />
-  <Button iconRight={<Power />} auto scale={2/3} px={0.6} />
+  <Button iconRight={<Fire />} auto scale={2/3} px={0.6} />
   <Spacer h={.5} />
-  <Button icon={<Settings />} auto>Action</Button>
+  <Button icon={<Instagram />} auto>Перейти</Button>
   <Spacer h={.5} />
-  <Button icon={<Settings />} type="success" scale={0.85}>Success</Button>
+  <Button icon={<Instagram />} type="success" scale={0.85}>Перейти</Button>
   <Spacer h={.5} />
-  <Button icon={<Settings />} type="secondary">Success</Button>
+  <Button iconRight={<Instagram />} type="secondary">Перейти</Button>
   <Spacer h={.5} />
-  <Button icon={<UserX />} type="error" ghost>Remove User</Button>
+  <Button icon={<Chat />} type="error" ghost>Отправить</Button>
   <Spacer h={.5} />
-  <Button icon={<UserX />} disabled>Remove User</Button>
+  <Button icon={<Chat />} disabled>Отправить</Button>
 </>
 `}
 />
 
 
-<Attributes edit="/pages/en-us/components/button.mdx">
+<Attributes edit="/components/button.mdx">
 
 <Attributes.Title>Button.Props</Attributes.Title>
 

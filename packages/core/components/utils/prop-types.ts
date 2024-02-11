@@ -6,16 +6,11 @@ const buttonTypes = tuple(
   'default',
   'primary',
   'secondary',
+  'tertiary',
   'success',
   'warning',
   'error',
   'abort',
-  'market',
-  'market-light',
-  'secondary-light',
-  'success-light',
-  'warning-light',
-  'error-light',
 )
 
 const normalTypes = tuple('default', 'secondary', 'success', 'warning', 'error')

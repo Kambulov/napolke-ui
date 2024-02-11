@@ -31,6 +31,10 @@ export const components: SidebarItemsI[] = [
     url: '/components/avatar'
   },
   {
+    name: 'Button',
+    url: '/components/button'
+  },
+  {
     name: 'Text',
     url: '/components/text'
   }

@@ -14,7 +14,7 @@ export const palette: NapolkeUIThemesPalette = {
     name: 'var(--nui-color-primary)'
   },
   primaryLight: {
-    value: '#f8472f',
+    value: '#f8563f',
     name: 'var(--nui-color-primary-light)'
   },
   secondary: {
@@ -24,6 +24,14 @@ export const palette: NapolkeUIThemesPalette = {
   secondaryLight: {
     value: '#3291ff',
     name: 'var(--nui-color-secondary-light)'
+  },
+  tertiary: {
+    value: '#21201c',
+    name: 'var(--nui-color-tertiary)'
+  },
+  tertiaryLight: {
+    value: '#42413e',
+    name: 'var(--nui-color-tertiary-light)'
   },
   success: {
     value: '#4b9806',
@@ -50,8 +58,12 @@ export const palette: NapolkeUIThemesPalette = {
     name: 'var(--nui-color-background)'
   },
   warning: {
-    value: '#fb923c',
+    value: '#f5a623',
     name: 'var(--nui-color-warning)'
+  },
+  warningLight: {
+    value: '#f7b955',
+    name: 'var(--nui-color-warning-light)'
   },
   info: {
     value: 'hsl(200.6 94.4% 86.1%)',
