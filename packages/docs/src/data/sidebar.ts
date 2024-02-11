@@ -6,17 +6,17 @@ export interface SidebarItemsI {
 }
 export const guide: SidebarItemsI[] = [
   {
-    name: 'Guide',
+    name: 'Инструкции',
     url: '',
     icon: 'Book'
   },
   {
-    name: 'Getting Started',
+    name: 'Начало работы',
     url: '/guide/getting-started'
   },
   {
-    name: 'Colors',
-    url: '/guide/getting-started'
+    name: 'Цветовая палитра',
+    url: '/guide/colors'
   }
 ]
 
@@ -42,7 +42,7 @@ export const components: SidebarItemsI[] = [
 
 export const hooks: SidebarItemsI[] = [
   {
-    name: 'Hooks22',
+    name: 'Хуки',
     url: '',
     icon: 'Settings'
   },

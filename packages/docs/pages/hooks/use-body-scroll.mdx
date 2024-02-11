@@ -1,0 +1,53 @@
+import {Docs} from "../../src/templates/Docs";
+import Playground from "../../src/components/Playground";
+import Attributes from '../../src/components/Attributes';
+import { Button, Spacer, Text, useBodyScroll } from '@napolke-ui';
+
+export const meta = {
+  title: 'useBodyScroll',
+  sidebar: 'hooks',
+  group: 'Hooks',
+  index: 1
+}
+
+## useBodyScroll
+
+Данный хук позволяет отключать скролл для всей страницы или любого элемента, это полезно для отображения всплывающего элемента или меню.
+Если ширина полосы прокрутки страницы установлена на определенное пользователем значение width перед отключением прокрутки, после отключения
+будет добавлено значение paddingRight, чтобы адаптироваться.
+
+<Playground
+  desc="Click button to disable scrolling."
+  scope={{ Button, Spacer, Text, useBodyScroll }}
+  code={`
+() => {
+  const [hidden, setHidden] = useBodyScroll()
+  return (
+    <>
+      <Text small b type={hidden ? 'error' : 'default'}>{hidden ? 'Body заблоикрован.' : 'Body можно прокручивать'}</Text>
+      <Spacer h={.75} />
+      <Button scale={0.5} type="success-light" auto onClick={() => setHidden(true)}>Блокировать</Button>
+      <Button ml="20px" scale={0.5} type="secondary-light" auto onClick={() => setHidden(false)}>Сбросить</Button>
+    </>
+  )
+}
+`}
+/>
+
+<Attributes edit="/pages/hooks/use-body-scroll.mdx">
+<Attributes.Title>useBodyScroll</Attributes.Title>
+
+```ts
+type BodyScrollOptions = {
+	delayReset: number  // задержка после возобнолвения прокрутки, по деффолту 0
+}
+
+const useBodyScroll = (
+	elementRef?: RefObject<HTMLElement> | null,
+	options?: BodyScrollOptions,
+) => [boolean, Dispatch<SetStateAction<boolean>>]
+```
+
+</Attributes>
+
+export default ({ children }) => <Docs meta={meta}>{children}</Docs>

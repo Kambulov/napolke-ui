@@ -26,10 +26,10 @@ Napolke UI позволяет создавать красивые, соврем�
 
 <Tabs initialValue="yarn" hideDivider hideBorder align="flex-start" mt="-46px">
   <Tabs.Item label="Yarn" value="yarn">
-    <Snippet text="yarn add @apolke-ui/core" />
+    <Snippet type="lite" text="yarn add @apolke-ui/core" />
   </Tabs.Item>
   <Tabs.Item label="Npm" value="npm">
-    <Snippet text="npm i @apolke-ui/core" />
+    <Snippet type="lite" text="npm i @apolke-ui/core" />
   </Tabs.Item>
 </Tabs>
 
@@ -43,14 +43,14 @@ Napolke UI позволяет создавать красивые, соврем�
 
 #### React
 
-Go to the root of your application and do this:
+Перейдите в корневую директорию вашего приложения и выполните следующее:
 
 ```tsx
+// NAME: /src/app.js
 import * as React from 'react'
 import { NapolkeProvider } from '@napolke-ui/core'
 
 function App({ Component }) {
-  // 2. Use at the root of your app
   return (
     <NapolkeProvider>
       <Component />
@@ -61,5 +61,98 @@ function App({ Component }) {
 
 <Spacer h={2} />
 
+<Spacer h={2} />
+
+#### Next.js
+
+1. Перейдите в файл pages/_app.js или pages/_app.tsx (создайте его, если он не существует), и добавьте следующий код:
+
+```tsx
+// NAME: pages/_app.ts
+import { NapolkeProvider } from '@napolke-ui/core'
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <NapolkeProvider>
+      <Component {...pageProps} />
+    </NapolkeProvider>
+  )
+}
+
+export default MyApp
+```
+
+2. Перейдите в файл  `pages/_document.js` или `pages/_document.tsx` (создайте его, если он не существует), и добавьте следующий код:
+
+```jsx
+// NAME: pages/_document.tsx
+import React from 'react'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { CssBaseline } from '@napolke-ui/core'
+
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx)
+    return {
+      ...initialProps,
+      styles: React.Children.toArray([initialProps.styles])
+    }
+  }
+
+  render() {
+    return (
+      <Html lang="кг">
+        <Head>{CssBaseline.flush()}</Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+}
+
+export default MyDocument
+```
+
+>Для получения дополнительной информации о SSR с использованием Next.js и Napolke UI обратитесь к [документации](/guide/bolio-ui-plus-nextjs).
+
+
+
+<Spacer h={2} />
+
+### Как использовать компоненты Napolke UI
+
+После установки Napolke UI вы можете использовать любой из компонентов следующим образом.
+Napolke UI использует оптимизацию дерева зависимостей (tree-shaking), поэтому неиспользуемые модули не будут включены в пакет во время процесса сборки, и
+каждый компонент экспортируется отдельно.
+
+```tsx
+import { Button } from '@napolke-ui/core'
+
+const Component = () => <Button>Отправить</Button>
+```
+
+<Spacer h={2} />
+
+### Импорт отдельных компонентов
+
+```jsx
+import Button from '@napolke-ui/core/button'
+
+const Component = () => <Button>Отправить</Button>
+```
+
+<Attributes edit="/pages/docs/components/avatar.mdx">
+	<Attributes.Title>BolioUIProvider.Props</Attributes.Title>
+
+	| Attribute           | Type            | Accepted values              | Description                                                      | Default |
+	| ------------------- | --------------- | ---------------------------- | ---------------------------------------------------------------- | ------- |
+	| **theme**           | `BolioUIThemes` | [ThemeObject](#theme-object) | Optional custom theme, by default Bolio UI applies `light` theme | -       |
+	| **disableBaseline** | `boolean`       | `true/false`                 | Bolio UI automatically includes `<CssBaseline/>`                 | `false` |
+
+</Attributes>
+
+<Spacer h={3} />
 
 export default ({ children }) => <Docs meta={meta}>{children}</Docs>

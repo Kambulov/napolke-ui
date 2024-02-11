@@ -40,6 +40,7 @@ const useBodyScroll = (
     ...defaultOptions,
     ...(options || {}),
   }
+  const timerRef = useRef<number | null>(null)
 
   useEffect(() => {
     if (!elRef || !elRef.current) return
@@ -68,10 +69,15 @@ const useBodyScroll = (
       elementStack.delete(el)
     }
 
-    const timer = window.setTimeout(() => {
+    if (timerRef.current) clearTimeout(timerRef.current)
+
+    timerRef.current = window.setTimeout(() => {
       reset(elRef.current!)
-      window.clearTimeout(timer)
     }, safeOptions.delayReset)
+
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current)
+    }
   }, [hidden, elRef])
 
   return [hidden, setHidden]

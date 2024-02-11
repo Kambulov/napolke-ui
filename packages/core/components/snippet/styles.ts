@@ -16,7 +16,7 @@ export const getStyles = (
     default: {
       color: palette.black.name,
       border: palette.border.name,
-      bgColor: palette.gray200.name,
+      bgColor: palette.background.name,
     },
     success: {
       color: palette.success.name,
@@ -41,7 +41,7 @@ export const getStyles = (
     lite: {
       color: palette.black.name,
       border: palette.border.name,
-      bgColor: palette.gray100.name,
+      bgColor: palette.gray200.name,
     },
     dark: {
       color: palette.white.name,
