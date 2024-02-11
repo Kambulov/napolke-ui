@@ -37,6 +37,10 @@ export const components: SidebarItemsI[] = [
   {
     name: 'Text',
     url: '/components/text'
+  },
+  {
+    name: 'Image',
+    url: '/components/image'
   }
 ]
 

@@ -1,43 +1,65 @@
 import { Image, Display, Code } from '@napolke-ui'
-import Layout from '../../../сomponents/layout'
-import  Playground from '../../../сomponents/playground'
-import  Attributes from '../../../сomponents/attributes'
+import {Docs} from "../../src/templates/Docs";
+import Playground from '../../src/components/Playground'
+import Attributes from '../../src/components/Attributes'
 
 export const meta = {
-  title: 'Image',
-  group: 'Data Display',
+	title: 'Image',
+	sidebar: 'components',
+	group: 'Components',
+	index: 3
 }
 
 ## Image
 
-Компонент для вставки картинок
+Компонент `Image` представляет собой элемент интерфейса, предназначенный для
+отображения изображений.Он предоставляет удобный способ вставки изображений на веб-страницы и обеспечивает
+возможность динамического управления свойствами изображения, такими как источник (src), размеры, альтернативный текст и другие.
 
 <Playground
-  title="Basic"
-  desc="Предварительно показываеся скилет, пока изображение загружается. (для проверки можно замедлить интернет)"
+  title="Дефолтное отображение"
+  desc="Базовое отображение `Image` без пропсов"
   scope={{ Image }}
   code={`
-<Image width="280px" height="160px"  maxDelay={4000} src='../../../images/banner_2.png' />
+<Image
+  width="280px"
+  height="160px"
+  src='../../../images/banner_2.png'
+ />
 `}
 />
 
 <Playground
-  title="Browser"
+  title="Плейсхолдер"
+  desc="Предварительно показываеся скилет, после установки пропсов `width` и `height`."
+  scope={{ Image }}
+  code={`
+<Image
+  width="280px"
+  height="160px"
+  maxDelay={14000}
+  src='http://www.deelay.me/2000/../../../images/banner_2.png'
+ />
+`}
+/>
+
+<Playground
+  title="Светлая тема браузера"
   desc="Добавьте к изображению оболочку в стиле браузера."
   scope={{ Image, Display, Code }}
   code={`
 <Image.Browser url="https://napolke.ru" anchorProps={{ rel: 'nofollow' }}>
   <Image width="525px" height="300px" src='../../../images/banner_1.png' />
-  </Image.Browser>
+</Image.Browser>
 `}
 />
 
 <Playground
-  title="Browser Invert"
+  title="Темная тема браузера"
   scope={{ Image, Display, Code }}
   code={`
-<Image.Browser url="https://geist-ui.dev/en-us/guide/introduction" invert>
-  <Image width="525px" height="300px" src="https://catherineasquithgallery.com/uploads/posts/2021-02/1614329632_9-p-raduzhnii-fon-dlya-intro-10.jpg" />
+<Image.Browser url="https://napolke.ru" invert>
+  <Image width="525px" height="295px" src="https://catherineasquithgallery.com/uploads/posts/2021-02/1614329632_9-p-raduzhnii-fon-dlya-intro-10.jpg" />
 </Image.Browser>
 `}
 />
@@ -80,17 +102,16 @@ export const meta = {
 <Attributes edit="/pages/en-us/components/image.mdx">
 <Attributes.Title>Image.Props</Attributes.Title>
 
-	| Атрибут       | Описание                                  | Тип                                             | Принимаемые значения        | Деф. значение   |
-| --------------------- | --------------------------------------- | ------------------- | ------------------------- | ------- |
-| **src**               | путь до файла                              | `string`            | -                         | -       |
-| **disableSkeleton**   | отключить анимацию скелета при загрузке | `boolean`           | -                         | `false` |
-| **disableAutoResize** | отключить масштабирование, если ширина слишком мала  | `boolean`           | -                         | `false` |
+| Атрибут               | Описание                                             | Тип                                             | Принимаемые значения        | Деф. значение   |
+| --------------------- | ---------------------------------------------------- | ------------------- | ------------------------- | ------- |
+| **src**               | путь до файла                                        | `string`            | -                         | -       |
+| **disableSkeleton**   | отключить анимацию скелета при загрузке              | `boolean`           | -                         | `false` |
 | **maxDelay**(ms)      | максимальная продолжительность анимации              | `number`            | -                         | `3000`  |
-| ...                   | стандартные пропсы                          | `ImgHTMLAttributes` | `'alt', 'className', ...` | -       |
+| ...                   | стандартные пропсы                                   | `ImgHTMLAttributes` | `'alt', 'className', ...` | -       |
 
 <Attributes.Title>Image.Browser.Props</Attributes.Title>
 
-	| Атрибут       | Описание                                  | Тип                                             | Принимаемые значения        | Деф. значение   |
+| Атрибут       | Описание                                  | Тип                                             | Принимаемые значения        | Деф. значение   |
 | ---------------- | ------------------------------------- | ---------------------- | ------------------------ | ------- |
 | **title**        | показывать текстовый заголовок (если "url" не задан) | `string`               | -                        | -       |
 | **url**          | показыват URL-адрес в заголовке     | `string`               | -                        | -       |
@@ -101,4 +122,4 @@ export const meta = {
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Docs meta={meta}>{children}</Docs>

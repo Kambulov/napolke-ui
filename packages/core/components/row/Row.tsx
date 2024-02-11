@@ -57,7 +57,9 @@ function Row({
   )
 
   return (
-    <Component className={`row ${className}`} {...props}>
+    <
+      // @ts-ignore
+      Component className={`row ${className}`} {...props}>
       {children}
       <style jsx>{`
         .row {

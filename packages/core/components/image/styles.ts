@@ -16,14 +16,14 @@ export const getBrowserColors = (
     ? {
         color: palette.white.name,
         barBgColor: palette.black.name,
-        inputBgColor: palette.gray950.name,
+        inputBgColor: palette.gray800.name,
         borderColor: palette.gray700.name,
         titleColor: palette.gray200.name,
       }
     : {
         color: palette.black.name,
         barBgColor: palette.background.name,
-        inputBgColor: palette.gray50.name,
+        inputBgColor: palette.gray200.name,
         borderColor: palette.border.name,
         titleColor: palette.gray500.name,
       }

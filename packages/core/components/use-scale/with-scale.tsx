@@ -1,4 +1,4 @@
-import React, {AnchorHTMLAttributes, ComponentType, forwardRef} from 'react';
+import React, {forwardRef} from 'react';
 import {
   DynamicLayoutPipe,
   ScaleConfig,

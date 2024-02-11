@@ -48,11 +48,12 @@ Napolke UI позволяет создавать красивые, соврем�
 ```tsx
 // NAME: /src/app.js
 import * as React from 'react'
-import { NapolkeProvider } from '@napolke-ui/core'
+import { NapolkeProvider, CssBaseline } from '@napolke-ui/core'
 
 function App({ Component }) {
   return (
     <NapolkeProvider>
+			<CssBaseline/> // --> Базовый стиль компонентов
       <Component />
     </NapolkeProvider>
   )
@@ -69,11 +70,12 @@ function App({ Component }) {
 
 ```tsx
 // NAME: pages/_app.ts
-import { NapolkeProvider } from '@napolke-ui/core'
+import { NapolkeProvider, CssBaseline } from '@napolke-ui/core'
 
 function MyApp({ Component, pageProps }) {
   return (
     <NapolkeProvider>
+			<CssBaseline/>
       <Component {...pageProps} />
     </NapolkeProvider>
   )
