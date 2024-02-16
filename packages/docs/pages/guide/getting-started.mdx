@@ -26,10 +26,10 @@ Napolke UI позволяет создавать красивые, соврем�
 
 <Tabs initialValue="yarn" hideDivider hideBorder align="flex-start" mt="-46px">
   <Tabs.Item label="Yarn" value="yarn">
-    <Snippet type="lite" text="yarn add @apolke-ui/core" />
+    <Snippet type="lite" text="yarn add @napolke-ui/core" />
   </Tabs.Item>
   <Tabs.Item label="Npm" value="npm">
-    <Snippet type="lite" text="npm i @apolke-ui/core" />
+    <Snippet type="lite" text="npm i @napolke-ui/core" />
   </Tabs.Item>
 </Tabs>
 
@@ -53,7 +53,7 @@ import { NapolkeProvider, CssBaseline } from '@napolke-ui/core'
 function App({ Component }) {
   return (
     <NapolkeProvider>
-			<CssBaseline/> // --> Базовый стиль компонентов
+      <CssBaseline/> // --> Базовый стиль компонентов
       <Component />
     </NapolkeProvider>
   )
@@ -75,7 +75,7 @@ import { NapolkeProvider, CssBaseline } from '@napolke-ui/core'
 function MyApp({ Component, pageProps }) {
   return (
     <NapolkeProvider>
-			<CssBaseline/>
+      <CssBaseline/>
       <Component {...pageProps} />
     </NapolkeProvider>
   )

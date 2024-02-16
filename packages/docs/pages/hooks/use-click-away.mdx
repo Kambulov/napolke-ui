@@ -1,0 +1,50 @@
+import {Docs} from "../../src/templates/Docs";
+import Playground from '../../src/components/Playground'
+import Attributes from '../../src/components/Attributes'
+import { Link, useClickAway } from '@napolke-ui'
+
+export const meta = {
+    title: 'useClickAway',
+    sidebar: 'hooks',
+    group: 'Hooks',
+    index: 3
+}
+
+## useClickAway
+
+Хук позволяет опредить, произошло ли событие click за пределами элемента.
+
+Это пользовательские перехватчики React, вам нужно следовать
+<Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html"> основным правилам</Link>  при его использовании.
+
+<Playground
+    title={"Реализация"}
+    desc="Нажмите за пределами зеленого блока, чтобы вызвать обратный вызов."
+    scope={{ useClickAway }}
+    code={`
+() => {
+  const ref = React.useRef()
+  const [count, setCount] = React.useState(0)
+  useClickAway(ref, () => setCount(last => last + 1))
+  return (
+    <div ref={ref} style={{ background: 'green', display: 'flex' }}>
+      <p style={{ fontSize: '2rem' }}>{count}</p>
+    </div>
+  )
+}
+`}
+/>
+
+<Attributes edit="/hooks/use-click-away.mdx">
+    <Attributes.Title>useClickAway</Attributes.Title>
+
+    ```ts
+    const useClickAway = (
+    ref: MutableRefObject<HTMLElement | null>,
+    handler: (event: MouseEvent) => void,
+    ) => void
+    ```
+
+</Attributes>
+
+export default ({ children }) => <Docs meta={meta}>{children}</Docs>

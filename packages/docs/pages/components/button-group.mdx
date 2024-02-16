@@ -5,7 +5,6 @@ import { Button, Grid, ButtonGroup } from '../../../core/components'
 
 export const meta = {
   title: 'Button Group',
-  description: 'A set of related buttons.',
   sidebar: 'components',
   group: 'Components',
   index: 6
@@ -13,19 +12,19 @@ export const meta = {
 
 ## Button Group
 
-A set of related buttons.
+Данный компонент позволяет группировать кнопки
 
 <Playground
-  title="General"
-  desc="The basic `ButtonGroup` usage."
+  title="Дефолтный вид"
+  desc="Базовое отображение `ButtonGroup`  без пропсов"
   scope={{ Button, ButtonGroup, Grid }}
   code={`
 <Grid.Container gap={2}>
   <Grid>
     <ButtonGroup>
-      <Button>One</Button>
-      <Button>Two</Button>
-      <Button>Three</Button>
+      <Button>Отправить</Button>
+      <Button>Редактировать</Button>
+      <Button>Удалить</Button>
     </ButtonGroup>
   </Grid>
 </Grid.Container>
@@ -33,35 +32,35 @@ A set of related buttons.
 />
 
 <Playground
-  title="Variant"
-  desc="set the type or styles of all buttons in the group."
+  title="Типы"
+  desc="Установите тип или стили всех кнопок в группе."
   scope={{ Button, ButtonGroup, Grid }}
   code={`
 <Grid.Container gap={2}>
   <Grid>
     <ButtonGroup type="success">
-      <Button>One</Button>
-      <Button>Two</Button>
-      <Button>Three</Button>
+      <Button>Отправить</Button>
+      <Button>Редактировать</Button>
+      <Button>Удалить</Button>
     </ButtonGroup>
   </Grid>
   <Grid>
     <ButtonGroup type="abort">
-      <Button>Action1</Button>
-      <Button>Action2</Button>
+      <Button>Добавить</Button>
+      <Button>Удалить</Button>
     </ButtonGroup>
   </Grid>
   <Grid>
     <ButtonGroup type="warning" ghost>
-      <Button>Action1</Button>
-      <Button>Action2</Button>
+      <Button>Добавить</Button>
+      <Button>Удалить</Button>
     </ButtonGroup>
   </Grid>
   <Grid>
     <ButtonGroup type="success-light">
-      <Button>One</Button>
-      <Button>Two</Button>
-      <Button>Three</Button>
+      <Button>Отправить</Button>
+      <Button>Редактировать</Button>
+      <Button>Удалить</Button>
     </ButtonGroup>
   </Grid>
 </Grid.Container>
@@ -69,22 +68,22 @@ A set of related buttons.
 />
 
 <Playground
-  title="Sizes"
-  desc="Change the size of the entire group button including the property `type`."
+  title="Размер"
+  desc="Измените размер всей кнопки или группы, для этого укажите свойство `scale`."
   scope={{ Button, ButtonGroup, Grid }}
   code={`
 <Grid.Container gap={2}>
   <Grid>
     <ButtonGroup scale={2 / 3}>
-      <Button scale={2 / 3}>One</Button>
-      <Button scale={2 / 3}>Two</Button>
-      <Button scale={2 / 3}>Three</Button>
+      <Button scale={2 / 3}>Отправить</Button>
+      <Button scale={2 / 3}>Редактировать</Button>
+      <Button scale={2 / 3}>Удалить</Button>
     </ButtonGroup>
   </Grid>
   <Grid>
     <ButtonGroup scale={1 / 3}>
-      <Button scale={1 / 3}>Action1</Button>
-      <Button scale={1 / 3}>Action2</Button>
+      <Button scale={1 / 3}>Отправить</Button>
+      <Button scale={1 / 3}>Удалить</Button>
     </ButtonGroup>
   </Grid>
 </Grid.Container>
@@ -92,17 +91,17 @@ A set of related buttons.
 />
 
 <Playground
-  title="Vertical"
-  desc="You can use the `vertical` property to sort the buttons vertically."
+  title="Вертикальное расположение"
+  desc="Вы можете использовать свойство `vertical` для того, чтобы расположить кнопки вертикально."
   scope={{ Button, ButtonGroup, Grid }}
   code={`
 <Grid.Container gap={2}>
   <Grid>
     <ButtonGroup vertical>
-      <Button>One</Button>
-      <Button>Two</Button>
-      <Button>Three</Button>
-      <Button>Four</Button>
+      <Button>Отправить</Button>
+      <Button>Удалить</Button>
+      <Button>Добавить</Button>
+      <Button>Редактировать</Button>
     </ButtonGroup>
   </Grid>
 </Grid.Container>
@@ -110,32 +109,32 @@ A set of related buttons.
 />
 
 <Playground
-  title="Disabled"
-  desc="disable all buttons in the group."
+  title="Блокировка"
+  desc="Заблакируйте все кнопки внутри группы"
   scope={{ Button, ButtonGroup, Grid }}
   code={`
 <Grid.Container gap={2}>
   <Grid>
     <ButtonGroup scale={0.5} disabled>
-      <Button scale={0.5}>One</Button>
-      <Button scale={0.5}>Two</Button>
-      <Button scale={0.5}>Three</Button>
+      <Button scale={0.5}>Отправить</Button>
+      <Button scale={0.5}>Удалить</Button>
+      <Button scale={0.5}>Редактировать</Button>
     </ButtonGroup>
   </Grid>
 </Grid.Container>
 `}
 />
 
-<Attributes edit="/pages/docs/components/button-group.mdx">
+<Attributes edit="/pages/components/button-group.mdx">
 <Attributes.Title>ButtonGroup.Props</Attributes.Title>
 
 | Attribute    | Description                 | Type                   | Accepted values             | Default   |
 | ------------ | --------------------------- | ---------------------- | --------------------------- | --------- |
-| **type**     | button type                 | `ButtonTypes`          | [ButtonTypes](#buttontypes) | `default` |
-| **ghost**    | the opposite color          | `boolean`              | -                           | `false`   |
-| **vertical** | show all buttons vertically | `boolean`              | -                           | `false`   |
-| **disabled** | disable all buttons         | `boolean`              | -                           | `false`   |
-| ...          | native props                | `ButtonHTMLAttributes` | `'id', 'className', ...`    | -         |
+| **type**     | Тип кнопки                  | `ButtonTypes`          | [ButtonTypes](#buttontypes) | `default` |
+| **ghost**    | Прозрачность                | `boolean`              | -                           | `false`   |
+| **vertical** | Вертикальное отображение    | `boolean`              | -                           | `false`   |
+| **disabled** | Заблокировать кнопки        | `boolean`              | -                           | `false`   |
+| ...          | Остальные пропсы            | `ButtonHTMLAttributes` | `'id', 'className', ...`    | -         |
 
 <Attributes.Title>ButtonTypes</Attributes.Title>
 

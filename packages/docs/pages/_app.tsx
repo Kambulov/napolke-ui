@@ -28,11 +28,6 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
         <meta property="og:title" content="Napolke UI" />
         <meta property="og:site_name" content="Napolke UI" />
         <meta name="generator" content="Napolke UI" />
-        <link
-          rel="manifest"
-          href="/manifest.json"
-          crossOrigin="use-credentials"
-        />
       </Head>
       <NapolkeProvider>
         <CssBaseline />

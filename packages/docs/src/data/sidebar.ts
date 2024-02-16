@@ -56,6 +56,10 @@ export const hooks: SidebarItemsI[] = [
   },
   {
     name: 'useBodyScroll',
-    url: '/hooks/use-body-scroll'
+    url: '/hooks/use-click-away'
+  },
+  {
+    name: 'useClickAway',
+    url: '/hooks/use-click-away'
   }
 ]
