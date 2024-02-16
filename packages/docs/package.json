@@ -1,0 +1,48 @@
+{
+  "name": "docs",
+  "version": "0.0.1",
+  "homepage": "https://kambulov.github.io/napolke-ui/",
+  "scripts": {
+    "dev": "next dev ",
+    "start": "next start",
+    "docs:collect": "node scripts/collect-meta.js",
+    "docs:build": "yarn docs:collect && next build",
+    "deploy": "gh-pages -d .next",
+    "predeploy": "yarn docs:build"
+  },
+  "keywords": [
+    "napolke",
+    "napolke-ui",
+    "components",
+    "react components",
+    "react ui"
+  ],
+  "sideEffects": false,
+  "devDependencies": {
+    "@mapbox/rehype-prism": "^0.6.0",
+    "@mdx-js/loader": "1.6.22",
+    "@next/mdx": "^12.3.1",
+    "@types/lodash": "^4.14.202",
+    "@types/node": "20.10.4",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@xstyled/styled-components": "^3.7.3",
+    "classnames": "^2.5.1",
+    "date-fns": "^2.30.0",
+    "lodash": "^4.17.21",
+    "next": "^12.1.4",
+    "prism-react-renderer": "1.3.5",
+    "react": "^18.0.2",
+    "react-dom": "^18.0.2",
+    "react-live": "^2.2.3",
+    "rehype-join-line": "^1.0.2",
+    "styled-components": "^5.3.11",
+    "ts-loader": "^9.5.1",
+    "typescript": "5.3.3"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.16.7",
+    "@napolke-ui/icons": "^0.0.38",
+    "kbar": "^0.1.0-beta.45"
+  }
+}

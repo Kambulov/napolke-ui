@@ -1,0 +1,167 @@
+import {Docs} from "../../src/templates/Docs";
+import { Tabs, Spacer, Snippet} from '../../../core/components'
+import Attributes from '../../src/components/Attributes'
+
+export const meta = {
+  title: 'Начало работы',
+  sidebar: 'guide',
+  group: 'Guide'
+}
+
+## Начало работы c Napolke UI
+
+<Spacer h={2} />
+
+#### Добро пожаловать в документацию
+
+Napolke UI позволяет создавать красивые, современные и быстрые веб-сайты/приложения независимо от вашего опыта в дизайне, созданные с <a href="https://reactjs.org/" rel="noreferrer" target="_blank">React.js</a>.
+
+<Spacer h={2} />
+
+### Установка
+
+Внутри вашего каталога проекта React установите Napolke UI, выполнив одну из следующих команд:
+
+<Spacer h={3} />
+
+<Tabs initialValue="yarn" hideDivider hideBorder align="flex-start" mt="-46px">
+  <Tabs.Item label="Yarn" value="yarn">
+    <Snippet type="lite" text="yarn add @apolke-ui/core" />
+  </Tabs.Item>
+  <Tabs.Item label="Npm" value="npm">
+    <Snippet type="lite" text="npm i @apolke-ui/core" />
+  </Tabs.Item>
+</Tabs>
+
+<Spacer h={3} />
+
+### Настройка
+
+Чтобы Napolke UI работал корректно, необходимо подключить NapolkeProvider в корне вашего приложения.
+
+<Spacer h={1} />
+
+#### React
+
+Перейдите в корневую директорию вашего приложения и выполните следующее:
+
+```tsx
+// NAME: /src/app.js
+import * as React from 'react'
+import { NapolkeProvider, CssBaseline } from '@napolke-ui/core'
+
+function App({ Component }) {
+  return (
+    <NapolkeProvider>
+			<CssBaseline/> // --> Базовый стиль компонентов
+      <Component />
+    </NapolkeProvider>
+  )
+}
+```
+
+<Spacer h={2} />
+
+<Spacer h={2} />
+
+#### Next.js
+
+1. Перейдите в файл pages/_app.js или pages/_app.tsx (создайте его, если он не существует), и добавьте следующий код:
+
+```tsx
+// NAME: pages/_app.ts
+import { NapolkeProvider, CssBaseline } from '@napolke-ui/core'
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <NapolkeProvider>
+			<CssBaseline/>
+      <Component {...pageProps} />
+    </NapolkeProvider>
+  )
+}
+
+export default MyApp
+```
+
+2. Перейдите в файл  `pages/_document.js` или `pages/_document.tsx` (создайте его, если он не существует), и добавьте следующий код:
+
+```jsx
+// NAME: pages/_document.tsx
+import React from 'react'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { CssBaseline } from '@napolke-ui/core'
+
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx)
+    return {
+      ...initialProps,
+      styles: React.Children.toArray([initialProps.styles])
+    }
+  }
+
+  render() {
+    return (
+      <Html lang="кг">
+        <Head>{CssBaseline.flush()}</Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
+}
+
+export default MyDocument
+```
+
+>Для получения дополнительной информации о SSR с использованием Next.js и Napolke UI обратитесь к [документации]().
+
+
+
+<Spacer h={2} />
+
+### Как использовать компоненты Napolke UI
+
+После установки Napolke UI вы можете использовать любой из компонентов следующим образом.
+Napolke UI использует оптимизацию дерева зависимостей (tree-shaking), поэтому неиспользуемые модули не будут включены в пакет во время процесса сборки, и
+каждый компонент экспортируется отдельно.
+
+```tsx
+import { Button } from '@napolke-ui/core'
+
+const Component = () => <Button>Отправить</Button>
+```
+
+<Spacer h={2} />
+
+### Импорт отдельных компонентов
+
+```jsx
+import Button from '@napolke-ui/core/button'
+
+const Component = () => <Button>Отправить</Button>
+```
+
+[//]: # (<Attributes edit="/pages/docs/components/avatar.mdx">)
+
+[//]: # (	<Attributes.Title>NapolkeProvider.Props</Attributes.Title>)
+
+[//]: # ()
+[//]: # (	| Attribute           | Type            | Accepted values              | Description                                                      | Default |)
+
+[//]: # (	| ------------------- | --------------- | ---------------------------- | ---------------------------------------------------------------- | ------- |)
+
+[//]: # (	| **theme**           | `NapolkeUIThemes` | [ThemeObject]&#40;#theme-object&#41; | Optional custom theme, by default Napolke UI applies `light` theme | -       |)
+
+[//]: # (	| **disableBaseline** | `boolean`       | `true/false`                 | Napolke UI automatically includes `<CssBaseline/>`                 | `false` |)
+
+[//]: # ()
+[//]: # (</Attributes>)
+
+[//]: # ()
+[//]: # (<Spacer h={3} />)
+
+export default ({ children }) => <Docs meta={meta}>{children}</Docs>
