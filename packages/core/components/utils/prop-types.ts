@@ -28,11 +28,13 @@ const snippetTypes = tuple(
 const cardTypes = tuple(
   'default',
   'secondary',
+  'primary',
   'success',
   'warning',
   'error',
   'dark',
   'lite',
+  'info',
   'alert',
   'purple',
   'violet',

@@ -25,6 +25,14 @@ export const getStyles = (
       color: palette.background.name,
       bgColor: palette.secondary.name
     },
+    primary: {
+      color: palette.background.name,
+      bgColor: palette.primary.name
+    },
+    info: {
+      color: palette.background.name,
+      bgColor: palette.info.name
+    },
     success: {
       color: palette.background.name,
       bgColor: palette.success.name

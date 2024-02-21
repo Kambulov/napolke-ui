@@ -1,0 +1,252 @@
+import { Card, Link, Image, Text, Divider, Code, Grid } from '@napolke-ui'
+import {Docs} from "../../src/templates/Docs";
+import Playground from '../../src/components/Playground'
+import Attributes from '../../src/components/Attributes'
+
+export const meta = {
+  title: 'Card',
+  sidebar: 'components',
+  group: 'Components',
+  index: 8
+}
+
+## Card
+
+Компонент контейнер
+
+<Playground
+  title="Дефолтный вид"
+  desc="Базовое отображение `Card`  без пропсов"
+  scope={{ Card, Grid }}
+  code={`
+<Grid.Container gap={2}>
+  <Grid>
+    <Card>На полке</Card>
+  </Grid>
+</Grid.Container>
+`}
+/>
+
+<Playground
+  title="Анимация"
+  desc="Вы пожете включить анимацию при наведении на карточку, для этого добавьте пропс `hoverable`."
+  scope={{ Card, Grid }}
+  code={`
+<Grid.Container gap={2}>
+  <Grid xs={12} md={4}>
+    <Card hoverable>Узнавайте первыми о скидках и новинках поставщиков</Card>
+  </Grid>
+  <Grid xs={12} md={4}>
+    <Card hoverable type="primary">Узнавайте первыми о скидках и новинках поставщиков.</Card>
+  </Grid>
+  <Grid xs={12} md={4}>
+    <Card hoverable type="secondary">Узнавайте первыми о скидках и новинках поставщиков.</Card>
+  </Grid>
+</Grid.Container>
+`}
+/>
+
+<Playground
+  title="Контур"
+  desc="Вы пожете добавить контур у карточки, для этого добавьте пропс `bordered`."
+  scope={{ Card, Grid }}
+  code={`
+<Grid.Container gap={2}>
+  <Grid xs={12} md={4}>
+    <Card bordered>Находите новых поставщиков и заказывайте онлайн.</Card>
+  </Grid>
+  <Grid xs={12} md={4}>
+    <Card bordered type="primary">Находите новых поставщиков и заказывайте онлайн.</Card>
+  </Grid>
+  <Grid xs={12} md={4}>
+    <Card bordered type="secondary">Находите новых поставщиков и заказывайте онлайн.</Card>
+  </Grid>
+</Grid.Container>
+`}
+/>
+
+<Playground
+  title="Тень"
+  desc="Вы пожете добавить контур у карточки, для этого добавьте пропс `shadow`."
+  scope={{ Card, Grid, Text }}
+  code={`
+<Grid.Container gap={2}>
+  <Grid xs={12} md={4}>
+    <Card shadow>Находите новых поставщиков и заказывайте онлайн.</Card>
+  </Grid>
+  <Grid xs={12} md={4}>
+    <Card shadow type="primary">Находите новых поставщиков и заказывайте онлайн.</Card>
+  </Grid>
+  <Grid xs={12} md={4}>
+    <Card shadow type="secondary">Находите новых поставщиков и заказывайте онлайн.</Card>
+  </Grid>
+</Grid.Container>
+`}
+/>
+
+<Playground
+  title="Типы"
+  desc="Карточка принимает различные типы"
+  scope={{ Card, Grid, Text }}
+  code={`
+() => {
+  const types = ['default', 'primary', 'secondary', 'success', 'warning', 'error', 'info', 'dark', 'lite']
+  return (
+    <Grid.Container gap={2}>
+      {types.map((type) => (
+        <Grid xs={6} md={4} key={type}>
+          <Card type={type} width="100%">
+            <Text h4 my={0} style={{ textTransform: 'uppercase' }}>
+              {type}
+            </Text>
+            <Text>{type}</Text>
+          </Card>
+        </Grid>
+      ))}
+    </Grid.Container>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Footer"
+  desc="Вы можете использовать `Card.Footer`, чтобы добавить нижнюю часть карточки с информацией."
+  scope={{ Card, Link, Grid, Text }}
+  code={`
+<Grid.Container gap={2}>
+  <Grid xs={12} md={6} justify="center">
+    <Card width="100%">
+      <Text h4 my={0}>
+        Napolke
+      </Text>
+      <Text>Находите новых поставщиков и заказывайте онлайн.</Text>
+      <Card.Footer>
+        <Link
+          color
+          target="_blank"
+          href="https://napolke.ru"
+        >
+          Посетить сайт.
+        </Link>
+      </Card.Footer>
+    </Card>
+  </Grid>
+  <Grid xs={12} md={6} justify="center">
+    <Card width="100%" type="dark">
+      <Text h4 my={0}>
+       Napolke
+      </Text>
+      <Text>Находите новых поставщиков и заказывайте онлайн.</Text>
+      <Card.Footer>
+        <Link target="_blank" href="https://napolke.ru">
+              Посетить сайт.
+          </Link>
+        </Card.Footer>
+      </Card>
+    </Grid>
+  </Grid.Container>
+`}
+/>
+
+<Playground
+  title="Изображение"
+  desc="В карточку можно добавить  компонент `Image`."
+  scope={{ Card, Link, Text, Image, Grid }}
+  code={`
+<Grid.Container gap={2}>
+  <Grid>
+    <Card width="350px">
+      <Image
+        src="../../../images/banner_2.png"
+        width="350px"
+        draggable={false}
+      />
+      <Text h4 mb={0} mt={0}>
+        Napolke
+      </Text>
+      <Text type="primary" small>
+        Узнавайте первыми о скидках и новинках поставщиков.
+      </Text>
+      <Card.Footer>
+        <Link
+          block
+          target="_blank"
+          href="https://napolke.ru"
+        >
+            Посетить сайт.
+          </Link>
+        </Card.Footer>
+      </Card>
+    </Grid>
+  </Grid.Container>
+`}
+/>
+
+<Playground
+  title="Разделитель"
+  desc="Для того чтобы отделить блоки, можно использовать `Divider`."
+  scope={{ Card, Text, Divider, Code, Grid }}
+  code={`
+<Grid.Container gap={2}>
+  <Grid>
+    <Card width="400px">
+      <Card.Content>
+        <Text b my={0}>
+          Наши поставщики
+        </Text>
+      </Card.Content>
+      <Divider h="1px" my={0} />
+      <Card.Content>
+        <Text>
+          Мы проводим проверку каждого поставщика и делаем контрольные закупки продукции.
+					На данный момент «на_полке» объединяет более 300 поставщиков.
+        </Text>
+      </Card.Content>
+    </Card>
+  </Grid>
+</Grid.Container>
+`}
+/>
+
+<Attributes edit="/pages/docs/components/card.mdx">
+<Attributes.Title>Card.Props</Attributes.Title>
+
+| Attribute     | Description         | Type                  | Accepted values         | Default   |
+| ------------- | ------------------- | --------------------- | ----------------------- | --------- |
+| **hoverable** | add effect on hover | `boolean`             | -                       | `false`   |
+| **shadow**    | show shadow         | `boolean`             | -                       | `false`   |
+| **type**      | card type           | [CardType](#cardtype) | -                       | `default` |
+| ...           | native props        | `HTMLAttributes`      | `'id', className', ...` | -         |
+
+<Attributes.Title alias="Card.Body">Card.Content.Props</Attributes.Title>
+
+| Attribute | Description  | Type             | Accepted values         | Default |
+| --------- | ------------ | ---------------- | ----------------------- | ------- |
+| ...       | native props | `HTMLAttributes` | `'id', className', ...` | -       |
+
+<Attributes.Title alias="Card.Actions">Card.Footer.Props</Attributes.Title>
+
+| Attribute             | Description                   | Type             | Accepted values         | Default |
+| --------------------- | ----------------------------- | ---------------- | ----------------------- | ------- |
+| **disableAutoMargin** | cancel automatic margin value | `boolean`        | -                       | `false` |
+| ...                   | native props                  | `HTMLAttributes` | `'id', className', ...` | -       |
+
+<Attributes.Title>CardType</Attributes.Title>
+
+```ts
+type CardType =
+  | 'default'
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'info'
+  | 'dark'
+  | 'lite'
+```
+
+</Attributes>
+
+export default ({ children }) => <Docs meta={meta}>{children}</Docs>
